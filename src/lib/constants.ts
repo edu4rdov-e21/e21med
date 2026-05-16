@@ -9,10 +9,36 @@ export const HERO = {
     "O paciente não escolhe o melhor médico. Escolhe o que ele já conhece.",
   subheadline:
     "A E21 constrói uma audiência composta por pacientes prontos para adquirir seus serviços.",
-  ctaLabel: "Quero ser referência na minha especialidade",
+  ctaLabel: "Quero agendar minha reunião",
   ctaHref: "#formulario",
-  imageDescription:
-    "FOTO: Médico gravando no estúdio E21 — bastidor com equipe e equipamento",
+  videoDescription:
+    "VÍDEO: Compilado de bastidores E21 — várias gravações acontecendo, equipe em ação, médicos gravando, muita coisa rolando ao mesmo tempo",
+  popups: [
+    {
+      id: "notif-1",
+      description:
+        "POPUP 1: notificação WhatsApp/iMessage — \"Quero agendar uma consulta\"",
+      position: "top-left",
+    },
+    {
+      id: "notif-2",
+      description:
+        "POPUP 2: notificação Instagram DM — \"Quero agendar uma consulta\"",
+      position: "top-right",
+    },
+    {
+      id: "notif-3",
+      description:
+        "POPUP 3: notificação genérica — \"Quero agendar uma consulta\"",
+      position: "bottom-left",
+    },
+    {
+      id: "ig-print",
+      description:
+        "PRINT: tela do Instagram mostrando crescimento de seguidores (gráfico subindo / contador de seguidores)",
+      position: "bottom-right",
+    },
+  ],
 } as const;
 
 export const PAIN_POINTS = {
@@ -68,39 +94,8 @@ export const HOW_IT_WORKS = {
   ],
   photoDescription:
     "FOTO: Sessão de gravação no estúdio — médico com microfone",
-} as const;
-
-export const PRICING = {
-  title: "Investimento",
-  plans: [
-    {
-      id: "aceleracao",
-      name: "Aceleração",
-      duration: "3 meses",
-      description: "Só a Fase 1",
-      entry: "R$6.000 de entrada",
-      installments: "+ 3× R$4.000",
-      total: "Total: R$18.000",
-      cash: "Ou R$15.000 à vista",
-      ctaLabel: "Começar com Aceleração",
-      ctaHref: "#formulario",
-      highlighted: false,
-    },
-    {
-      id: "jornada",
-      name: "Jornada Completa",
-      duration: "6 meses",
-      description: "Fase 1 + Fase 2",
-      entry: "R$6.000 de entrada",
-      installments: "+ 6× R$4.000",
-      total: "Total: R$30.000",
-      cash: "Ou R$25.000 à vista",
-      ctaLabel: "Quero a Jornada Completa",
-      ctaHref: "#formulario",
-      highlighted: true,
-      badge: "MAIS ESCOLHIDO",
-    },
-  ],
+  ctaLabel: "Quero entender melhor — agendar reunião",
+  ctaHref: "#formulario",
 } as const;
 
 export const TESTIMONIALS = {
@@ -132,12 +127,12 @@ export const PHOTO_DIVIDER_2 = {
 } as const;
 
 export const FORM = {
-  title: "Candidate-se ao E21 MED",
+  title: "Agende sua reunião",
   subtitle:
-    "Preencha abaixo e nossa equipe entra em contato em até 24h.",
-  submitLabel: "Enviar candidatura",
+    "Preencha abaixo. Nossa equipe entra em contato em até 24h pra marcar sua reunião de diagnóstico.",
+  submitLabel: "Quero agendar minha reunião",
   successMessage:
-    "Candidatura enviada! Entraremos em contato em até 24h.",
+    "Pedido recebido! Entraremos em contato em até 24h pra confirmar.",
   fields: [
     { name: "nome", label: "Nome completo", type: "text", required: true },
     { name: "whatsapp", label: "WhatsApp", type: "tel", required: true },

@@ -23,15 +23,15 @@ e21med/
 │   │   ├── page.tsx            # Página principal — monta as seções
 │   │   └── globals.css         # Tema Tailwind v4 (cores, fonts, scroll suave)
 │   ├── components/
-│   │   ├── Hero.tsx
-│   │   ├── PainPoints.tsx      # Seção "Isso é sobre você?"
-│   │   ├── PhotoDivider.tsx    # Divisor visual full-width reutilizável
-│   │   ├── PhotoPlaceholder.tsx# Bloco placeholder de foto (16:9, 4:3, 1:1)
-│   │   ├── Differentiator.tsx  # "Aqui, sua imagem é protagonista"
-│   │   ├── HowItWorks.tsx      # Fases 1 (Aceleração) e 2 (Exponenciação)
-│   │   ├── Pricing.tsx         # Cards de preço
-│   │   ├── Testimonials.tsx    # Depoimentos
-│   │   ├── ApplicationForm.tsx # Formulário (#formulario) — só front, sem backend
+│   │   ├── Hero.tsx                  # Título, CTA, placeholder de vídeo + popups
+│   │   ├── NotificationPopup.tsx     # Card flutuante (notificações sobre o vídeo)
+│   │   ├── PainPoints.tsx            # Seção "Isso é sobre você?"
+│   │   ├── PhotoDivider.tsx          # Divisor visual full-width reutilizável
+│   │   ├── PhotoPlaceholder.tsx      # Bloco placeholder de mídia (16:9, 4:3, 1:1)
+│   │   ├── Differentiator.tsx        # "Aqui, sua imagem é protagonista"
+│   │   ├── HowItWorks.tsx            # Fases 1 (Aceleração) e 2 (Exponenciação)
+│   │   ├── Testimonials.tsx          # Depoimentos
+│   │   ├── ApplicationForm.tsx       # Form de agendamento (#formulario) — só front
 │   │   └── Footer.tsx
 │   ├── lib/
 │   │   └── constants.ts        # Todos os textos, preços, dados dos cards
@@ -48,9 +48,9 @@ e21med/
 
 Tudo em [`src/lib/constants.ts`](src/lib/constants.ts). Cada seção tem seu próprio objeto exportado (`HERO`, `PAIN_POINTS`, `PRICING`, `TESTIMONIALS`, etc). Edite ali sem mexer em componente.
 
-## Como trocar fotos
+## Como trocar fotos e o vídeo do hero
 
-1. Dropar os arquivos reais em `/public/images/`.
+1. Dropar os arquivos reais em `/public/images/` (ou `/public/video/` pro vídeo).
 2. Em cada componente que usa `PhotoPlaceholder`, trocar pelo `next/image` apontando para o arquivo real. Exemplo:
 
 ```tsx
@@ -61,7 +61,11 @@ Tudo em [`src/lib/constants.ts`](src/lib/constants.ts). Cada seção tem seu pr�
 <Image src="/images/hero.jpg" alt="Médico gravando" width={800} height={600} />
 ```
 
-As descrições atuais nos placeholders indicam exatamente qual foto vai em cada lugar.
+**Vídeo do hero**: o placeholder atual indica "VÍDEO: Compilado de bastidores E21". Pra colocar o vídeo real, edite [src/components/Hero.tsx](src/components/Hero.tsx) e troque o `<PhotoPlaceholder>` por um `<video>` com `autoPlay muted loop playsInline`.
+
+**Popups do hero** (notificações + print do Instagram): cada `NotificationPopup` é um placeholder. Pra usar a imagem real, troque o `<NotificationPopup>` por um `<Image>`. As posições estão em `POPUP_POSITIONS` no topo do `Hero.tsx` e podem ser ajustadas livremente.
+
+As descrições atuais nos placeholders indicam exatamente qual imagem/vídeo vai em cada lugar.
 
 ## Cores do tema (definidas em `globals.css`)
 

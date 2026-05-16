@@ -3,7 +3,6 @@ import PainPoints from "@/components/PainPoints";
 import PhotoDivider from "@/components/PhotoDivider";
 import Differentiator from "@/components/Differentiator";
 import HowItWorks from "@/components/HowItWorks";
-import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import ApplicationForm from "@/components/ApplicationForm";
 import Footer from "@/components/Footer";
@@ -17,7 +16,6 @@ export default function Home() {
       <PhotoDivider description={PHOTO_DIVIDER_1.description} />
       <Differentiator />
       <HowItWorks />
-      <Pricing />
       <Testimonials />
       <PhotoDivider description={PHOTO_DIVIDER_2.description} />
       <ApplicationForm />

@@ -2,14 +2,28 @@
 
 import { HERO } from "@/lib/constants";
 import PhotoPlaceholder from "./PhotoPlaceholder";
+import NotificationPopup from "./NotificationPopup";
 import { useFadeIn } from "@/hooks/useFadeIn";
+
+const POPUP_POSITIONS: Record<string, string> = {
+  "top-left":
+    "top-2 -left-3 sm:-top-5 sm:-left-8 w-40 sm:w-56",
+  "top-right":
+    "-top-3 right-2 sm:-top-6 sm:-right-6 w-40 sm:w-56",
+  "bottom-left":
+    "bottom-6 -left-3 sm:bottom-10 sm:-left-10 w-44 sm:w-60",
+  "bottom-right":
+    "-bottom-4 right-2 sm:-bottom-8 sm:-right-10 w-48 sm:w-64",
+};
+
+const POPUP_DELAYS = [0.6, 1.0, 1.4, 1.8];
 
 export default function Hero() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
 
   return (
-    <section className="bg-cream">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-36">
+    <section className="bg-cream overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-16 pb-24 sm:pt-24 sm:pb-32 lg:pt-32 lg:pb-40">
         <div
           ref={ref}
           className={`${className} grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center`}
@@ -31,11 +45,22 @@ export default function Hero() {
               {HERO.ctaLabel}
             </a>
           </div>
+
           <div className="lg:pl-8">
-            <PhotoPlaceholder
-              description={HERO.imageDescription}
-              ratio="4:3"
-            />
+            <div className="relative">
+              <PhotoPlaceholder
+                description={HERO.videoDescription}
+                ratio="4:3"
+              />
+              {HERO.popups.map((popup, idx) => (
+                <NotificationPopup
+                  key={popup.id}
+                  description={popup.description}
+                  className={POPUP_POSITIONS[popup.position]}
+                  delay={POPUP_DELAYS[idx]}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
