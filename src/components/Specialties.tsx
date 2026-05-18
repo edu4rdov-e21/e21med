@@ -27,12 +27,6 @@ export default function Specialties() {
           ))}
         </ul>
       </div>
-
-      <div className="flex justify-center mt-3 sm:mt-4">
-        <span className="text-[9px] sm:text-[11px] font-semibold tracking-[0.2em] text-navy/60 uppercase whitespace-nowrap">
-          {SPECIALTIES.label}
-        </span>
-      </div>
     </section>
   );
 }

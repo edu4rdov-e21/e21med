@@ -39,7 +39,6 @@ export const SOCIAL_PROOF = {
 } as const;
 
 export const SPECIALTIES = {
-  label: "Especialidades que já atendemos",
   items: [
     "Endocrinologia",
     "Cirurgia Bariátrica",
