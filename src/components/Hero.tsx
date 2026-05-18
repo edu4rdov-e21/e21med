@@ -7,18 +7,27 @@ export default function Hero() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
 
   return (
-    <section className="relative flex flex-col justify-end overflow-hidden bg-navy-dark pt-[68%] lg:pt-0 lg:min-h-[640px] lg:justify-center">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/video/takes-poster.jpg"
-        className="absolute inset-0 w-full h-full object-cover"
-        aria-hidden="true"
+    <section className="relative overflow-hidden bg-navy-dark pt-[68%] lg:pt-0 lg:min-h-[640px] flex flex-col justify-end lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16 lg:py-20 lg:px-10 xl:px-16">
+      <div
+        className="
+          absolute inset-0
+          lg:relative lg:inset-auto lg:order-2
+          lg:w-[440px] lg:h-[550px] lg:flex-shrink-0
+          lg:rounded-2xl lg:overflow-hidden lg:ring-1 lg:ring-cream/10 lg:shadow-2xl
+        "
       >
-        <source src={HERO.videoSrc} type="video/mp4" />
-      </video>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/video/takes-poster.jpg"
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        >
+          <source src={HERO.videoSrc} type="video/mp4" />
+        </video>
+      </div>
 
       <div
         aria-hidden="true"
@@ -29,19 +38,10 @@ export default function Hero() {
         }}
       />
 
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 hidden lg:block"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(15,36,64,0.92) 0%, rgba(15,36,64,0.6) 50%, rgba(15,36,64,0) 100%)",
-        }}
-      />
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-10 sm:pb-14 lg:py-20">
+      <div className="relative z-10 lg:order-1 w-full max-w-7xl mx-auto px-6 sm:px-10 pb-10 sm:pb-14 lg:p-0 lg:mx-0 lg:max-w-xl lg:flex-1">
         <div
           ref={ref}
-          className={`${className} flex flex-col items-center text-center lg:items-start lg:text-left lg:max-w-2xl gap-5 sm:gap-7`}
+          className={`${className} flex flex-col items-center text-center lg:items-start lg:text-left gap-5 sm:gap-7`}
         >
           <div className="flex flex-col items-center lg:items-start gap-2">
             <span className="inline-flex items-center rounded-full px-3 py-1.5 bg-cream/10 backdrop-blur-md border border-cream/20 text-[10px] sm:text-xs font-semibold tracking-[0.22em] text-cream uppercase">
