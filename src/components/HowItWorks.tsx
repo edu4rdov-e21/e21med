@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { HOW_IT_WORKS } from "@/lib/constants";
-import PhotoPlaceholder from "./PhotoPlaceholder";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
 export default function HowItWorks() {
@@ -71,10 +71,15 @@ export default function HowItWorks() {
               </div>
             ))}
           </div>
-          <PhotoPlaceholder
-            description={HOW_IT_WORKS.photoDescription}
-            ratio="16:9"
-          />
+          <div className="relative w-full aspect-video overflow-hidden rounded-xl ring-1 ring-navy/10">
+            <Image
+              src={HOW_IT_WORKS.photoSrc}
+              alt={HOW_IT_WORKS.photoDescription}
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

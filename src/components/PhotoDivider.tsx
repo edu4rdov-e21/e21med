@@ -7,9 +7,17 @@ import { useFadeIn } from "@/hooks/useFadeIn";
 interface PhotoDividerProps {
   description: string;
   src?: string;
+  peek?: boolean;
 }
 
-export default function PhotoDivider({ description, src }: PhotoDividerProps) {
+const PEEK_MASK =
+  "linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%)";
+
+export default function PhotoDivider({
+  description,
+  src,
+  peek = false,
+}: PhotoDividerProps) {
   const { ref, className } = useFadeIn<HTMLDivElement>();
 
   return (
@@ -17,13 +25,14 @@ export default function PhotoDivider({ description, src }: PhotoDividerProps) {
       <div ref={ref} className={className}>
         {src ? (
           <div
-            className="relative w-full aspect-[16/7] sm:aspect-[3/1] overflow-hidden"
-            style={{
-              maskImage:
-                "linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%)",
-              WebkitMaskImage:
-                "linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%)",
-            }}
+            className={`relative w-full overflow-hidden ${
+              peek ? "aspect-[16/7] sm:aspect-[3/1]" : "aspect-video sm:aspect-[21/9]"
+            }`}
+            style={
+              peek
+                ? { maskImage: PEEK_MASK, WebkitMaskImage: PEEK_MASK }
+                : undefined
+            }
           >
             <Image
               src={src}

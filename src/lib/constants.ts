@@ -141,36 +141,23 @@ export const HOW_IT_WORKS = {
       ],
     },
   ],
-  photoDescription:
-    "FOTO: Sessão de gravação no estúdio, médico com microfone",
+  photoDescription: "Bastidor de gravação no estúdio E21",
+  photoSrc: "/images/bastidores/bastidores-1.jpg",
 } as const;
 
 export const TESTIMONIALS = {
   title: "Quem já vive isso",
   items: [
-    {
-      quote: "SUBSTITUIR POR DEPOIMENTO REAL DO MÉDICO CLIENTE",
-      name: "Dr. Nome Sobrenome",
-      specialty: "Especialidade",
-      photoDescription: "FOTO DO MÉDICO",
-    },
-    {
-      quote: "SUBSTITUIR POR DEPOIMENTO REAL DO MÉDICO CLIENTE",
-      name: "Dr. Nome Sobrenome",
-      specialty: "Especialidade",
-      photoDescription: "FOTO DO MÉDICO",
-    },
-    {
-      quote: "SUBSTITUIR POR DEPOIMENTO REAL DO MÉDICO CLIENTE",
-      name: "Dr. Nome Sobrenome",
-      specialty: "Especialidade",
-      photoDescription: "FOTO DO MÉDICO",
-    },
+    { src: "/images/depoimentos/depoimento-1.jpeg", alt: "Depoimento de cliente" },
+    { src: "/images/depoimentos/depoimento-2.jpeg", alt: "Depoimento de cliente" },
+    { src: "/images/depoimentos/depoimento-3.jpeg", alt: "Depoimento de cliente" },
+    { src: "/images/depoimentos/depoimento-4.jpg", alt: "Depoimento de cliente" },
   ],
 } as const;
 
 export const PHOTO_DIVIDER_2 = {
-  description: "FOTO: Equipe E21 em ação, making of de uma gravação",
+  description: "Making of de uma gravação no estúdio E21",
+  src: "/images/bastidores/bastidores-2.png",
 } as const;
 
 export const FORM = {

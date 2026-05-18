@@ -18,11 +18,15 @@ export default function Home() {
       <PhotoDivider
         description={PHOTO_DIVIDER_1.description}
         src={PHOTO_DIVIDER_1.src}
+        peek
       />
       <Team />
       <HowItWorks />
       <Testimonials />
-      <PhotoDivider description={PHOTO_DIVIDER_2.description} />
+      <PhotoDivider
+        description={PHOTO_DIVIDER_2.description}
+        src={PHOTO_DIVIDER_2.src}
+      />
       <ApplicationForm />
       <Footer />
     </main>
