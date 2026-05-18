@@ -43,9 +43,22 @@ export default function Hero() {
           ref={ref}
           className={`${className} flex flex-col items-center text-center lg:items-start lg:text-left lg:max-w-2xl gap-5 sm:gap-7`}
         >
-          <span className="inline-flex items-center rounded-full px-3 py-1.5 bg-cream/10 backdrop-blur-md border border-cream/20 text-[10px] sm:text-xs font-semibold tracking-[0.22em] text-cream uppercase">
-            {HERO.badge}
-          </span>
+          <div className="flex flex-col items-center lg:items-start gap-2">
+            <span className="inline-flex items-center rounded-full px-3 py-1.5 bg-cream/10 backdrop-blur-md border border-cream/20 text-[10px] sm:text-xs font-semibold tracking-[0.22em] text-cream uppercase">
+              {HERO.badge}
+            </span>
+            <p className="text-[11px] sm:text-xs text-cream/60">
+              {HERO.subBadgePre}
+              <a
+                href={HERO.subBadgeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cream/80 font-medium hover:text-cream transition-colors"
+              >
+                {HERO.subBadgeHandle}
+              </a>
+            </p>
+          </div>
 
           <h1 className="text-2xl sm:text-4xl lg:text-5xl text-cream leading-[1.2] sm:leading-[1.15]">
             {HERO.headlinePre}

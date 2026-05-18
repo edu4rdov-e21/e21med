@@ -5,6 +5,9 @@ export const BRAND = {
 
 export const HERO = {
   badge: "E21 MED",
+  subBadgePre: "um projeto do grupo ",
+  subBadgeHandle: "@e21.studio",
+  subBadgeHref: "https://instagram.com/e21.studio",
   headlinePre: "O paciente não escolhe o melhor médico. Escolhe o que ",
   headlineHighlight: "ele já conhece",
   headlinePost: ".",
