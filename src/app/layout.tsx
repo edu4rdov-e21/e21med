@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "E21 MED — Construindo autoridade para médicos de alto padrão",
+  title: "E21 MED · Construindo autoridade para médicos de alto padrão",
   description:
     "O E21 constrói uma audiência composta por pacientes prontos para adquirir seus serviços. Estúdio próprio, equipe dedicada, resultado real.",
 };

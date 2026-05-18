@@ -12,24 +12,24 @@ export const HERO = {
   ctaLabel: "Quero agendar minha reunião",
   ctaHref: "#formulario",
   videoDescription:
-    "VÍDEO: Compilado de bastidores E21 — várias gravações acontecendo, equipe em ação, médicos gravando, muita coisa rolando ao mesmo tempo",
+    "VÍDEO: Compilado de bastidores E21, várias gravações acontecendo, equipe em ação, médicos gravando, muita coisa rolando ao mesmo tempo",
   popups: [
     {
       id: "notif-1",
       description:
-        "POPUP 1: notificação WhatsApp/iMessage — \"Quero agendar uma consulta\"",
+        "POPUP 1: notificação WhatsApp/iMessage, \"Quero agendar uma consulta\"",
       position: "top-left",
     },
     {
       id: "notif-2",
       description:
-        "POPUP 2: notificação Instagram DM — \"Quero agendar uma consulta\"",
+        "POPUP 2: notificação Instagram DM, \"Quero agendar uma consulta\"",
       position: "top-right",
     },
     {
       id: "notif-3",
       description:
-        "POPUP 3: notificação genérica — \"Quero agendar uma consulta\"",
+        "POPUP 3: notificação genérica, \"Quero agendar uma consulta\"",
       position: "bottom-left",
     },
     {
@@ -140,9 +140,7 @@ export const HOW_IT_WORKS = {
     },
   ],
   photoDescription:
-    "FOTO: Sessão de gravação no estúdio — médico com microfone",
-  ctaLabel: "Quero entender melhor — agendar reunião",
-  ctaHref: "#formulario",
+    "FOTO: Sessão de gravação no estúdio, médico com microfone",
 } as const;
 
 export const TESTIMONIALS = {
@@ -170,7 +168,7 @@ export const TESTIMONIALS = {
 } as const;
 
 export const PHOTO_DIVIDER_2 = {
-  description: "FOTO: Equipe E21 em ação — making of de uma gravação",
+  description: "FOTO: Equipe E21 em ação, making of de uma gravação",
 } as const;
 
 export const FORM = {
