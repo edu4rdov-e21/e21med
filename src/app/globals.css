@@ -52,3 +52,21 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   animation: popup-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 50s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-x:hover {
+  animation-play-state: paused;
+}

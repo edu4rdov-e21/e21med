@@ -41,6 +41,24 @@ export const HERO = {
   ],
 } as const;
 
+export const SOCIAL_PROOF = {
+  label: "Quem já está com a E21",
+  clients: [
+    { name: "Dr. André Moreira", src: "/images/clients/dr-andre-moreira.jpg" },
+    { name: "Dra. Carla Fernandes", src: "/images/clients/dra-carla-fernandes.jpg" },
+    { name: "Dra. Haylla", src: "/images/clients/dra-haylla.png" },
+    { name: "Dra. Larissa Nunes", src: "/images/clients/dra-larissa-nunes.jpg" },
+    { name: "Dra. Laura Oliveira", src: "/images/clients/dra-laura-oliveira.png" },
+    { name: "Dra. Layla Jorge", src: "/images/clients/dra-layla-jorge.png" },
+    { name: "Dra. Rebeca Mendes", src: "/images/clients/dra-rebeca-mendes.png" },
+    { name: "Dra. Sara Mendes", src: "/images/clients/dra-sara-mendes.jpg" },
+    { name: "Dra. Stephanny Melo", src: "/images/clients/dra-stephanny-melo.jpg" },
+    { name: "Dra. Wanessa Barbosa", src: "/images/clients/dra-wanessa-barbosa.jpg" },
+    { name: "Clínica Haven", src: "/images/clients/clinica-haven.png" },
+    { name: "+ mais médicos", src: "/images/clients/mais-medicos.png" },
+  ],
+} as const;
+
 export const PAIN_POINTS = {
   title: "Isso é sobre você?",
   cards: [
