@@ -1,67 +1,72 @@
 "use client";
 
 import { HERO } from "@/lib/constants";
-import PhotoPlaceholder from "./PhotoPlaceholder";
-import NotificationPopup from "./NotificationPopup";
 import { useFadeIn } from "@/hooks/useFadeIn";
-
-const POPUP_POSITIONS: Record<string, string> = {
-  "top-left":
-    "top-2 -left-3 sm:-top-5 sm:-left-8 w-40 sm:w-56",
-  "top-right":
-    "-top-3 right-2 sm:-top-6 sm:-right-6 w-40 sm:w-56",
-  "bottom-left":
-    "bottom-6 -left-3 sm:bottom-10 sm:-left-10 w-44 sm:w-60",
-  "bottom-right":
-    "-bottom-4 right-2 sm:-bottom-8 sm:-right-10 w-48 sm:w-64",
-};
-
-const POPUP_DELAYS = [0.6, 1.0, 1.4, 1.8];
 
 export default function Hero() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
 
   return (
-    <section className="bg-cream overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-16 pb-24 sm:pt-24 sm:pb-32 lg:pt-32 lg:pb-40">
+    <section className="relative flex flex-col justify-end overflow-hidden bg-navy-dark pt-[68%] lg:pt-0 lg:min-h-[640px] lg:justify-center">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/video/takes-poster.jpg"
+        className="absolute inset-0 w-full h-full object-cover"
+        aria-hidden="true"
+      >
+        <source src={HERO.videoSrc} type="video/mp4" />
+      </video>
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-0 w-full h-[65%] lg:hidden"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(15,36,64,0.96) 0%, rgba(15,36,64,0.7) 40%, rgba(15,36,64,0) 100%)",
+        }}
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 hidden lg:block"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(15,36,64,0.92) 0%, rgba(15,36,64,0.6) 50%, rgba(15,36,64,0) 100%)",
+        }}
+      />
+
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-10 sm:pb-14 lg:py-20">
         <div
           ref={ref}
-          className={`${className} grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center`}
+          className={`${className} flex flex-col items-center text-center lg:items-start lg:text-left lg:max-w-2xl gap-5 sm:gap-7`}
         >
-          <div className="flex flex-col gap-6 sm:gap-8">
-            <span className="inline-flex items-center self-start rounded-full border border-navy/20 px-3 py-1 text-xs font-medium tracking-[0.2em] text-navy uppercase">
-              {HERO.badge}
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-navy">
-              {HERO.headline}
-            </h1>
-            <p className="text-lg sm:text-xl text-navy/75 max-w-xl leading-relaxed">
-              {HERO.subheadline}
-            </p>
-            <a
-              href={HERO.ctaHref}
-              className="inline-flex items-center justify-center self-start rounded-full bg-navy text-cream px-8 py-4 text-base font-semibold hover:bg-navy-light transition-colors duration-300"
-            >
-              {HERO.ctaLabel}
-            </a>
-          </div>
+          <span className="inline-flex items-center rounded-full px-3 py-1.5 bg-cream/10 backdrop-blur-md border border-cream/20 text-[10px] sm:text-xs font-semibold tracking-[0.22em] text-cream uppercase">
+            {HERO.badge}
+          </span>
 
-          <div className="lg:pl-8">
-            <div className="relative">
-              <PhotoPlaceholder
-                description={HERO.videoDescription}
-                ratio="4:3"
-              />
-              {HERO.popups.map((popup, idx) => (
-                <NotificationPopup
-                  key={popup.id}
-                  description={popup.description}
-                  className={POPUP_POSITIONS[popup.position]}
-                  delay={POPUP_DELAYS[idx]}
-                />
-              ))}
-            </div>
-          </div>
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl text-cream leading-[1.2] sm:leading-[1.15]">
+            {HERO.headlinePre}
+            <em className="italic">{HERO.headlineHighlight}</em>
+            {HERO.headlinePost}
+          </h1>
+
+          <p className="text-sm sm:text-base lg:text-lg text-cream/70 leading-relaxed max-w-xl">
+            {HERO.subheadlinePre}
+            <strong className="text-cream font-bold">
+              {HERO.subheadlineStrong}
+            </strong>
+            {HERO.subheadlinePost}
+          </p>
+
+          <a
+            href={HERO.ctaHref}
+            className="inline-flex items-center justify-center rounded-full bg-cream text-navy px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold hover:bg-white transition-colors duration-300"
+          >
+            {HERO.ctaLabel}
+          </a>
         </div>
       </div>
     </section>

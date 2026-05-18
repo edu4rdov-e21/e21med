@@ -5,40 +5,15 @@ export const BRAND = {
 
 export const HERO = {
   badge: "E21 MED",
-  headline:
-    "O paciente não escolhe o melhor médico. Escolhe o que ele já conhece.",
-  subheadline:
-    "O E21 constrói uma audiência composta por pacientes prontos para adquirir seus serviços.",
+  headlinePre: "O paciente não escolhe o melhor médico. Escolhe o que ",
+  headlineHighlight: "ele já conhece",
+  headlinePost: ".",
+  subheadlinePre: "O E21 constrói uma audiência composta por ",
+  subheadlineStrong: "pacientes prontos para adquirir seus serviços",
+  subheadlinePost: ".",
   ctaLabel: "Quero agendar minha reunião",
   ctaHref: "#formulario",
-  videoDescription:
-    "VÍDEO: Compilado de bastidores E21, várias gravações acontecendo, equipe em ação, médicos gravando, muita coisa rolando ao mesmo tempo",
-  popups: [
-    {
-      id: "notif-1",
-      description:
-        "POPUP 1: notificação WhatsApp/iMessage, \"Quero agendar uma consulta\"",
-      position: "top-left",
-    },
-    {
-      id: "notif-2",
-      description:
-        "POPUP 2: notificação Instagram DM, \"Quero agendar uma consulta\"",
-      position: "top-right",
-    },
-    {
-      id: "notif-3",
-      description:
-        "POPUP 3: notificação genérica, \"Quero agendar uma consulta\"",
-      position: "bottom-left",
-    },
-    {
-      id: "ig-print",
-      description:
-        "PRINT: tela do Instagram mostrando crescimento de seguidores (gráfico subindo / contador de seguidores)",
-      position: "bottom-right",
-    },
-  ],
+  videoSrc: "/video/takes.mp4",
 } as const;
 
 export const SOCIAL_PROOF = {
