@@ -66,3 +66,8 @@ h1, h2, h3, h4, h5, h6 {
   animation: scroll-x 30s linear infinite;
   will-change: transform;
 }
+
+.animate-scroll-x-fast {
+  animation: scroll-x 20s linear infinite;
+  will-change: transform;
+}

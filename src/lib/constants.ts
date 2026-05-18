@@ -60,6 +60,22 @@ export const SOCIAL_PROOF = {
   ],
 } as const;
 
+export const SPECIALTIES = {
+  label: "Especialidades que já atendemos",
+  items: [
+    "Endocrinologia",
+    "Cirurgia Bariátrica",
+    "Nutrologia",
+    "Dermatologia",
+    "Homeopatia",
+    "Medicina da Família",
+    "Cardiologia",
+    "Endopediatria",
+    "Ginecologia",
+    "Oftalmologia",
+  ],
+} as const;
+
 export const PAIN_POINTS = {
   title: "Isso é sobre você?",
   cards: [
