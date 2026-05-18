@@ -34,7 +34,7 @@ export const SOCIAL_PROOF = {
     { name: "Dra. Stephanny Melo", src: "/images/clients/dra-stephanny-melo.jpg" },
     { name: "Dra. Wanessa Barbosa", src: "/images/clients/dra-wanessa-barbosa.jpg" },
     { name: "Clínica Haven", src: "/images/clients/clinica-haven.png" },
-    { name: "+ mais médicos", src: "/images/clients/mais-medicos.png" },
+    { name: "Evento Mais Médicos", src: "/images/clients/mais-medicos.png" },
   ],
 } as const;
 
