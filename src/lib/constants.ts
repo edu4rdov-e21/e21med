@@ -45,6 +45,7 @@ export const SOCIAL_PROOF = {
   label: "Quem confia no E21",
   clients: [
     { name: "Dr. André Moreira", src: "/images/clients/dr-andre-moreira.jpg" },
+    { name: "Dr. Danilo Minari", src: "/images/clients/dr-danilo-minari.png" },
     { name: "Dra. Carla Fernandes", src: "/images/clients/dra-carla-fernandes.jpg" },
     { name: "Dra. Larissa Nunes", src: "/images/clients/dra-larissa-nunes.jpg" },
     { name: "Dra. Laura Oliveira", src: "/images/clients/dra-laura-oliveira.png" },
