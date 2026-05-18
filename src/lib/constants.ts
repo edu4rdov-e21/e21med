@@ -8,7 +8,7 @@ export const HERO = {
   headline:
     "O paciente não escolhe o melhor médico. Escolhe o que ele já conhece.",
   subheadline:
-    "A E21 constrói uma audiência composta por pacientes prontos para adquirir seus serviços.",
+    "O E21 constrói uma audiência composta por pacientes prontos para adquirir seus serviços.",
   ctaLabel: "Quero agendar minha reunião",
   ctaHref: "#formulario",
   videoDescription:
@@ -42,7 +42,7 @@ export const HERO = {
 } as const;
 
 export const SOCIAL_PROOF = {
-  label: "Quem já está com a E21",
+  label: "Quem confia no E21",
   clients: [
     { name: "Dr. André Moreira", src: "/images/clients/dr-andre-moreira.jpg" },
     { name: "Dra. Carla Fernandes", src: "/images/clients/dra-carla-fernandes.jpg" },
@@ -74,7 +74,7 @@ export const PHOTO_DIVIDER_1 = {
 
 export const DIFFERENTIATOR = {
   title: "Aqui, sua imagem é protagonista",
-  body: "Nada de artes genéricas e panfletagem digital. Na E21, você grava no nosso estúdio com equipe profissional dedicada. O resultado é conteúdo que constrói autoridade de verdade — porque quem te assiste sente a diferença.",
+  body: "Nada de artes genéricas e panfletagem digital. No E21, você grava no nosso estúdio com equipe profissional dedicada. O resultado é conteúdo que constrói autoridade de verdade — porque quem te assiste sente a diferença.",
   photos: [
     "FOTO: Close da gravação",
     "FOTO: Bastidor com iluminação",
