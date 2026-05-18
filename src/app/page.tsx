@@ -16,6 +16,7 @@ export default function Home() {
       <Hero />
       <SocialProof />
       <PainPoints />
+      <Specialties />
       <PhotoDivider
         description={PHOTO_DIVIDER_1.description}
         src={PHOTO_DIVIDER_1.src}
@@ -23,7 +24,6 @@ export default function Home() {
       />
       <Team />
       <HowItWorks />
-      <Specialties />
       <Testimonials />
       <ApplicationForm />
       <Footer />
