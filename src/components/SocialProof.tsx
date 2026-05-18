@@ -9,7 +9,7 @@ export default function SocialProof() {
   const clients = [...SOCIAL_PROOF.clients, ...SOCIAL_PROOF.clients];
 
   return (
-    <section className="bg-cream py-16 sm:py-20 overflow-hidden">
+    <section className="bg-cream pt-16 sm:pt-20 pb-8 sm:pb-20 overflow-hidden">
       <div ref={ref} className={className}>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mb-10 sm:mb-14">
           <p className="text-xs sm:text-sm font-semibold tracking-[0.25em] text-navy/60 uppercase text-center">

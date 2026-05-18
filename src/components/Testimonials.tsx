@@ -9,7 +9,7 @@ export default function Testimonials() {
   const items = [...TESTIMONIALS.items, ...TESTIMONIALS.items];
 
   return (
-    <section className="bg-white py-20 sm:py-28 overflow-hidden">
+    <section className="bg-white pt-10 sm:pt-28 pb-20 sm:pb-28 overflow-hidden">
       <div ref={ref} className={className}>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-navy text-center">

@@ -7,7 +7,7 @@ export default function PainPoints() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
 
   return (
-    <section className="bg-cream py-20 sm:py-28">
+    <section className="bg-cream pt-10 sm:pt-28 pb-20 sm:pb-28">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div ref={ref} className={className}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-navy text-center mb-12 sm:mb-16">

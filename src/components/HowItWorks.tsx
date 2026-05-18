@@ -7,7 +7,7 @@ export default function HowItWorks() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
 
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-white pt-20 sm:pt-28 pb-10 sm:pb-28">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div ref={ref} className={className}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-navy text-center mb-14 sm:mb-20">
