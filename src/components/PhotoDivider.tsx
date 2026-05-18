@@ -20,9 +20,9 @@ export default function PhotoDivider({ description, src }: PhotoDividerProps) {
             className="relative w-full aspect-[16/7] sm:aspect-[3/1] overflow-hidden"
             style={{
               maskImage:
-                "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+                "linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%)",
               WebkitMaskImage:
-                "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+                "linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%)",
             }}
           >
             <Image
