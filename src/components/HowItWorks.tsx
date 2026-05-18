@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { HOW_IT_WORKS } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
@@ -70,15 +69,6 @@ export default function HowItWorks() {
                 </ul>
               </div>
             ))}
-          </div>
-          <div className="relative w-full aspect-video overflow-hidden rounded-xl ring-1 ring-navy/10">
-            <Image
-              src={HOW_IT_WORKS.photoSrc}
-              alt={HOW_IT_WORKS.photoDescription}
-              fill
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              className="object-cover"
-            />
           </div>
         </div>
       </div>

@@ -141,8 +141,6 @@ export const HOW_IT_WORKS = {
       ],
     },
   ],
-  photoDescription: "Bastidor de gravação no estúdio E21",
-  photoSrc: "/images/bastidores/bastidores-1.jpg",
 } as const;
 
 export const TESTIMONIALS = {
@@ -154,11 +152,6 @@ export const TESTIMONIALS = {
     { src: "/images/depoimentos/depoimento-4.jpg",  alt: "Depoimento de cliente", width: 1119, height: 650 },
     { src: "/images/depoimentos/depoimento-5.jpeg", alt: "Depoimento de cliente", width: 739,  height: 1034 },
   ],
-} as const;
-
-export const PHOTO_DIVIDER_2 = {
-  description: "Making of de uma gravação no estúdio E21",
-  src: "/images/bastidores/bastidores-2.png",
 } as const;
 
 export const FORM = {

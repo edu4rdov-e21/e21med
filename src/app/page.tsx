@@ -7,7 +7,7 @@ import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import ApplicationForm from "@/components/ApplicationForm";
 import Footer from "@/components/Footer";
-import { PHOTO_DIVIDER_1, PHOTO_DIVIDER_2 } from "@/lib/constants";
+import { PHOTO_DIVIDER_1 } from "@/lib/constants";
 
 export default function Home() {
   return (
@@ -23,10 +23,6 @@ export default function Home() {
       <Team />
       <HowItWorks />
       <Testimonials />
-      <PhotoDivider
-        description={PHOTO_DIVIDER_2.description}
-        src={PHOTO_DIVIDER_2.src}
-      />
       <ApplicationForm />
       <Footer />
     </main>
