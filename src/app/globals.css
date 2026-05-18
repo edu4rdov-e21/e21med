@@ -71,3 +71,24 @@ h1, h2, h3, h4, h5, h6 {
   animation: scroll-x 20s linear infinite;
   will-change: transform;
 }
+
+@keyframes marker-sweep {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+.marker {
+  background-image: linear-gradient(transparent 55%, rgba(252, 211, 77, 0.85) 55%, rgba(252, 211, 77, 0.85) 92%, transparent 92%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  padding-inline: 0.08em;
+  margin-inline: -0.08em;
+  animation: marker-sweep 1.6s cubic-bezier(0.65, 0, 0.35, 1) 0.7s forwards;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}

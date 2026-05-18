@@ -7,23 +7,13 @@ export default function Hero() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
 
   return (
-    <section
-      className="relative overflow-hidden pt-[68%] lg:pt-20 lg:pb-20 lg:min-h-[720px] flex flex-col justify-end lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16 lg:px-10 xl:px-16"
-      style={{
-        background: `
-          radial-gradient(circle at 1px 1px, rgba(250, 250, 250, 0.05) 1px, transparent 0) 0 0 / 28px 28px,
-          radial-gradient(ellipse 70% 60% at 75% 40%, rgba(43, 108, 176, 0.22), transparent 60%),
-          radial-gradient(ellipse 60% 50% at 15% 85%, rgba(43, 108, 176, 0.15), transparent 65%),
-          linear-gradient(135deg, #0F2440 0%, #122B4A 50%, #0A1A30 100%)
-        `,
-      }}
-    >
+    <section className="relative overflow-hidden bg-navy-dark pt-[68%] lg:pt-20 lg:pb-20 lg:min-h-[720px] flex flex-col justify-end lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16 lg:px-10 xl:px-16">
       <div
         className="
           absolute inset-0
           lg:relative lg:inset-auto lg:order-2
           lg:w-[440px] lg:h-[550px] lg:flex-shrink-0
-          lg:rounded-2xl lg:overflow-hidden lg:ring-1 lg:ring-cream/10 lg:shadow-2xl
+          lg:rounded-2xl lg:overflow-hidden lg:ring-1 lg:ring-cream/15 lg:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]
         "
       >
         <video
@@ -70,13 +60,19 @@ export default function Hero() {
             </p>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl text-cream leading-[1.2] sm:leading-[1.15]">
+          <h1
+            className="text-2xl sm:text-4xl lg:text-5xl text-cream leading-[1.2] sm:leading-[1.15]"
+            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.35)" }}
+          >
             {HERO.headlinePre}
-            <em className="italic">{HERO.headlineHighlight}</em>
+            <span className="marker">{HERO.headlineHighlight}</span>
             {HERO.headlinePost}
           </h1>
 
-          <p className="text-sm sm:text-base lg:text-lg text-cream/70 leading-relaxed max-w-xl">
+          <p
+            className="text-sm sm:text-base lg:text-lg text-cream/70 leading-relaxed max-w-xl"
+            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}
+          >
             {HERO.subheadlinePre}
             <strong className="text-cream font-bold">
               {HERO.subheadlineStrong}
