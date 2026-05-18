@@ -72,13 +72,43 @@ export const PHOTO_DIVIDER_1 = {
   src: "/images/studio-geral.jpg",
 } as const;
 
-export const DIFFERENTIATOR = {
-  title: "Aqui, sua imagem é protagonista",
-  body: "Nada de artes genéricas e panfletagem digital. No E21, você grava no nosso estúdio com equipe profissional dedicada. O resultado é conteúdo que constrói autoridade de verdade — porque quem te assiste sente a diferença.",
-  photos: [
-    "FOTO: Close da gravação",
-    "FOTO: Bastidor com iluminação",
-    "FOTO: Médico revisando conteúdo com a equipe",
+export const TEAM = {
+  title: "Conheça a equipe que vai cuidar do seu projeto",
+  groupPhoto: {
+    src: "/images/team/time-completo.jpg",
+    alt: "Equipe completa do E21",
+  },
+  members: [
+    {
+      name: "Eduardo",
+      role: "Sócio e Estrategista de Marketing",
+      src: null,
+    },
+    {
+      name: "Victor",
+      role: "Sócio e Diretor de Filmagem",
+      src: null,
+    },
+    {
+      name: "Ana Clara",
+      role: "Roteirista Sênior",
+      src: "/images/team/ana-clara.jpg",
+    },
+    {
+      name: "Nathalia",
+      role: "Editora de Vídeos e Filmmaker",
+      src: "/images/team/nathalia.jpg",
+    },
+    {
+      name: "Giovana",
+      role: "Editora de Vídeos Junior",
+      src: "/images/team/giovana.jpg",
+    },
+    {
+      name: "Gisele",
+      role: "Customer Success e Atendimento",
+      src: "/images/team/gisele.jpg",
+    },
   ],
 } as const;
 

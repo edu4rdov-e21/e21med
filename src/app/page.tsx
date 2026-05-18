@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import SocialProof from "@/components/SocialProof";
 import PainPoints from "@/components/PainPoints";
 import PhotoDivider from "@/components/PhotoDivider";
-import Differentiator from "@/components/Differentiator";
+import Team from "@/components/Team";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import ApplicationForm from "@/components/ApplicationForm";
@@ -19,7 +19,7 @@ export default function Home() {
         description={PHOTO_DIVIDER_1.description}
         src={PHOTO_DIVIDER_1.src}
       />
-      <Differentiator />
+      <Team />
       <HowItWorks />
       <Testimonials />
       <PhotoDivider description={PHOTO_DIVIDER_2.description} />
