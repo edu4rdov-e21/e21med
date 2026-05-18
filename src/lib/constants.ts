@@ -148,10 +148,11 @@ export const HOW_IT_WORKS = {
 export const TESTIMONIALS = {
   title: "Quem já vive isso",
   items: [
-    { src: "/images/depoimentos/depoimento-1.jpeg", alt: "Depoimento de cliente" },
-    { src: "/images/depoimentos/depoimento-2.jpeg", alt: "Depoimento de cliente" },
-    { src: "/images/depoimentos/depoimento-3.jpeg", alt: "Depoimento de cliente" },
-    { src: "/images/depoimentos/depoimento-4.jpg", alt: "Depoimento de cliente" },
+    { src: "/images/depoimentos/depoimento-1.jpeg", alt: "Depoimento de cliente", width: 1170, height: 662 },
+    { src: "/images/depoimentos/depoimento-2.jpeg", alt: "Depoimento de cliente", width: 1134, height: 307 },
+    { src: "/images/depoimentos/depoimento-3.jpeg", alt: "Depoimento de cliente", width: 1170, height: 450 },
+    { src: "/images/depoimentos/depoimento-4.jpg",  alt: "Depoimento de cliente", width: 1119, height: 650 },
+    { src: "/images/depoimentos/depoimento-5.jpeg", alt: "Depoimento de cliente", width: 739,  height: 1034 },
   ],
 } as const;
 
