@@ -68,8 +68,8 @@ export const PAIN_POINTS = {
 } as const;
 
 export const PHOTO_DIVIDER_1 = {
-  description:
-    "FOTO: Visão geral do estúdio E21 — espaço, luzes, câmeras",
+  description: "Visão geral do estúdio E21",
+  src: "/images/studio-geral.jpg",
 } as const;
 
 export const DIFFERENTIATOR = {

@@ -15,7 +15,10 @@ export default function Home() {
       <Hero />
       <SocialProof />
       <PainPoints />
-      <PhotoDivider description={PHOTO_DIVIDER_1.description} />
+      <PhotoDivider
+        description={PHOTO_DIVIDER_1.description}
+        src={PHOTO_DIVIDER_1.src}
+      />
       <Differentiator />
       <HowItWorks />
       <Testimonials />
