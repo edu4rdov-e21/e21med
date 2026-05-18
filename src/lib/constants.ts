@@ -61,9 +61,9 @@ export const SOCIAL_PROOF = {
 export const PAIN_POINTS = {
   title: "Isso é sobre você?",
   cards: [
-    "Você posta nas redes sem estratégia e não vê resultado nenhum.",
-    "É excelente no que faz, mas depende de indicação boca a boca pra encher a agenda.",
-    "Já passou por uma agência que só fez panfletagem digital — postou bonito, mas não trouxe paciente.",
+    "Posta sem estratégia e não vê resultado.",
+    "Depende apenas do boca a boca.",
+    "Já passou por agência que só fez panfletagem digital.",
   ],
 } as const;
 
