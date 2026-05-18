@@ -46,7 +46,6 @@ export const SOCIAL_PROOF = {
   clients: [
     { name: "Dr. André Moreira", src: "/images/clients/dr-andre-moreira.jpg" },
     { name: "Dra. Carla Fernandes", src: "/images/clients/dra-carla-fernandes.jpg" },
-    { name: "Dra. Haylla", src: "/images/clients/dra-haylla.png" },
     { name: "Dra. Larissa Nunes", src: "/images/clients/dra-larissa-nunes.jpg" },
     { name: "Dra. Laura Oliveira", src: "/images/clients/dra-laura-oliveira.png" },
     { name: "Dra. Layla Jorge", src: "/images/clients/dra-layla-jorge.png" },

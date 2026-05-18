@@ -63,10 +63,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .animate-scroll-x {
-  animation: scroll-x 50s linear infinite;
+  animation: scroll-x 30s linear infinite;
   will-change: transform;
-}
-
-.animate-scroll-x:hover {
-  animation-play-state: paused;
 }
