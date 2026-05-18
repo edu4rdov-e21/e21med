@@ -2,6 +2,7 @@
 
 import { HERO } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
+import BrushHighlight from "./BrushHighlight";
 
 export default function Hero() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
@@ -65,7 +66,9 @@ export default function Hero() {
             style={{ textShadow: "0 2px 12px rgba(0,0,0,0.35)" }}
           >
             {HERO.headlinePre}
-            <span className="marker">{HERO.headlineHighlight}</span>
+            <BrushHighlight color="#FCD34D" opacity={0.6} delay={600}>
+              {HERO.headlineHighlight}
+            </BrushHighlight>
             {HERO.headlinePost}
           </h1>
 

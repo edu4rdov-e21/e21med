@@ -72,23 +72,3 @@ h1, h2, h3, h4, h5, h6 {
   will-change: transform;
 }
 
-@keyframes marker-sweep {
-  from {
-    background-size: 0% 130%;
-  }
-  to {
-    background-size: 100% 130%;
-  }
-}
-
-.marker {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60' preserveAspectRatio='none'><path fill='%23FCD34D' fill-opacity='0.85' d='M4,17 C25,11 55,20 90,13 C125,8 155,18 184,12 C193,11 197,16 198,22 L196,44 C172,52 138,46 105,49 C72,52 38,46 12,48 C5,48 2,44 3,38 Z'/><path fill='%23FCD34D' fill-opacity='0.4' d='M8,15 C40,10 75,17 110,11 C145,7 175,15 195,13 L196,20 C170,18 140,24 105,21 C70,25 35,18 8,22 Z'/><ellipse cx='38' cy='28' rx='6' ry='1.4' fill='%23FCD34D' fill-opacity='0'/><ellipse cx='120' cy='35' rx='5' ry='1.2' fill='%23FCD34D' fill-opacity='0'/></svg>");
-  background-size: 0% 130%;
-  background-repeat: no-repeat;
-  background-position: 0 50%;
-  padding-inline: 0.22em;
-  margin-inline: -0.22em;
-  animation: marker-sweep 1.7s cubic-bezier(0.55, 0, 0.4, 1) 0.7s forwards;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
