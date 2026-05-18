@@ -10,23 +10,20 @@ const PATHS = {
 };
 
 interface BrushHighlightProps {
-  children: string;
+  children: React.ReactNode;
   color?: string;
   opacity?: number;
   delay?: number;
-  perWordStagger?: number;
   variant?: keyof typeof PATHS;
 }
 
-interface WordProps {
-  word: string;
-  color: string;
-  opacity: number;
-  delay: number;
-  variant: keyof typeof PATHS;
-}
-
-function BrushWord({ word, color, opacity, delay, variant }: WordProps) {
+export default function BrushHighlight({
+  children,
+  color = "#FCD34D",
+  opacity = 0.55,
+  delay = 0,
+  variant = "default",
+}: BrushHighlightProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -69,53 +66,31 @@ function BrushWord({ word, color, opacity, delay, variant }: WordProps) {
   const path = PATHS[variant];
   const bgImage = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'><path d='${path}' fill='${encodedColor}' opacity='${opacity}'/></svg>")`;
 
-  const clipShown = "inset(-12% 0% -12% 0)";
-  const clipHidden = "inset(-12% 100% -12% 0)";
+  const clipShown = "inset(0 0% 0 0)";
+  const clipHidden = "inset(0 100% 0 0)";
 
-  const style: CSSProperties = {
-    display: "inline-block",
+  const brushStyle: CSSProperties = {
+    position: "absolute",
+    inset: "-0.08em -0.18em",
+    zIndex: 0,
     backgroundImage: bgImage,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "100% 110%",
+    backgroundSize: "100% 100%",
     backgroundPosition: "center",
-    padding: "0 0.15em",
-    margin: "0 -0.05em",
     clipPath: visible ? clipShown : clipHidden,
     WebkitClipPath: visible ? clipShown : clipHidden,
     transition:
       "clip-path 0.9s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-clip-path 0.9s cubic-bezier(0.25, 0.1, 0.25, 1)",
+    pointerEvents: "none",
   };
 
   return (
-    <span ref={ref} style={style}>
-      {word}
+    <span
+      ref={ref}
+      style={{ position: "relative", display: "inline-block" }}
+    >
+      <span style={{ position: "relative", zIndex: 1 }}>{children}</span>
+      <span aria-hidden="true" style={brushStyle} />
     </span>
-  );
-}
-
-export default function BrushHighlight({
-  children,
-  color = "#FCD34D",
-  opacity = 0.6,
-  delay = 0,
-  perWordStagger = 70,
-  variant = "default",
-}: BrushHighlightProps) {
-  const words = children.split(" ");
-  return (
-    <>
-      {words.map((word, i) => (
-        <span key={i}>
-          <BrushWord
-            word={word}
-            color={color}
-            opacity={opacity}
-            delay={delay + i * perWordStagger}
-            variant={variant}
-          />
-          {i < words.length - 1 ? " " : ""}
-        </span>
-      ))}
-    </>
   );
 }
