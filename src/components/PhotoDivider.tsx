@@ -16,7 +16,15 @@ export default function PhotoDivider({ description, src }: PhotoDividerProps) {
     <section className="bg-cream">
       <div ref={ref} className={className}>
         {src ? (
-          <div className="relative w-full aspect-video overflow-hidden">
+          <div
+            className="relative w-full aspect-[16/7] sm:aspect-[3/1] overflow-hidden"
+            style={{
+              maskImage:
+                "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+            }}
+          >
             <Image
               src={src}
               alt={description}
