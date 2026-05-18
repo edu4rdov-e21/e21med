@@ -26,9 +26,9 @@
 .claude/
 AGENTS.md
 CLAUDE.md
-Fotos prova social/
-Fotos equipe/
-Depoimentos/
+/Fotos prova social/
+/Fotos equipe/
+/Depoimentos/
 
 # debug
 npm-debug.log*
