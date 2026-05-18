@@ -82,12 +82,12 @@ export const TEAM = {
     {
       name: "Eduardo",
       role: "Sócio e Estrategista de Marketing",
-      src: null,
+      src: "/images/team/eduardo.jpg",
     },
     {
       name: "Victor",
       role: "Sócio e Diretor de Filmagem",
-      src: null,
+      src: "/images/team/victor.jpg",
     },
     {
       name: "Ana Clara",

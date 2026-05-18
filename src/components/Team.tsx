@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { TEAM } from "@/lib/constants";
-import PhotoPlaceholder from "./PhotoPlaceholder";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
 export default function Team() {
@@ -33,24 +32,14 @@ export default function Team() {
                 key={member.name}
                 className="flex flex-col items-center text-center gap-3 sm:gap-4"
               >
-                <div className="w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40">
-                  {member.src ? (
-                    <div className="relative w-full h-full rounded-full overflow-hidden ring-1 ring-navy/10 bg-photo-placeholder">
-                      <Image
-                        src={member.src}
-                        alt={member.name}
-                        fill
-                        sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 160px"
-                        className="object-cover"
-                      />
-                    </div>
-                  ) : (
-                    <PhotoPlaceholder
-                      description={`FOTO em breve · ${member.name}`}
-                      ratio="1:1"
-                      rounded
-                    />
-                  )}
+                <div className="relative w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden ring-1 ring-navy/10 bg-photo-placeholder">
+                  <Image
+                    src={member.src}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 160px"
+                    className="object-cover"
+                  />
                 </div>
                 <div className="flex flex-col gap-1">
                   <h3 className="text-lg sm:text-xl text-navy leading-tight">
