@@ -13,16 +13,18 @@ export default function PainPoints() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-navy text-center mb-12 sm:mb-16">
             {PAIN_POINTS.title}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-3 gap-2 sm:gap-6 lg:gap-8">
             {PAIN_POINTS.cards.map((card, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="bg-white border border-gray-200 rounded-lg sm:rounded-xl p-3 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <span className="block text-navy/40 text-sm font-semibold mb-4">
+                <span className="block text-navy/40 text-[10px] sm:text-sm font-semibold mb-2 sm:mb-4">
                   0{idx + 1}
                 </span>
-                <p className="text-navy text-lg leading-relaxed">{card}</p>
+                <p className="text-navy text-xs sm:text-lg leading-snug sm:leading-relaxed">
+                  {card}
+                </p>
               </div>
             ))}
           </div>
