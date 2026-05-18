@@ -7,7 +7,17 @@ export default function Hero() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
 
   return (
-    <section className="relative overflow-hidden bg-navy-dark pt-[68%] lg:pt-0 lg:min-h-[640px] flex flex-col justify-end lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16 lg:py-20 lg:px-10 xl:px-16">
+    <section
+      className="relative overflow-hidden pt-[68%] lg:pt-20 lg:pb-20 lg:min-h-[720px] flex flex-col justify-end lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16 lg:px-10 xl:px-16"
+      style={{
+        background: `
+          radial-gradient(circle at 1px 1px, rgba(250, 250, 250, 0.05) 1px, transparent 0) 0 0 / 28px 28px,
+          radial-gradient(ellipse 70% 60% at 75% 40%, rgba(43, 108, 176, 0.22), transparent 60%),
+          radial-gradient(ellipse 60% 50% at 15% 85%, rgba(43, 108, 176, 0.15), transparent 65%),
+          linear-gradient(135deg, #0F2440 0%, #122B4A 50%, #0A1A30 100%)
+        `,
+      }}
+    >
       <div
         className="
           absolute inset-0
