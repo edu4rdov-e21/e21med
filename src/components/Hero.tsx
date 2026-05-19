@@ -61,10 +61,11 @@ export default function Hero() {
           </div>
 
           <h1
-            className="text-2xl sm:text-4xl lg:text-5xl text-cream leading-[1.2] sm:leading-[1.15]"
+            className="text-lg sm:text-2xl lg:text-3xl text-cream leading-[1.25] sm:leading-[1.2]"
             style={{ textShadow: "0 2px 12px rgba(0,0,0,0.35)" }}
           >
-            {HERO.headlinePre}
+            {HERO.headlinePre.trimEnd()}
+            <br />
             <span className="marker">{HERO.headlineHighlight}</span>
             {HERO.headlinePost}
           </h1>
