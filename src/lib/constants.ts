@@ -76,7 +76,7 @@ export const TEAM = {
   members: [
     {
       name: "Eduardo",
-      role: "Sócio e Estrategista de Marketing",
+      role: "Sócio e Diretor de Marketing",
       src: "/images/team/eduardo.jpg",
     },
     {
