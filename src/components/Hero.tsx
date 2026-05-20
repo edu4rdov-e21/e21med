@@ -9,6 +9,18 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-dark pt-[68%] lg:pt-20 lg:pb-20 lg:min-h-[720px] flex flex-col justify-end lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16 lg:px-10 xl:px-16">
       <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E\")",
+          backgroundRepeat: "repeat",
+          backgroundSize: "256px 256px",
+          opacity: 0.08,
+          mixBlendMode: "overlay",
+        }}
+      />
+      <div
         className="
           absolute inset-0
           lg:relative lg:inset-auto lg:order-2
@@ -38,7 +50,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 lg:order-1 w-full max-w-7xl mx-auto px-6 sm:px-10 pb-10 sm:pb-14 lg:p-0 lg:mx-0 lg:max-w-xl lg:flex-1">
+      <div className="relative z-10 lg:order-1 w-full max-w-7xl mx-auto px-6 sm:px-10 pb-10 sm:pb-14 lg:p-0 lg:mx-0 lg:max-w-2xl lg:flex-1">
         <div
           ref={ref}
           className={`${className} flex flex-col items-center text-center lg:items-start lg:text-left gap-5 sm:gap-7`}
@@ -61,7 +73,7 @@ export default function Hero() {
           </div>
 
           <h1
-            className="text-lg sm:text-2xl lg:text-3xl text-cream leading-[1.25] sm:leading-[1.2]"
+            className="text-3xl sm:text-5xl lg:text-6xl text-cream font-bold leading-[1.15] sm:leading-[1.1]"
             style={{ textShadow: "0 2px 12px rgba(0,0,0,0.35)" }}
           >
             {HERO.headlinePre.trimEnd()}
