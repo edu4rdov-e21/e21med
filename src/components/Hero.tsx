@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { HERO } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
@@ -56,10 +57,16 @@ export default function Hero() {
           ref={ref}
           className={`${className} flex flex-col items-center text-center lg:items-start lg:text-left gap-5 sm:gap-7`}
         >
-          <div className="flex flex-col items-center lg:items-start gap-2">
-            <span className="inline-flex items-center rounded-full px-3 py-1.5 bg-cream/10 backdrop-blur-md border border-cream/20 text-[10px] sm:text-xs font-semibold tracking-[0.22em] text-cream uppercase">
-              {HERO.badge}
-            </span>
+          <div className="flex flex-col items-center lg:items-start gap-3">
+            <Image
+              src="/logos/e21-med.svg"
+              alt={HERO.badge}
+              width={1712}
+              height={1286}
+              priority
+              className="w-32 sm:w-40 lg:w-44 h-auto"
+              style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.3))" }}
+            />
             <p className="text-[11px] sm:text-xs text-cream/60">
               {HERO.subBadgePre}
               <a
