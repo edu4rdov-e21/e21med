@@ -20,7 +20,8 @@ export default function Team() {
               src={TEAM.groupPhoto.src}
               alt={TEAM.groupPhoto.alt}
               fill
-              sizes="(max-width: 1024px) 100vw, 1024px"
+              sizes="(max-width: 1024px) 100vw, 1280px"
+              quality={92}
               className="object-cover"
               priority={false}
             />
