@@ -73,7 +73,7 @@ export default function Hero() {
           </div>
 
           <h1
-            className="text-3xl sm:text-5xl lg:text-6xl text-cream font-bold leading-[1.15] sm:leading-[1.1]"
+            className="text-lg sm:text-2xl lg:text-3xl text-cream font-bold leading-[1.25] sm:leading-[1.2]"
             style={{ textShadow: "0 2px 12px rgba(0,0,0,0.35)" }}
           >
             {HERO.headlinePre.trimEnd()}
