@@ -210,12 +210,15 @@ export default function Hero() {
             {HERO.subheadlinePost}
           </p>
 
-          <a
-            href={HERO.ctaHref}
-            className="inline-flex items-center justify-center rounded-full bg-cream text-navy px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold hover:bg-white transition-colors duration-300"
+          <button
+            type="button"
+            onClick={() =>
+              window.dispatchEvent(new CustomEvent("e21:open-application"))
+            }
+            className="inline-flex items-center justify-center rounded-full bg-cream text-navy px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold hover:bg-white transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
           >
             {HERO.ctaLabel}
-          </a>
+          </button>
         </div>
       </div>
     </section>

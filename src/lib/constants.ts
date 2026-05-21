@@ -15,7 +15,6 @@ export const HERO = {
   subheadlineStrong: "pacientes prontos para adquirir seus serviços",
   subheadlinePost: ".",
   ctaLabel: "Quero agendar minha reunião",
-  ctaHref: "#formulario",
   videoSrc: "/video/takes.mp4",
   notifications: [
     {

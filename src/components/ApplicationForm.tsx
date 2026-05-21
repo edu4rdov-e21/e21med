@@ -26,6 +26,15 @@ export default function ApplicationForm() {
     setTimeout(() => triggerRef.current?.focus(), 100);
   }
 
+  // Permite que outros componentes (Hero) abram a modal via evento global
+  useEffect(() => {
+    function handleOpen() {
+      openModal();
+    }
+    window.addEventListener("e21:open-application", handleOpen);
+    return () => window.removeEventListener("e21:open-application", handleOpen);
+  }, []);
+
   // Body scroll lock + initial focus enquanto modal aberta
   useEffect(() => {
     if (!isOpen) return;
