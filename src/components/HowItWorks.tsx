@@ -124,7 +124,7 @@ export default function HowItWorks() {
               </video>
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-navy/60 z-10"
+                className="pointer-events-none absolute inset-0 bg-navy/30 z-10"
                 style={{ transform: "translateZ(0)" }}
               />
             </div>
