@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRef, useState } from "react";
 import { HERO } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
@@ -45,6 +46,20 @@ function WhatsAppNotification({
 
 export default function Hero() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  function toggleVideo() {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setIsPlaying(true);
+    } else {
+      v.pause();
+      setIsPlaying(false);
+    }
+  }
 
   return (
     <section className="relative overflow-hidden bg-navy-dark pt-[68%] lg:pt-20 lg:pb-20 lg:min-h-[720px] flex flex-col justify-end lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16 lg:px-10 xl:px-16">
@@ -70,16 +85,47 @@ export default function Hero() {
       >
         <div className="absolute inset-0 lg:rounded-2xl lg:overflow-hidden lg:ring-1 lg:ring-cream/15 lg:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
           <video
+            ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
+            preload="metadata"
             poster="/video/takes-poster.jpg"
             className="w-full h-full object-cover"
             aria-hidden="true"
           >
             <source src={HERO.videoSrc} type="video/mp4" />
           </video>
+          <button
+            type="button"
+            onClick={toggleVideo}
+            aria-label={isPlaying ? "Pausar vídeo de bastidores" : "Reproduzir vídeo de bastidores"}
+            className="absolute bottom-3 right-3 z-30 inline-flex items-center justify-center w-9 h-9 rounded-full bg-navy-dark/70 backdrop-blur-md text-cream ring-1 ring-cream/20 hover:bg-navy-dark/90 transition-colors"
+          >
+            {isPlaying ? (
+              <svg
+                aria-hidden="true"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="currentColor"
+              >
+                <rect x="3" y="2" width="3" height="10" rx="0.5" />
+                <rect x="8" y="2" width="3" height="10" rx="0.5" />
+              </svg>
+            ) : (
+              <svg
+                aria-hidden="true"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="currentColor"
+              >
+                <path d="M3 2v10l9-5L3 2z" />
+              </svg>
+            )}
+          </button>
         </div>
 
         <div

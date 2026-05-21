@@ -36,17 +36,17 @@ export const SOCIAL_PROOF = {
   label: "Quem confia no E21",
   clients: [
     { name: "Dr. André Moreira", src: "/images/clients/dr-andre-moreira.jpg" },
-    { name: "Dra. Adriana Moser", src: "/images/clients/dra-adriana-moser.png" },
+    { name: "Dra. Adriana Moser", src: "/images/clients/dra-adriana-moser.jpg" },
     { name: "Dra. Larissa Nunes", src: "/images/clients/dra-larissa-nunes.jpg" },
-    { name: "Dr. Danilo Minari", src: "/images/clients/dr-danilo-minari.png" },
+    { name: "Dr. Danilo Minari", src: "/images/clients/dr-danilo-minari.jpg" },
     { name: "Dra. Laura Oliveira", src: "/images/clients/dra-laura-oliveira.png" },
     { name: "Dra. Layla Jorge", src: "/images/clients/dra-layla-jorge.png" },
-    { name: "Dr. Luan Ocanã", src: "/images/clients/dr-luan-ocana.png" },
+    { name: "Dr. Luan Ocanã", src: "/images/clients/dr-luan-ocana.jpg" },
     { name: "Dra. Rebeca Mendes", src: "/images/clients/dra-rebeca-mendes.png" },
     { name: "Dra. Sara Mendes", src: "/images/clients/dra-sara-mendes.jpg" },
     { name: "Dra. Stephanny Melo", src: "/images/clients/dra-stephanny-melo.jpg" },
     { name: "Clínica Haven", src: "/images/clients/clinica-haven.png" },
-    { name: "Evento Mais Médicos", src: "/images/clients/mais-medicos.png" },
+    { name: "Evento Mais Médicos", src: "/images/clients/mais-medicos.jpg" },
   ],
 } as const;
 
