@@ -42,7 +42,7 @@ export default function Team() {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <h3 className="text-lg sm:text-xl text-navy leading-tight">
+                  <h3 className="text-base sm:text-lg text-navy leading-tight">
                     {member.name}
                   </h3>
                   <p className="text-xs sm:text-sm text-navy/70 leading-snug">

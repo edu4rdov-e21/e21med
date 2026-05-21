@@ -31,7 +31,7 @@ export default function ApplicationForm() {
               aria-atomic="true"
               className="bg-cream/10 border border-cream/30 rounded-2xl p-10 text-center"
             >
-              <p className="text-cream text-xl leading-relaxed">
+              <p className="text-cream text-lg leading-relaxed">
                 {FORM.successMessage}
               </p>
             </div>
