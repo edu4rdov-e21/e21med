@@ -19,7 +19,7 @@ export default function PainPoints() {
                 key={idx}
                 className="bg-white border border-gray-200 rounded-lg sm:rounded-xl p-3 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <span className="block text-navy/40 text-xs font-semibold mb-2 sm:mb-4">
+                <span className="block text-navy/60 text-xs font-semibold mb-2 sm:mb-4">
                   0{idx + 1}
                 </span>
                 <p className="text-navy text-xs sm:text-lg leading-snug sm:leading-relaxed">

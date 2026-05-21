@@ -12,7 +12,7 @@ import { PHOTO_DIVIDER_1 } from "@/lib/constants";
 
 export default function Home() {
   return (
-    <main className="flex-1 flex flex-col">
+    <main id="main" className="flex-1 flex flex-col">
       <Hero />
       <SocialProof />
       <PainPoints />

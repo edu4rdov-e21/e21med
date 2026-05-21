@@ -25,7 +25,12 @@ export default function ApplicationForm() {
           </div>
 
           {submitted ? (
-            <div className="bg-cream/10 border border-cream/30 rounded-2xl p-10 text-center">
+            <div
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+              className="bg-cream/10 border border-cream/30 rounded-2xl p-10 text-center"
+            >
               <p className="text-cream text-xl leading-relaxed">
                 {FORM.successMessage}
               </p>
@@ -52,7 +57,9 @@ export default function ApplicationForm() {
                     name={field.name}
                     type={field.type}
                     required={field.required}
-                    className="w-full bg-white text-navy rounded-lg px-4 py-3 text-base placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-cream/50"
+                    autoComplete={field.autoComplete}
+                    inputMode={field.inputMode}
+                    className="w-full bg-white text-navy rounded-lg px-4 py-3 text-base placeholder:text-navy/60 focus:outline-none focus:ring-2 focus:ring-cream/50"
                   />
                 </div>
               ))}

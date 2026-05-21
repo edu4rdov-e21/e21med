@@ -242,19 +242,37 @@ export const FORM = {
   successMessage:
     "Pedido recebido! Entraremos em contato em até 24h pra confirmar.",
   fields: [
-    { name: "nome", label: "Nome completo", type: "text", required: true },
-    { name: "whatsapp", label: "WhatsApp", type: "tel", required: true },
+    {
+      name: "nome",
+      label: "Nome completo",
+      type: "text",
+      required: true,
+      autoComplete: "name",
+      inputMode: "text" as const,
+    },
+    {
+      name: "whatsapp",
+      label: "WhatsApp",
+      type: "tel",
+      required: true,
+      autoComplete: "tel",
+      inputMode: "tel" as const,
+    },
     {
       name: "especialidade",
       label: "Especialidade médica",
       type: "text",
       required: true,
+      autoComplete: "organization-title",
+      inputMode: "text" as const,
     },
     {
       name: "instagram",
       label: "@ do Instagram",
       type: "text",
       required: true,
+      autoComplete: "username",
+      inputMode: "text" as const,
     },
   ],
 } as const;

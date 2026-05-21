@@ -32,6 +32,12 @@ export default function RootLayout({
       className={`${dmSerifDisplay.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-navy">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-navy focus:text-cream focus:rounded"
+        >
+          Pular para o conteúdo
+        </a>
         {children}
       </body>
     </html>
