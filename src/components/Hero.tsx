@@ -27,20 +27,49 @@ export default function Hero() {
           absolute inset-0
           lg:relative lg:inset-auto lg:order-2
           lg:w-[440px] lg:h-[550px] lg:flex-shrink-0
-          lg:rounded-2xl lg:overflow-hidden lg:ring-1 lg:ring-cream/15 lg:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]
         "
       >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/video/takes-poster.jpg"
-          className="w-full h-full object-cover"
+        <div className="absolute inset-0 lg:rounded-2xl lg:overflow-hidden lg:ring-1 lg:ring-cream/15 lg:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/video/takes-poster.jpg"
+            className="w-full h-full object-cover"
+            aria-hidden="true"
+          >
+            <source src={HERO.videoSrc} type="video/mp4" />
+          </video>
+        </div>
+
+        <Image
+          src={HERO.notifications[0].src}
+          alt=""
           aria-hidden="true"
-        >
-          <source src={HERO.videoSrc} type="video/mp4" />
-        </video>
+          width={HERO.notifications[0].width}
+          height={HERO.notifications[0].height}
+          className="absolute z-20 pointer-events-none animate-popup top-[8%] left-2 w-[55%] sm:w-[42%] lg:top-6 lg:-left-16 lg:w-[230px] drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+          style={{ animationDelay: "0.8s" }}
+        />
+        <Image
+          src={HERO.notifications[1].src}
+          alt=""
+          aria-hidden="true"
+          width={HERO.notifications[1].width}
+          height={HERO.notifications[1].height}
+          className="absolute z-20 pointer-events-none animate-popup top-[26%] right-2 w-[52%] sm:w-[40%] lg:top-[40%] lg:-right-20 lg:w-[230px] drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+          style={{ animationDelay: "1.2s" }}
+        />
+        <Image
+          src={HERO.notifications[2].src}
+          alt=""
+          aria-hidden="true"
+          width={HERO.notifications[2].width}
+          height={HERO.notifications[2].height}
+          className="absolute z-20 pointer-events-none animate-popup hidden sm:block top-[42%] left-4 w-[42%] lg:top-auto lg:bottom-4 lg:-left-20 lg:w-[250px] drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+          style={{ animationDelay: "1.6s" }}
+        />
       </div>
 
       <div

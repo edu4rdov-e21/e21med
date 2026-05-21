@@ -17,6 +17,11 @@ export const HERO = {
   ctaLabel: "Quero agendar minha reunião",
   ctaHref: "#formulario",
   videoSrc: "/video/takes.mp4",
+  notifications: [
+    { src: "/images/notifications/notif-1.png", width: 800, height: 533 },
+    { src: "/images/notifications/notif-2.png", width: 800, height: 533 },
+    { src: "/images/notifications/notif-4.png", width: 800, height: 441 },
+  ],
 } as const;
 
 export const SOCIAL_PROOF = {
