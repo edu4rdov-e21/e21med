@@ -14,14 +14,14 @@ export default function ApplicationForm() {
   }
 
   return (
-    <section id="formulario" className="bg-navy py-20 sm:py-28">
+    <section id="formulario" className="bg-navy py-16 sm:py-24">
       <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16">
         <div ref={ref} className={className}>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl text-cream mb-4">
               {FORM.title}
             </h2>
-            <p className="text-cream/80 text-lg">{FORM.subtitle}</p>
+            <p className="text-cream/70 text-lg">{FORM.subtitle}</p>
           </div>
 
           {submitted ? (
@@ -40,11 +40,11 @@ export default function ApplicationForm() {
                 <div key={field.name} className="flex flex-col gap-2">
                   <label
                     htmlFor={field.name}
-                    className="text-cream/90 text-sm font-medium"
+                    className="text-cream/90 text-sm font-semibold"
                   >
                     {field.label}
                     {field.required && (
-                      <span className="text-cream/60"> *</span>
+                      <span className="text-cream/70"> *</span>
                     )}
                   </label>
                   <input

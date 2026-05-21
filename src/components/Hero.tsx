@@ -28,14 +28,14 @@ function WhatsAppNotification({
       </div>
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline justify-between gap-2">
-          <span className="font-semibold text-[11px] sm:text-xs text-white truncate">
+          <span className="font-semibold text-xs text-white truncate">
             {sender}
           </span>
-          <span className="text-[10px] sm:text-[11px] text-white/55 flex-shrink-0">
+          <span className="text-xs text-white/70 flex-shrink-0">
             {time}
           </span>
         </div>
-        <p className="text-[11px] sm:text-xs text-white/85 leading-snug mt-0.5">
+        <p className="text-xs text-white/85 leading-snug mt-0.5">
           {message}
         </p>
       </div>
@@ -130,13 +130,13 @@ export default function Hero() {
               className="w-32 sm:w-40 lg:w-44 h-auto"
               style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.3))" }}
             />
-            <p className="text-[11px] sm:text-xs text-cream/60">
+            <p className="text-xs text-cream/70">
               {HERO.subBadgePre}
               <a
                 href={HERO.subBadgeHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cream/80 font-medium hover:text-cream transition-colors"
+                className="text-cream font-semibold hover:text-cream transition-colors"
               >
                 {HERO.subBadgeHandle}
               </a>
@@ -144,7 +144,7 @@ export default function Hero() {
           </div>
 
           <h1
-            className="text-lg sm:text-2xl lg:text-3xl text-cream font-bold leading-[1.25] sm:leading-[1.2]"
+            className="text-lg sm:text-2xl lg:text-3xl text-cream leading-[1.25] sm:leading-[1.2]"
             style={{ textShadow: "0 2px 12px rgba(0,0,0,0.35)" }}
           >
             {HERO.headlinePre.trimEnd()}
@@ -158,7 +158,7 @@ export default function Hero() {
             style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}
           >
             {HERO.subheadlinePre}
-            <strong className="text-cream font-bold">
+            <strong className="text-cream font-semibold">
               {HERO.subheadlineStrong}
             </strong>
             {HERO.subheadlinePost}

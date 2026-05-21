@@ -9,10 +9,10 @@ export default function SocialProof() {
   const clients = [...SOCIAL_PROOF.clients, ...SOCIAL_PROOF.clients];
 
   return (
-    <section className="bg-cream pt-16 sm:pt-20 pb-8 sm:pb-20 overflow-hidden">
+    <section className="bg-cream py-8 sm:py-12 overflow-hidden">
       <div ref={ref} className={className}>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mb-10 sm:mb-14">
-          <p className="text-xs sm:text-sm font-semibold tracking-[0.25em] text-navy/60 uppercase text-center">
+          <p className="text-xs font-semibold tracking-[0.2em] text-navy/70 uppercase text-center">
             {SOCIAL_PROOF.label}
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function SocialProof() {
                     className="object-cover"
                   />
                 </div>
-                <span className="text-xs sm:text-sm text-navy font-medium text-center leading-tight">
+                <span className="text-xs sm:text-sm text-navy font-semibold text-center leading-tight">
                   {client.name}
                 </span>
               </li>

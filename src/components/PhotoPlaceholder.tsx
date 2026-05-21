@@ -36,7 +36,7 @@ export default function PhotoPlaceholder({
         priority={false}
       />
       <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
-        <span className="text-navy/70 text-xs sm:text-sm font-medium text-center font-sans leading-snug tracking-wide">
+        <span className="text-navy/70 text-xs sm:text-sm font-semibold text-center font-sans leading-snug tracking-wide">
           {description}
         </span>
       </div>

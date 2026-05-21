@@ -20,13 +20,13 @@ export default function HowItWorks() {
   }
 
   return (
-    <section className="bg-white pt-20 sm:pt-28 pb-10 sm:pb-28">
+    <section className="bg-white py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div
           ref={ref}
           className={`${className} text-center max-w-2xl mx-auto mb-12 sm:mb-16`}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-navy mb-4 sm:mb-5 leading-snug">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-navy mb-4 sm:mb-5 leading-snug">
             {title}
           </h2>
           <p className="text-sm sm:text-base text-navy/70 leading-relaxed">
@@ -50,16 +50,16 @@ export default function HowItWorks() {
                   }`}
                 >
                   <span
-                    className={`block text-[9px] sm:text-[10px] font-semibold tracking-[0.22em] uppercase ${
-                      isActive ? "text-cream/60" : "text-navy/50"
+                    className={`block text-xs font-semibold tracking-[0.2em] uppercase ${
+                      isActive ? "text-cream/70" : "text-navy/70"
                     }`}
                   >
                     {m.phaseLabel}
                   </span>
-                  <span className="block text-sm sm:text-base font-medium mt-1 whitespace-nowrap sm:whitespace-normal">
+                  <span className="block text-sm sm:text-base font-semibold mt-1 whitespace-nowrap sm:whitespace-normal">
                     <span
                       className={
-                        isActive ? "text-cream/70" : "text-navy/55"
+                        isActive ? "text-cream/70" : "text-navy/70"
                       }
                     >
                       Mês {m.monthLabel}
@@ -88,17 +88,17 @@ export default function HowItWorks() {
             className="animate-fade-in flex flex-col gap-5"
           >
             <div>
-              <span className="text-[10px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-navy/50">
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-navy/70">
                 {active.phaseLabel}
               </span>
               <h3 className="text-3xl sm:text-4xl text-navy mt-2 leading-tight">
-                <span className="text-navy/55">Mês {active.monthLabel}</span>
-                <span className="mx-2 text-navy/30">·</span>
+                <span className="text-navy/70">Mês {active.monthLabel}</span>
+                <span className="mx-2 text-navy/40">·</span>
                 {active.title}
               </h3>
             </div>
 
-            <p className="text-base sm:text-lg text-navy/80 leading-relaxed">
+            <p className="text-base sm:text-lg text-navy/70 leading-relaxed">
               {active.summary}
             </p>
 
@@ -106,7 +106,7 @@ export default function HowItWorks() {
               {active.shortItems.map((item, i) => (
                 <li
                   key={i}
-                  className="flex gap-3 text-sm sm:text-base text-navy/85"
+                  className="flex gap-3 text-sm sm:text-base text-navy/70"
                 >
                   <span
                     aria-hidden="true"
@@ -120,7 +120,7 @@ export default function HowItWorks() {
             <button
               type="button"
               onClick={() => setShowDetails((v) => !v)}
-              className="self-start inline-flex items-center gap-2 text-sm sm:text-base font-medium text-navy hover:text-navy-light transition-colors"
+              className="self-start inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-navy hover:text-navy-light transition-colors"
             >
               <span>{showDetails ? "Ocultar detalhes" : "Ver detalhes"}</span>
               <span
@@ -147,7 +147,7 @@ export default function HowItWorks() {
                       return (
                         <li
                           key={i}
-                          className="text-sm sm:text-base text-navy/80 leading-snug"
+                          className="text-sm sm:text-base text-navy/70 leading-snug"
                         >
                           <span className="font-semibold text-navy">
                             {item.slice(0, colonIdx)}
@@ -159,7 +159,7 @@ export default function HowItWorks() {
                     return (
                       <li
                         key={i}
-                        className="text-sm sm:text-base text-navy/80 leading-snug"
+                        className="text-sm sm:text-base text-navy/70 leading-snug"
                       >
                         {item}
                       </li>
@@ -169,7 +169,7 @@ export default function HowItWorks() {
               </div>
             </div>
 
-            <p className="italic text-sm sm:text-base text-navy/65 leading-relaxed border-l-2 border-navy/20 pl-4 mt-2">
+            <p className="italic text-sm sm:text-base text-navy/70 leading-relaxed border-l-2 border-navy/20 pl-4 mt-2">
               {active.closing}
             </p>
           </div>

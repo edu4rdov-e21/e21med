@@ -6,7 +6,7 @@ export default function Specialties() {
   const items = [...SPECIALTIES.items, ...SPECIALTIES.items];
 
   return (
-    <section className="bg-white border-y border-navy/10 py-4 sm:py-5 overflow-hidden">
+    <section className="bg-white border-y border-navy/10 py-8 sm:py-12 overflow-hidden">
       <div
         className="relative overflow-hidden"
         style={{
@@ -20,7 +20,7 @@ export default function Specialties() {
           {items.map((s, i) => (
             <li
               key={i}
-              className="text-sm sm:text-base text-navy/75 whitespace-nowrap"
+              className="text-sm sm:text-base text-navy/70 whitespace-nowrap"
             >
               {s}
             </li>
