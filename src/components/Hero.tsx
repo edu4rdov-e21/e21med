@@ -16,6 +16,7 @@ export default function Hero() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
           opacity: 0.22,
           mixBlendMode: "luminosity",
         }}
