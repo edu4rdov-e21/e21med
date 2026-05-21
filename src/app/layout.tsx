@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, DM_Sans } from "next/font/google";
+import { Source_Serif_4, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const dmSerifDisplay = DM_Serif_Display({
-  variable: "--font-dm-serif-display",
-  weight: "400",
+const sourceSerif = Source_Serif_4({
+  variable: "--font-serif-display",
+  weight: ["400", "600"],
+  style: ["normal"],
   subsets: ["latin"],
   display: "swap",
 });
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
+  weight: ["400", "600", "700"],
+  style: ["normal"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -29,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${dmSerifDisplay.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${sourceSerif.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-navy">
         <a
