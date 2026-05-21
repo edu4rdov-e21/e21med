@@ -126,12 +126,8 @@ export default function HowItWorks() {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0"
                 style={{
-                  backgroundImage: "url('/images/e21-studio-bg.jpg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  opacity: 0.22,
-                  mixBlendMode: "luminosity",
+                  background:
+                    "linear-gradient(180deg, rgba(15,36,64,0.2) 0%, rgba(15,36,64,0.55) 100%)",
                 }}
               />
             </div>
