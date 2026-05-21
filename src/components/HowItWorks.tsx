@@ -113,10 +113,10 @@ export default function HowItWorks() {
     <section className="bg-cream pt-20 sm:pt-28 pb-10 sm:pb-28">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div ref={headRef} className={`${headClass} text-center mb-14 sm:mb-20 max-w-3xl mx-auto`}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-navy mb-5 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl text-navy mb-5 sm:mb-6 leading-snug">
             {HOW_IT_WORKS.title}
           </h2>
-          <p className="text-base sm:text-lg text-navy/70 leading-relaxed">
+          <p className="text-sm sm:text-base text-navy/70 leading-relaxed">
             {HOW_IT_WORKS.subtitle}
           </p>
         </div>

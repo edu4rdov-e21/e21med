@@ -107,7 +107,8 @@ export const TEAM = {
 } as const;
 
 export const HOW_IT_WORKS = {
-  title: "Sua jornada mês a mês",
+  title:
+    "Faremos um compromisso juntos: uma postagem todos os dias por 90 dias. Com isso feito, temos certeza que sua audiência vai atingir um tamanho muito maior do que é hoje.",
   subtitle:
     "Todo mês você recebe: ~30 conteúdos publicados (1 por dia), 2 diárias de gravação no estúdio e reunião quinzenal de acompanhamento. O que muda é o foco estratégico.",
   milestones: [
