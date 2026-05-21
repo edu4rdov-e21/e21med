@@ -131,7 +131,9 @@ export const HOW_IT_WORKS = {
       title: "Fundação",
       summary: "Montamos toda a base do seu perfil profissional.",
       photoDescription:
-        "FOTO: Reunião de diagnóstico, médico e equipe E21 planejando no estúdio",
+        "Bastidor de diagnóstico do Mês 1 no estúdio E21",
+      videoSrc: "/video/jornada/mes1.mp4",
+      videoPoster: "/video/jornada/mes1-poster.jpg",
       shortItems: [
         "Diagnóstico do perfil",
         "Consultoria de branding",
@@ -158,7 +160,9 @@ export const HOW_IT_WORKS = {
       summary:
         "Produção diária e construção de autoridade na sua especialidade.",
       photoDescription:
-        "FOTO: Gravação no estúdio, médico com microfone, câmera em primeiro plano",
+        "Bastidor de gravação no estúdio E21 — Mês 2-3",
+      videoSrc: "/video/jornada/mes2-3.mp4",
+      videoPoster: "/video/jornada/mes2-3-poster.jpg",
       shortItems: [
         "Produção diária (1/dia)",
         "2 diárias de gravação/mês",
@@ -182,7 +186,9 @@ export const HOW_IT_WORKS = {
       summary:
         "Tráfego pago turbina o orgânico e pacientes começam a agendar.",
       photoDescription:
-        "FOTO: Tela de computador mostrando métricas / bastidor de edição com equipe",
+        "Bastidor de tráfego e edição — Mês 4-5",
+      videoSrc: "/video/jornada/mes4-5.mp4",
+      videoPoster: "/video/jornada/mes4-5-poster.jpg",
       shortItems: [
         "Tráfego pago (Meta Ads)",
         "Funil de conversão",
@@ -205,7 +211,9 @@ export const HOW_IT_WORKS = {
       title: "Autoridade",
       summary: "Você vira a referência da sua especialidade.",
       photoDescription:
-        "FOTO: Médico gravando episódio de podcast no estúdio E21",
+        "Bastidor de podcast no estúdio E21 — Mês 6",
+      videoSrc: "/video/jornada/mes6.mp4",
+      videoPoster: "/video/jornada/mes6-poster.jpg",
       shortItems: [
         "Episódio de podcast",
         "Escala total do funil",

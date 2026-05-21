@@ -2,7 +2,6 @@
 
 import { useRef, useState, type KeyboardEvent } from "react";
 import { HOW_IT_WORKS } from "@/lib/constants";
-import PhotoPlaceholder from "./PhotoPlaceholder";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
 export default function HowItWorks() {
@@ -109,10 +108,21 @@ export default function HowItWorks() {
             key={`photo-${activeTab}`}
             className="animate-fade-in lg:sticky lg:top-8"
           >
-            <PhotoPlaceholder
-              description={active.photoDescription}
-              ratio="4:3"
-            />
+            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg ring-1 ring-navy/10 bg-photo-placeholder">
+              <video
+                key={active.videoSrc}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={active.videoPoster}
+                aria-label={active.photoDescription}
+                className="w-full h-full object-cover"
+              >
+                <source src={active.videoSrc} type="video/mp4" />
+              </video>
+            </div>
           </div>
 
           <div
