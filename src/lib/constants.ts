@@ -65,13 +65,60 @@ export const SPECIALTIES = {
   ],
 } as const;
 
-export const PAIN_POINTS = {
-  title: "Isso é sobre você?",
-  cards: [
-    "Posta sem estratégia e não vê resultado.",
-    "Depende apenas do boca a boca.",
-    "Já passou por agência que só fez panfletagem digital.",
+export const LETTER = {
+  label: "Para você",
+  title: "Uma carta aberta a você, médico(a)",
+  envelopeAddress: "Para: o(a) médico(a) que chegou até aqui",
+  openCta: "Abrir a carta",
+  greeting: "Para você,",
+  paragraphs: [
+    {
+      text: "Você estudou anos pra saber o que sabe e pagou um preço que poucos pagariam.",
+      emphasis: false,
+    },
+    {
+      text: "Aprendeu a salvar, cuidar, e principalmente a ouvir. Hoje, o que te permite servir cada pessoa que entra no seu consultório foram as incontáveis horas abrindo mão de momentos importantes.",
+      emphasis: false,
+    },
+    {
+      text: "Você merece ser ouvido(a) e merece que as pessoas tenham acesso ao que você estudou. Merece atender pacientes que chegam até você sabendo o seu valor… e não brigando por preço, te comparando com outro profissional e te tratando como mais um na lista.",
+      emphasis: false,
+    },
+    {
+      text: "Você está servindo, está ajudando pessoas a viverem melhor e isso tem um peso que precisa chegar do outro lado.",
+      emphasis: false,
+    },
+    {
+      text: "O compromisso do E21 é construir essa audiência para você.",
+      emphasis: true,
+    },
+    {
+      text: "As estratégias são muitas, os caminhos variam mas a execução disso é nosso papel. No entanto, tem uma parte que ninguém faz no seu lugar: o compromisso com você mesmo.",
+      emphasis: false,
+    },
+    {
+      text: "Estar na câmera, compartilhar o que você sabe, dedicar tempo, energia e alma a se tornar a referência que você já é tecnicamente, mas que o mundo ainda não sabe que existe.",
+      emphasis: false,
+    },
+    {
+      text: "Sabemos que já te venderam a mentira de que dá pra ser reconhecido sem fazer nada, que com simples publicações feitas com Inteligência Artificial seus pacientes virão.",
+      emphasis: false,
+    },
+    {
+      text: "Não acreditamos nisso.",
+      emphasis: true,
+    },
+    {
+      text: "Acreditamos no trabalho sério, bem feito e consistente. Foi isso que te trouxe até aqui, não acredite que algo diferente vai te levar adiante.",
+      emphasis: false,
+    },
+    {
+      text: "Se você topa esse compromisso, a gente faz o resto. Venha fazer parte do nosso time.",
+      emphasis: false,
+    },
   ],
+  signatureLabel: "Com respeito,",
+  signatureName: "Equipe E21 MED",
 } as const;
 
 export const PHOTO_DIVIDER_1 = {

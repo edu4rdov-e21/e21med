@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import SocialProof from "@/components/SocialProof";
-import PainPoints from "@/components/PainPoints";
+import OpenLetter from "@/components/OpenLetter";
 import PhotoDivider from "@/components/PhotoDivider";
 import Team from "@/components/Team";
 import HowItWorks from "@/components/HowItWorks";
@@ -15,7 +15,7 @@ export default function Home() {
     <main id="main" className="flex-1 flex flex-col">
       <Hero />
       <SocialProof />
-      <PainPoints />
+      <OpenLetter />
       <PhotoDivider
         description={PHOTO_DIVIDER_1.description}
         src={PHOTO_DIVIDER_1.src}
