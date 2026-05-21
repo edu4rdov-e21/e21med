@@ -293,10 +293,10 @@ export const TESTIMONIALS = {
 export const FORM = {
   title: "Agende sua reunião",
   subtitle:
-    "Preencha abaixo. Nossa equipe entra em contato em até 24h pra marcar sua reunião de diagnóstico.",
+    "Nossa equipe entra em contato em até 10 minutos por ligação pra marcar sua reunião de diagnóstico.",
   submitLabel: "Quero agendar minha reunião",
   successMessage:
-    "Pedido recebido! Entraremos em contato em até 24h pra confirmar.",
+    "Pedido recebido. Em até 10 minutos nossa equipe entra em contato por ligação pra marcar sua reunião de diagnóstico.",
   fields: [
     {
       name: "nome",
