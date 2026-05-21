@@ -122,6 +122,18 @@ export default function HowItWorks() {
               >
                 <source src={active.videoSrc} type="video/mp4" />
               </video>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  backgroundImage: "url('/images/e21-studio-bg.jpg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  opacity: 0.22,
+                  mixBlendMode: "luminosity",
+                }}
+              />
             </div>
           </div>
 
