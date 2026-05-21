@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState, type KeyboardEvent } from "react";
 import { HOW_IT_WORKS } from "@/lib/constants";
 import PhotoPlaceholder from "./PhotoPlaceholder";
 import { useFadeIn } from "@/hooks/useFadeIn";
@@ -9,6 +9,7 @@ export default function HowItWorks() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
   const [activeTab, setActiveTab] = useState(0);
   const [showDetails, setShowDetails] = useState(false);
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const { milestones, title, subtitle } = HOW_IT_WORKS;
   const active = milestones[activeTab];
@@ -17,6 +18,19 @@ export default function HowItWorks() {
     if (i === activeTab) return;
     setActiveTab(i);
     setShowDetails(false);
+  }
+
+  function handleTabKey(e: KeyboardEvent<HTMLButtonElement>, i: number) {
+    const last = milestones.length - 1;
+    let next = i;
+    if (e.key === "ArrowRight") next = i === last ? 0 : i + 1;
+    else if (e.key === "ArrowLeft") next = i === 0 ? last : i - 1;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = last;
+    else return;
+    e.preventDefault();
+    changeTab(next);
+    tabRefs.current[next]?.focus();
   }
 
   return (
@@ -35,14 +49,27 @@ export default function HowItWorks() {
         </div>
 
         <div className="overflow-x-auto -mx-6 sm:mx-0 mb-10 sm:mb-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          <div className="flex gap-2 sm:gap-3 px-6 sm:px-0 sm:grid sm:grid-cols-4 snap-x snap-mandatory">
+          <div
+            role="tablist"
+            aria-label="Etapas da jornada"
+            className="flex gap-2 sm:gap-3 px-6 sm:px-0 sm:grid sm:grid-cols-4 snap-x snap-mandatory"
+          >
             {milestones.map((m, i) => {
               const isActive = i === activeTab;
               return (
                 <button
                   key={i}
+                  ref={(el) => {
+                    tabRefs.current[i] = el;
+                  }}
                   type="button"
+                  role="tab"
+                  id={`tab-${i}`}
+                  aria-selected={isActive}
+                  aria-controls={`tabpanel-${i}`}
+                  tabIndex={isActive ? 0 : -1}
                   onClick={() => changeTab(i)}
+                  onKeyDown={(e) => handleTabKey(e, i)}
                   className={`shrink-0 sm:shrink snap-start text-left px-4 py-3 sm:px-5 sm:py-4 rounded-lg border transition-colors duration-200 ${
                     isActive
                       ? "bg-navy text-cream border-navy"
@@ -72,7 +99,12 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div
+          role="tabpanel"
+          id={`tabpanel-${activeTab}`}
+          aria-labelledby={`tab-${activeTab}`}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start"
+        >
           <div
             key={`photo-${activeTab}`}
             className="animate-fade-in lg:sticky lg:top-8"
