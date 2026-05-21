@@ -58,7 +58,7 @@ export default function OpenLetter() {
   return (
     <section
       ref={sectionRef}
-      className={`bg-cream pt-16 sm:pt-24 transition-[padding] duration-500 ease-out ${
+      className={`bg-cream pt-16 sm:pt-24 ${
         isOpen ? "pb-24 sm:pb-32" : "pb-16 sm:pb-24"
       }`}
     >
@@ -78,11 +78,12 @@ export default function OpenLetter() {
         <div className="relative max-w-2xl mx-auto">
           <div
             aria-hidden={isOpen}
-            className={`flex flex-col items-center transition-all duration-300 ease-out ${
+            className={`flex flex-col items-center transition-all duration-[400ms] ${
               isOpen
-                ? "opacity-0 -translate-y-3 pointer-events-none absolute inset-x-0 top-0"
-                : "opacity-100 translate-y-0"
+                ? "opacity-0 -translate-y-2 scale-[0.98] pointer-events-none absolute inset-x-0 top-0"
+                : "opacity-100 translate-y-0 scale-100"
             }`}
+            style={{ transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)" }}
           >
             <div
               role="button"
@@ -146,8 +147,11 @@ export default function OpenLetter() {
           </div>
 
           <div
-            className="grid transition-[grid-template-rows] duration-500 ease-out"
-            style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+            className="grid transition-[grid-template-rows] duration-[600ms]"
+            style={{
+              gridTemplateRows: isOpen ? "1fr" : "0fr",
+              transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
+            }}
           >
             <div className="overflow-hidden">
               <article
@@ -156,11 +160,12 @@ export default function OpenLetter() {
                 role="article"
                 tabIndex={-1}
                 aria-label="Carta aberta da E21"
-                className={`relative bg-white rounded-lg shadow-xl border-l-4 border-l-navy p-8 sm:p-12 lg:p-16 transition-opacity duration-500 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-4 focus-visible:ring-offset-cream ${
+                className={`relative bg-white rounded-lg shadow-xl border-l-4 border-l-navy p-8 sm:p-12 lg:p-16 transition-opacity duration-[500ms] focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-4 focus-visible:ring-offset-cream ${
                   isOpen ? "opacity-100" : "opacity-0"
                 }`}
                 style={{
-                  transitionDelay: isOpen ? "200ms" : "0ms",
+                  transitionDelay: isOpen ? "150ms" : "0ms",
+                  transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
                 }}
               >
                 <p className="italic text-navy/70 text-base sm:text-lg font-serif mb-6 sm:mb-8">
