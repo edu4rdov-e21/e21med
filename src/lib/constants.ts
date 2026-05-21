@@ -107,31 +107,71 @@ export const TEAM = {
 } as const;
 
 export const HOW_IT_WORKS = {
-  title: "Como funciona",
-  phases: [
+  title: "Sua jornada mês a mês",
+  subtitle:
+    "Todo mês você recebe: ~30 conteúdos publicados (1 por dia), 2 diárias de gravação no estúdio e reunião quinzenal de acompanhamento. O que muda é o foco estratégico.",
+  milestones: [
     {
-      tag: "Fase 1",
-      title: "Aceleração",
-      duration: "90 dias",
+      monthLabel: "01",
+      phaseLabel: "Fase 1 · Aceleração",
+      phase: 1 as const,
+      title: "Fundação",
       items: [
+        "Diagnóstico do perfil e da especialidade",
         "Consultoria de branding",
         "Sessão de fotos profissional",
-        "Posicionamento + identidade visual do perfil",
-        "Roteiros + gravação + edição mensal",
-        "Estratégia de conteúdo + calendário editorial",
+        "Setup completo do perfil (bio, destaques, identidade visual)",
+        "Definição da linha editorial",
+        "Início da produção de conteúdo",
       ],
+      tom: "Montamos toda a base. Você sai do mês 1 com o perfil pronto pra escalar.",
     },
     {
-      tag: "Fase 2",
-      title: "Exponenciação",
-      duration: "90 dias",
+      monthLabel: "02-03",
+      phaseLabel: "Fase 1 · Aceleração",
+      phase: 1 as const,
+      title: "Crescimento orgânico",
       items: [
-        "Produção mensal contínua",
-        "Tráfego pago estratégico",
-        "Funil de conversão (stories, CTAs, agendamento)",
-        "Episódio de podcast",
+        "Produção em ritmo total (1 conteúdo/dia)",
+        "2 diárias de gravação/mês no estúdio",
+        "Ajuste de estratégia com base em dados",
+        "Dobrar o que funciona, cortar o que não funciona",
+        "Construção de autoridade e reconhecimento",
       ],
+      tom: "A máquina tá rodando. O perfil ganha tração e o público começa a reconhecer você.",
     },
+    {
+      monthLabel: "04-05",
+      phaseLabel: "Fase 2 · Exponenciação",
+      phase: 2 as const,
+      title: "Tráfego pago + conversão",
+      items: [
+        "Tráfego pago estratégico (Meta Ads)",
+        "Funil de conversão via stories e CTAs",
+        "Sistema de agendamento direto pelo perfil",
+        "Produção mensal contínua",
+        "Reuniões quinzenais de performance",
+      ],
+      tom: "Agora o conteúdo orgânico é turbinado com tráfego pago. Pacientes começam a agendar direto.",
+    },
+    {
+      monthLabel: "06",
+      phaseLabel: "Fase 2 · Exponenciação",
+      phase: 2 as const,
+      title: "Autoridade consolidada",
+      items: [
+        "Episódio de podcast (posicionamento como referência)",
+        "Escala total do funil",
+        "Relatório completo de resultados",
+        "Plano de continuidade pós-projeto",
+      ],
+      tom: "Você não é mais um perfil. É a referência da sua especialidade na sua região.",
+    },
+  ],
+  deliverables: [
+    "~30 conteúdos/mês",
+    "2 diárias de gravação",
+    "Reunião quinzenal",
   ],
 } as const;
 
