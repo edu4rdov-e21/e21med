@@ -3,14 +3,36 @@
 import { useState, FormEvent } from "react";
 import { FORM } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
+import { submitLead } from "@/lib/leads";
 
 export default function ApplicationForm() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const formData = new FormData(e.currentTarget);
+    const result = await submitLead({
+      name: (formData.get("nome") as string) || "",
+      whatsapp: (formData.get("whatsapp") as string) || "",
+      specialty: (formData.get("especialidade") as string) || "",
+      instagram: (formData.get("instagram") as string) || "",
+    });
+
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setErrorMessage(result.error || "Erro ao enviar. Tente novamente.");
+    }
   }
 
   return (
@@ -59,15 +81,29 @@ export default function ApplicationForm() {
                     required={field.required}
                     autoComplete={field.autoComplete}
                     inputMode={field.inputMode}
-                    className="w-full bg-white text-navy rounded-lg px-4 py-3 text-base placeholder:text-navy/60 focus:outline-none focus:ring-2 focus:ring-cream/50"
+                    disabled={isSubmitting}
+                    className="w-full bg-white text-navy rounded-lg px-4 py-3 text-base placeholder:text-navy/60 focus:outline-none focus:ring-2 focus:ring-cream/50 disabled:opacity-60"
                   />
                 </div>
               ))}
+
+              {errorMessage && (
+                <p
+                  className="text-red-300 text-sm"
+                  role="alert"
+                  aria-live="polite"
+                >
+                  {errorMessage}
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="mt-4 bg-white text-navy font-bold rounded-full px-8 py-4 text-base hover:opacity-90 transition-opacity duration-300"
+                disabled={isSubmitting}
+                aria-busy={isSubmitting}
+                className="mt-4 bg-white text-navy font-bold rounded-full px-8 py-4 text-base hover:opacity-90 transition-opacity duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {FORM.submitLabel}
+                {isSubmitting ? "Enviando..." : FORM.submitLabel}
               </button>
             </form>
           )}
