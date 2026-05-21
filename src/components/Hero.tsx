@@ -67,7 +67,7 @@ export default function Hero() {
           aria-hidden="true"
           width={HERO.notifications[2].width}
           height={HERO.notifications[2].height}
-          className="absolute z-20 pointer-events-none animate-popup hidden sm:block top-[42%] left-4 w-[42%] lg:top-auto lg:bottom-4 lg:-left-20 lg:w-[250px] drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+          className="absolute z-20 pointer-events-none animate-popup hidden sm:block top-[42%] left-4 w-[42%] lg:top-auto lg:bottom-4 lg:-left-20 lg:w-[250px] rounded-2xl drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
           style={{ animationDelay: "1.6s" }}
         />
       </div>
