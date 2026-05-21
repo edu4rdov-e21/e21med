@@ -356,7 +356,7 @@ export const FOOTER = {
   },
   business: {
     label: "E21 Studio Ltda.",
-    cnpj: "CNPJ a ser preenchido",
+    cnpj: "CNPJ 55.788.849/0001-63",
     address: "Endereço a ser preenchido",
   },
 } as const;
