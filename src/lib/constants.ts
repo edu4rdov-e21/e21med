@@ -32,7 +32,6 @@ export const SOCIAL_PROOF = {
     { name: "Dra. Rebeca Mendes", src: "/images/clients/dra-rebeca-mendes.png" },
     { name: "Dra. Sara Mendes", src: "/images/clients/dra-sara-mendes.jpg" },
     { name: "Dra. Stephanny Melo", src: "/images/clients/dra-stephanny-melo.jpg" },
-    { name: "Dra. Wanessa Barbosa", src: "/images/clients/dra-wanessa-barbosa.jpg" },
     { name: "Clínica Haven", src: "/images/clients/clinica-haven.png" },
     { name: "Evento Mais Médicos", src: "/images/clients/mais-medicos.png" },
   ],
