@@ -118,7 +118,8 @@ export const LETTER = {
     },
   ],
   signatureLabel: "Com respeito,",
-  signatureName: "Equipe E21 MED",
+  signatureName: "Eduardo",
+  signatureRole: "CEO E21 Med",
 } as const;
 
 export const PHOTO_DIVIDER_1 = {

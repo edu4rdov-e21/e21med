@@ -187,6 +187,9 @@ export default function OpenLetter() {
                   <p className="font-serif text-xl sm:text-2xl text-navy">
                     {LETTER.signatureName}
                   </p>
+                  <p className="text-sm sm:text-base text-navy/70 mt-1">
+                    {LETTER.signatureRole}
+                  </p>
                 </div>
               </article>
             </div>
