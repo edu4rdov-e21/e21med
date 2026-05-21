@@ -18,10 +18,38 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const SITE_URL = "https://e21med.vercel.app";
+const SITE_TITLE = "E21 MED · Construindo autoridade para médicos de alto padrão";
+const SITE_DESCRIPTION =
+  "O E21 constrói uma audiência composta por pacientes prontos para adquirir seus serviços. Estúdio próprio, equipe dedicada, resultado real.";
+
 export const metadata: Metadata = {
-  title: "E21 MED · Construindo autoridade para médicos de alto padrão",
-  description:
-    "O E21 constrói uma audiência composta por pacientes prontos para adquirir seus serviços. Estúdio próprio, equipe dedicada, resultado real.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: "E21 MED",
+    images: [
+      {
+        url: "/images/studio-geral.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Estúdio E21 MED",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ["/images/studio-geral.jpg"],
+  },
+  themeColor: "#0F2440",
 };
 
 export default function RootLayout({

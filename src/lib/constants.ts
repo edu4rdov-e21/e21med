@@ -280,4 +280,28 @@ export const FORM = {
 export const FOOTER = {
   copyright: "E21 Studio © 2026",
   tagline: "Produtora de autoridade digital.",
+  brand: {
+    name: "E21 Studio",
+    description:
+      "Estúdio de produção de autoridade digital para médicos. Conteúdo, branding e funil de pacientes.",
+  },
+  contact: {
+    label: "Contato",
+    items: [
+      { label: "WhatsApp", href: "https://wa.me/5500000000000", text: "Fale com a equipe" },
+      { label: "Instagram", href: "https://instagram.com/e21.studio", text: "@e21.studio" },
+    ],
+  },
+  legal: {
+    label: "Legal",
+    items: [
+      { label: "Política de Privacidade", href: "/privacidade" },
+      { label: "Termos de Uso", href: "/termos" },
+    ],
+  },
+  business: {
+    label: "E21 Studio Ltda.",
+    cnpj: "CNPJ a ser preenchido",
+    address: "Endereço a ser preenchido",
+  },
 } as const;
