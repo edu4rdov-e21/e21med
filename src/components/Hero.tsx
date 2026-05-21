@@ -4,6 +4,45 @@ import Image from "next/image";
 import { HERO } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
+function WhatsAppNotification({
+  sender,
+  time,
+  message,
+}: {
+  sender: string;
+  time: string;
+  message: string;
+}) {
+  return (
+    <div className="flex items-start gap-2.5 sm:gap-3 rounded-2xl bg-[#1f1f1f]/95 backdrop-blur-md px-3 sm:px-3.5 py-2.5 sm:py-3 ring-1 ring-white/10 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.55)]">
+      <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#25D366] flex items-center justify-center">
+        <Image
+          src="/images/notifications/whatsapp.webp"
+          alt=""
+          aria-hidden="true"
+          width={36}
+          height={36}
+          className="w-5 h-5 sm:w-6 sm:h-6"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="flex items-baseline justify-between gap-2">
+          <span className="font-semibold text-[11px] sm:text-xs text-white truncate">
+            {sender}
+          </span>
+          <span className="text-[10px] sm:text-[11px] text-white/55 flex-shrink-0">
+            {time}
+          </span>
+        </div>
+        <p className="text-[11px] sm:text-xs text-white/85 leading-snug mt-0.5">
+          {message}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function Hero() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
 
@@ -43,33 +82,28 @@ export default function Hero() {
           </video>
         </div>
 
-        <Image
-          src={HERO.notifications[0].src}
-          alt=""
+        <div
           aria-hidden="true"
-          width={HERO.notifications[0].width}
-          height={HERO.notifications[0].height}
-          className="absolute z-20 pointer-events-none animate-popup top-[8%] left-2 w-[55%] sm:w-[42%] lg:top-6 lg:-left-16 lg:w-[230px] drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+          className="absolute z-20 pointer-events-none animate-popup top-[8%] left-3 w-[62%] sm:w-[45%] lg:top-6 lg:-left-14 lg:w-[280px]"
           style={{ animationDelay: "0.8s" }}
-        />
-        <Image
-          src={HERO.notifications[1].src}
-          alt=""
+        >
+          <WhatsAppNotification
+            sender={HERO.notifications[0].sender}
+            time={HERO.notifications[0].time}
+            message={HERO.notifications[0].message}
+          />
+        </div>
+        <div
           aria-hidden="true"
-          width={HERO.notifications[1].width}
-          height={HERO.notifications[1].height}
-          className="absolute z-20 pointer-events-none animate-popup top-[26%] right-2 w-[52%] sm:w-[40%] lg:top-[40%] lg:-right-20 lg:w-[230px] drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+          className="absolute z-20 pointer-events-none animate-popup top-[28%] right-3 w-[58%] sm:w-[42%] lg:top-[55%] lg:-right-16 lg:w-[280px]"
           style={{ animationDelay: "1.2s" }}
-        />
-        <Image
-          src={HERO.notifications[2].src}
-          alt=""
-          aria-hidden="true"
-          width={HERO.notifications[2].width}
-          height={HERO.notifications[2].height}
-          className="absolute z-20 pointer-events-none animate-popup hidden sm:block top-[42%] left-4 w-[42%] lg:top-auto lg:bottom-4 lg:-left-20 lg:w-[250px] rounded-2xl drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
-          style={{ animationDelay: "1.6s" }}
-        />
+        >
+          <WhatsAppNotification
+            sender={HERO.notifications[1].sender}
+            time={HERO.notifications[1].time}
+            message={HERO.notifications[1].message}
+          />
+        </div>
       </div>
 
       <div

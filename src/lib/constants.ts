@@ -18,9 +18,17 @@ export const HERO = {
   ctaHref: "#formulario",
   videoSrc: "/video/takes.mp4",
   notifications: [
-    { src: "/images/notifications/notif-1.png", width: 800, height: 533 },
-    { src: "/images/notifications/notif-2.png", width: 800, height: 533 },
-    { src: "/images/notifications/notif-4.png", width: 800, height: 441 },
+    {
+      sender: "Paciente Whatsapp 1",
+      time: "agora",
+      message:
+        "Dra, gostaria de marcar uma consulta, me passa as informações?",
+    },
+    {
+      sender: "Paciente Whatsapp 2",
+      time: "agora",
+      message: "Dr quanto custa a consulta?",
+    },
   ],
 } as const;
 
