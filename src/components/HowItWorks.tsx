@@ -124,11 +124,7 @@ export default function HowItWorks() {
               </video>
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(15,36,64,0.2) 0%, rgba(15,36,64,0.55) 100%)",
-                }}
+                className="pointer-events-none absolute inset-0 bg-navy/35"
               />
             </div>
           </div>
