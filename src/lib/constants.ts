@@ -107,72 +107,106 @@ export const TEAM = {
 } as const;
 
 export const HOW_IT_WORKS = {
-  title:
-    "Faremos um compromisso juntos: uma postagem todos os dias por 90 dias. Com isso feito, temos certeza que sua audiência vai atingir um tamanho muito maior do que é hoje.",
+  title: "Sua jornada mês a mês",
   subtitle:
-    "Todo mês você recebe: ~30 conteúdos publicados (1 por dia), 2 diárias de gravação no estúdio e reunião quinzenal de acompanhamento. O que muda é o foco estratégico.",
+    "Todo mês: ~30 conteúdos publicados, 2 diárias de gravação no estúdio e reunião quinzenal.",
   milestones: [
     {
       monthLabel: "01",
-      phaseLabel: "Fase 1 · Aceleração",
+      phaseLabel: "Fase 1",
       phase: 1 as const,
       title: "Fundação",
-      items: [
-        "Diagnóstico do perfil e da especialidade",
+      summary: "Montamos toda a base do seu perfil profissional.",
+      photoDescription:
+        "FOTO: Reunião de diagnóstico, médico e equipe E21 planejando no estúdio",
+      shortItems: [
+        "Diagnóstico do perfil",
         "Consultoria de branding",
-        "Sessão de fotos profissional",
-        "Setup completo do perfil (bio, destaques, identidade visual)",
-        "Definição da linha editorial",
-        "Início da produção de conteúdo",
+        "Sessão de fotos",
+        "Setup do perfil",
+        "Linha editorial",
+        "Início da produção",
       ],
-      tom: "Montamos toda a base. Você sai do mês 1 com o perfil pronto pra escalar.",
+      detailItems: [
+        "Diagnóstico completo do perfil e da especialidade: entendemos seu público, sua concorrência e seu diferencial.",
+        "Consultoria de branding: definimos posicionamento, tom de voz e identidade.",
+        "Sessão de fotos profissional: banco de imagens pessoal para usar em todo o conteúdo.",
+        "Setup completo do perfil: bio, destaques, identidade visual alinhados.",
+        "Definição da linha editorial: os pilares de conteúdo que vão sustentar sua autoridade.",
+        "Início da produção de conteúdo: a máquina começa a rodar.",
+      ],
+      closing: "Você sai do mês 1 com o perfil pronto pra escalar.",
     },
     {
       monthLabel: "02-03",
-      phaseLabel: "Fase 1 · Aceleração",
+      phaseLabel: "Fase 1",
       phase: 1 as const,
-      title: "Crescimento orgânico",
-      items: [
-        "Produção em ritmo total (1 conteúdo/dia)",
-        "2 diárias de gravação/mês no estúdio",
-        "Ajuste de estratégia com base em dados",
-        "Dobrar o que funciona, cortar o que não funciona",
-        "Construção de autoridade e reconhecimento",
+      title: "Crescimento",
+      summary:
+        "Produção diária e construção de autoridade na sua especialidade.",
+      photoDescription:
+        "FOTO: Gravação no estúdio, médico com microfone, câmera em primeiro plano",
+      shortItems: [
+        "Produção diária (1/dia)",
+        "2 diárias de gravação/mês",
+        "Ajuste com base em dados",
+        "Construção de autoridade",
       ],
-      tom: "A máquina tá rodando. O perfil ganha tração e o público começa a reconhecer você.",
+      detailItems: [
+        "Produção em ritmo total: 1 conteúdo por dia, entre vídeos e carrosséis.",
+        "2 diárias de gravação por mês no estúdio E21 com equipe completa.",
+        "Ajuste de estratégia com base em dados reais de performance.",
+        "Dobramos o que funciona, cortamos o que não funciona.",
+        "Construção progressiva de autoridade e reconhecimento na sua especialidade.",
+      ],
+      closing: "O perfil ganha tração e o público começa a reconhecer você.",
     },
     {
       monthLabel: "04-05",
-      phaseLabel: "Fase 2 · Exponenciação",
+      phaseLabel: "Fase 2",
       phase: 2 as const,
-      title: "Tráfego pago + conversão",
-      items: [
-        "Tráfego pago estratégico (Meta Ads)",
-        "Funil de conversão via stories e CTAs",
-        "Sistema de agendamento direto pelo perfil",
-        "Produção mensal contínua",
-        "Reuniões quinzenais de performance",
+      title: "Conversão",
+      summary:
+        "Tráfego pago turbina o orgânico e pacientes começam a agendar.",
+      photoDescription:
+        "FOTO: Tela de computador mostrando métricas / bastidor de edição com equipe",
+      shortItems: [
+        "Tráfego pago (Meta Ads)",
+        "Funil de conversão",
+        "Agendamento pelo perfil",
+        "Produção contínua",
       ],
-      tom: "Agora o conteúdo orgânico é turbinado com tráfego pago. Pacientes começam a agendar direto.",
+      detailItems: [
+        "Tráfego pago estratégico via Meta Ads: seus conteúdos chegam a pacientes qualificados.",
+        "Funil de conversão via stories e CTAs: cada conteúdo tem objetivo claro.",
+        "Sistema de agendamento direto pelo perfil: o paciente te encontra e agenda sem fricção.",
+        "Produção mensal contínua no mesmo ritmo.",
+        "Reuniões quinzenais focadas em performance e otimização.",
+      ],
+      closing: "Pacientes começam a agendar direto pelo seu perfil.",
     },
     {
       monthLabel: "06",
-      phaseLabel: "Fase 2 · Exponenciação",
+      phaseLabel: "Fase 2",
       phase: 2 as const,
-      title: "Autoridade consolidada",
-      items: [
-        "Episódio de podcast (posicionamento como referência)",
+      title: "Autoridade",
+      summary: "Você vira a referência da sua especialidade.",
+      photoDescription:
+        "FOTO: Médico gravando episódio de podcast no estúdio E21",
+      shortItems: [
+        "Episódio de podcast",
         "Escala total do funil",
-        "Relatório completo de resultados",
-        "Plano de continuidade pós-projeto",
+        "Relatório de resultados",
+        "Plano de continuidade",
       ],
-      tom: "Você não é mais um perfil. É a referência da sua especialidade na sua região.",
+      detailItems: [
+        "Episódio de podcast: posicionamento definitivo como referência na sua especialidade.",
+        "Escala total do funil: orgânico + pago funcionando em conjunto.",
+        "Relatório completo de resultados: tudo o que foi construído em 6 meses, documentado.",
+        "Plano de continuidade pós-projeto: você sabe exatamente como manter e crescer sozinho.",
+      ],
+      closing: "Você não é mais um perfil. É a referência da sua especialidade.",
     },
-  ],
-  deliverables: [
-    "~30 conteúdos/mês",
-    "2 diárias de gravação",
-    "Reunião quinzenal",
   ],
 } as const;
 
