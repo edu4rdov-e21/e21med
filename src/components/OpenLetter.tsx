@@ -14,8 +14,10 @@ export default function OpenLetter() {
   const sectionRef = useRef<HTMLElement>(null);
   const openButtonRef = useRef<HTMLButtonElement>(null);
   const letterRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const [contentHeight, setContentHeight] = useState(0);
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -25,6 +27,23 @@ export default function OpenLetter() {
       { threshold: 0.1 }
     );
     observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!contentRef.current) return;
+
+    const measure = () => {
+      if (contentRef.current) {
+        setContentHeight(contentRef.current.scrollHeight);
+      }
+    };
+
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(contentRef.current);
+
     return () => observer.disconnect();
   }, []);
 
@@ -147,13 +166,14 @@ export default function OpenLetter() {
           </div>
 
           <div
-            className="grid transition-[grid-template-rows] duration-[600ms]"
+            className="overflow-hidden transition-[max-height] duration-[600ms]"
             style={{
-              gridTemplateRows: isOpen ? "1fr" : "0fr",
+              maxHeight: isOpen ? `${contentHeight}px` : "0px",
               transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
             }}
+            aria-hidden={!isOpen}
           >
-            <div className="overflow-hidden">
+            <div ref={contentRef}>
               <article
                 ref={letterRef}
                 id="open-letter-body"
