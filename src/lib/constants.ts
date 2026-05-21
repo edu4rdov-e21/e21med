@@ -333,30 +333,53 @@ export const FORM = {
 } as const;
 
 export const FOOTER = {
-  copyright: "E21 Studio © 2026",
-  tagline: "Produtora de autoridade digital.",
   brand: {
-    name: "E21 Studio",
+    name: "E21 MED",
+    tagline: "Produtora de autoridade digital.",
     description:
-      "Estúdio de produção de autoridade digital para médicos. Conteúdo, branding e funil de pacientes.",
+      "O E21 Studio constrói audiências para profissionais que sabem que reconhecimento se conquista com trabalho sério e consistente.",
   },
   contact: {
     label: "Contato",
     items: [
-      { label: "WhatsApp", href: "https://wa.me/5500000000000", text: "Fale com a equipe" },
-      { label: "Instagram", href: "https://instagram.com/e21.studio", text: "@e21.studio" },
+      {
+        label: "E-mail",
+        href: "mailto:eduardo@e21studio.com",
+        text: "eduardo@e21studio.com",
+      },
+      {
+        label: "WhatsApp",
+        href: "https://wa.me/5561981306278",
+        text: "(61) 98130-6278",
+      },
+    ],
+    address:
+      "QS 1, Rua 210, Lote 14, Apt. 12, Areal (Águas Claras), Brasília/DF, 71.950-770",
+  },
+  institutional: {
+    label: "Institucional",
+    items: [
+      { label: "Sobre o E21", href: "/" },
+      { label: "Equipe", href: "/#equipe" },
+      { label: "Trabalhe conosco", href: "mailto:eduardo@e21studio.com" },
     ],
   },
   legal: {
     label: "Legal",
     items: [
-      { label: "Política de Privacidade", href: "/privacidade" },
-      { label: "Termos de Uso", href: "/termos" },
+      { label: "Política de Privacidade", href: "/politica-de-privacidade" },
+      { label: "Termos de Uso", href: "/termos-de-uso" },
+      { label: "Política de Cookies", href: "/politica-de-cookies" },
+      { label: "Termos de Contratação", href: "/termos-de-contratacao" },
+      { label: "Meus dados (LGPD)", href: "/meus-dados" },
     ],
   },
-  business: {
-    label: "E21 Studio Ltda.",
-    cnpj: "CNPJ 55.788.849/0001-63",
-    address: "Endereço a ser preenchido",
-  },
+  social: [
+    {
+      label: "Instagram",
+      href: "https://instagram.com/e21.studio",
+      icon: "instagram" as const,
+    },
+  ],
+  copyright: "© 2026 E21 Studio Ltda · CNPJ 55.788.849/0001-63",
 } as const;

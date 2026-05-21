@@ -8,7 +8,7 @@ export default function Team() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
 
   return (
-    <section className="bg-cream py-16 sm:py-24">
+    <section id="equipe" className="bg-cream py-16 sm:py-24 scroll-mt-8">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div ref={ref} className={className}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-navy text-center mb-12 sm:mb-16 max-w-3xl mx-auto leading-tight">
