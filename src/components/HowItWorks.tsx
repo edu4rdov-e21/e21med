@@ -118,7 +118,7 @@ export default function HowItWorks() {
                 preload="metadata"
                 poster={active.videoPoster}
                 aria-label={active.photoDescription}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover grayscale"
               >
                 <source src={active.videoSrc} type="video/mp4" />
               </video>
