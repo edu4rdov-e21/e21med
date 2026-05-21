@@ -35,7 +35,7 @@ export default function PoliticaDePrivacidade() {
         <br />
         <strong>E-mail:</strong> eduardo@e21studio.com
         <br />
-        <strong>Telefone:</strong> (61) 98130-6278
+        <strong>Telefone:</strong> (61) 99870-4135
       </p>
 
       <h2>2. Encarregado de Dados (DPO)</h2>
@@ -215,7 +215,7 @@ export default function PoliticaDePrivacidade() {
         Em caso de dúvidas sobre esta Política ou sobre o tratamento dos seus
         dados:
         <br />
-        <strong>eduardo@e21studio.com</strong> | (61) 98130-6278
+        <strong>eduardo@e21studio.com</strong> | (61) 99870-4135
       </p>
     </LegalLayout>
   );

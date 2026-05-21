@@ -349,8 +349,8 @@ export const FOOTER = {
       },
       {
         label: "WhatsApp",
-        href: "https://wa.me/5561981306278",
-        text: "(61) 98130-6278",
+        href: "https://wa.me/5561998704135",
+        text: "(61) 99870-4135",
       },
     ],
     address:

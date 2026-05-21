@@ -140,7 +140,7 @@ export default function TermosDeUso() {
         QS 1, Rua 210, Lote 14, Apt. 12, Areal (Águas Claras), Brasília/DF,
         71.950-770
         <br />
-        eduardo@e21studio.com | (61) 98130-6278
+        eduardo@e21studio.com | (61) 99870-4135
       </p>
     </LegalLayout>
   );
