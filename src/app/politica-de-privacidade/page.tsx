@@ -2,7 +2,7 @@ import Link from "next/link";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata = {
-  title: "Política de Privacidade — E21 MED",
+  title: "Política de Privacidade · E21 MED",
   description:
     "Como o E21 trata seus dados pessoais conforme a Lei Geral de Proteção de Dados (LGPD).",
   robots: "index, follow",
@@ -19,7 +19,7 @@ export default function PoliticaDePrivacidade() {
       <p>
         A E21 Studio Ltda (&quot;E21&quot;, &quot;nós&quot;) respeita a
         privacidade dos seus dados pessoais e atua em conformidade com a Lei
-        Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD) e demais normas
+        Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD) e demais normas
         aplicáveis. Esta Política explica como tratamos os dados das pessoas
         que interagem com o site e21med.com.
       </p>
@@ -41,7 +41,7 @@ export default function PoliticaDePrivacidade() {
       <h2>2. Encarregado de Dados (DPO)</h2>
       <p>
         O Encarregado pelo Tratamento de Dados Pessoais do E21 é{" "}
-        <strong>Eduardo Carvalho</strong>, contatável pelo e-mail{" "}
+        <strong>Eduardo Vinícius</strong>, contatável pelo e-mail{" "}
         <strong>eduardo@e21studio.com</strong>.
       </p>
 
@@ -108,18 +108,18 @@ export default function PoliticaDePrivacidade() {
       <p>Compartilhamos dados estritamente necessários com:</p>
       <ul>
         <li>
-          <strong>Supabase Inc.</strong> — provedor de banco de dados (dados
+          <strong>Supabase Inc.</strong>: provedor de banco de dados (dados
           armazenados em servidores nos Estados Unidos)
         </li>
         <li>
-          <strong>Vercel Inc.</strong> — hospedagem do site
+          <strong>Vercel Inc.</strong>: hospedagem do site
         </li>
         <li>
-          <strong>Google LLC</strong> — Google Analytics para análise de uso
+          <strong>Google LLC</strong>: Google Analytics para análise de uso
           do site
         </li>
         <li>
-          <strong>Meta Platforms, Inc.</strong> — Meta Pixel para mensuração
+          <strong>Meta Platforms, Inc.</strong>: Meta Pixel para mensuração
           de campanhas
         </li>
         <li>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata = {
-  title: "Meus dados (LGPD) — E21 MED",
+  title: "Meus dados (LGPD) · E21 MED",
   description:
     "Como exercer seus direitos de titular de dados sob a Lei Geral de Proteção de Dados.",
   robots: "index, follow",
@@ -44,11 +44,11 @@ export default function MeusDados() {
         para nosso Encarregado de Dados:
       </p>
       <p>
-        <strong>Eduardo Carvalho</strong>
+        <strong>Eduardo Vinícius</strong>
         <br />
         <a href="mailto:eduardo@e21studio.com">eduardo@e21studio.com</a>
         <br />
-        Assunto sugerido: &quot;LGPD — solicitação de [tipo de direito]&quot;
+        Assunto sugerido: &quot;LGPD: solicitação de [tipo de direito]&quot;
       </p>
 
       <h2>O que incluir no pedido</h2>

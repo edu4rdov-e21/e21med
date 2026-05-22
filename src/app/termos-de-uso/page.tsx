@@ -2,7 +2,7 @@ import Link from "next/link";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata = {
-  title: "Termos de Uso — E21 MED",
+  title: "Termos de Uso · E21 MED",
   description:
     "Regras de uso do site e21med.com, operado pela E21 Studio Ltda.",
   robots: "index, follow",
@@ -56,9 +56,9 @@ export default function TermosDeUso() {
 
       <h2>5. Propriedade intelectual</h2>
       <p>
-        Todo o conteúdo do Site — incluindo logotipos, marcas, textos,
+        Todo o conteúdo do Site, incluindo logotipos, marcas, textos,
         imagens, vídeos, áudios, layouts, código, gráficos, fotografias do
-        estúdio e dos profissionais — é propriedade da E21 Studio Ltda ou de
+        estúdio e dos profissionais, é propriedade da E21 Studio Ltda ou de
         terceiros que autorizaram seu uso, protegido pelas leis de propriedade
         intelectual aplicáveis.
       </p>
@@ -135,7 +135,7 @@ export default function TermosDeUso() {
 
       <h2>12. Contato</h2>
       <p>
-        <strong>E21 Studio Ltda</strong> — CNPJ 55.788.849/0001-63
+        <strong>E21 Studio Ltda</strong> · CNPJ 55.788.849/0001-63
         <br />
         QS 1, Rua 210, Lote 14, Apt. 12, Areal (Águas Claras), Brasília/DF,
         71.950-770

@@ -23,7 +23,7 @@ export default function ApplicationForm() {
 
   function closeModal() {
     setIsOpen(false);
-    setTimeout(() => triggerRef.current?.focus(), 100);
+    setTimeout(() => triggerRef.current?.focus({ preventScroll: true }), 100);
   }
 
   // Permite que outros componentes (Hero) abram a modal via evento global
@@ -40,7 +40,10 @@ export default function ApplicationForm() {
     if (!isOpen) return;
     const original = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const t = setTimeout(() => firstFieldRef.current?.focus(), 80);
+    const t = setTimeout(
+      () => firstFieldRef.current?.focus({ preventScroll: true }),
+      80
+    );
     return () => {
       document.body.style.overflow = original;
       clearTimeout(t);

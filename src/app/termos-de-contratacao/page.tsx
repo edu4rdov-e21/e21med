@@ -2,7 +2,7 @@ import Link from "next/link";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata = {
-  title: "Termos de Contratação — E21 MED",
+  title: "Termos de Contratação · E21 MED",
   description:
     "Condições gerais de contratação dos serviços do E21 MED operado pela E21 Studio Ltda.",
   robots: "index, follow",
@@ -66,7 +66,7 @@ export default function TermosDeContratacao() {
       </ul>
       <p>
         A simples candidatura via formulário do Site não configura
-        contratação — é fase de qualificação.
+        contratação. É fase de qualificação.
       </p>
 
       <h2>4. Forma de pagamento</h2>
@@ -221,7 +221,7 @@ export default function TermosDeContratacao() {
 
       <h2>14. Contato</h2>
       <p>
-        <strong>E21 Studio Ltda</strong> — CNPJ 55.788.849/0001-63
+        <strong>E21 Studio Ltda</strong> · CNPJ 55.788.849/0001-63
         <br />
         QS 1, Rua 210, Lote 14, Apt. 12, Areal (Águas Claras), Brasília/DF,
         71.950-770

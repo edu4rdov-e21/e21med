@@ -15,6 +15,7 @@ export default function OpenLetter() {
   const openButtonRef = useRef<HTMLButtonElement>(null);
   const letterRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const wasOpenRef = useRef(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
   const [contentHeight, setContentHeight] = useState(0);
@@ -66,11 +67,20 @@ export default function OpenLetter() {
 
   useEffect(() => {
     if (isOpen) {
-      const t = setTimeout(() => letterRef.current?.focus(), 400);
+      wasOpenRef.current = true;
+      const t = setTimeout(
+        () => letterRef.current?.focus({ preventScroll: true }),
+        400
+      );
       return () => clearTimeout(t);
     }
-    // ao fechar, devolve foco pro botão de abrir
-    const t = setTimeout(() => openButtonRef.current?.focus(), 100);
+    // só devolve foco se a carta já tinha sido aberta antes
+    // (evita auto-scroll no carregamento inicial da página)
+    if (!wasOpenRef.current) return;
+    const t = setTimeout(
+      () => openButtonRef.current?.focus({ preventScroll: true }),
+      100
+    );
     return () => clearTimeout(t);
   }, [isOpen]);
 

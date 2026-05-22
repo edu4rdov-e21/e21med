@@ -1,7 +1,7 @@
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata = {
-  title: "Política de Cookies — E21 MED",
+  title: "Política de Cookies · E21 MED",
   description:
     "Quais cookies o site e21med.com utiliza e como você pode gerenciá-los.",
   robots: "index, follow",
@@ -47,7 +47,7 @@ export default function PoliticaDeCookies() {
       <p>Permitem entender como visitantes interagem com o Site.</p>
       <ul>
         <li>
-          <strong>Google Analytics</strong> — fornecido por Google LLC
+          <strong>Google Analytics</strong>: fornecido por Google LLC
         </li>
         <li>
           Coleta: páginas visitadas, tempo de permanência, origem do tráfego,
@@ -62,7 +62,7 @@ export default function PoliticaDeCookies() {
       </p>
       <ul>
         <li>
-          <strong>Meta Pixel</strong> — fornecido por Meta Platforms, Inc.
+          <strong>Meta Pixel</strong>: fornecido por Meta Platforms, Inc.
         </li>
         <li>
           Coleta: páginas visitadas, ações no Site, características do

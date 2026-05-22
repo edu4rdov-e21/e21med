@@ -207,7 +207,7 @@ export const HOW_IT_WORKS = {
       summary:
         "Produção diária e construção de autoridade na sua especialidade.",
       photoDescription:
-        "Bastidor de gravação no estúdio E21 — Mês 2-3",
+        "Bastidor de gravação no estúdio E21, Mês 2-3",
       videoSrc: "/video/jornada/mes2-3.mp4",
       videoPoster: "/video/jornada/mes2-3-poster.jpg",
       shortItems: [
@@ -233,7 +233,7 @@ export const HOW_IT_WORKS = {
       summary:
         "Tráfego pago turbina o orgânico e pacientes começam a agendar.",
       photoDescription:
-        "Bastidor de tráfego e edição — Mês 4-5",
+        "Bastidor de tráfego e edição, Mês 4-5",
       videoSrc: "/video/jornada/mes4-5.mp4",
       videoPoster: "/video/jornada/mes4-5-poster.jpg",
       shortItems: [
@@ -258,7 +258,7 @@ export const HOW_IT_WORKS = {
       title: "Autoridade",
       summary: "Você vira a referência da sua especialidade.",
       photoDescription:
-        "Bastidor de podcast no estúdio E21 — Mês 6",
+        "Bastidor de podcast no estúdio E21, Mês 6",
       videoSrc: "/video/jornada/mes6.mp4",
       videoPoster: "/video/jornada/mes6-poster.jpg",
       shortItems: [
