@@ -130,7 +130,7 @@ export default function Hero() {
 
         <div
           aria-hidden="true"
-          className="absolute z-20 pointer-events-none animate-popup top-[8%] left-3 w-[62%] sm:w-[45%] lg:top-6 lg:-left-14 lg:w-[280px]"
+          className="hidden lg:block absolute z-20 pointer-events-none animate-popup lg:top-6 lg:-left-14 lg:w-[280px]"
           style={{ animationDelay: "0.8s" }}
         >
           <WhatsAppNotification
@@ -141,7 +141,7 @@ export default function Hero() {
         </div>
         <div
           aria-hidden="true"
-          className="absolute z-20 pointer-events-none animate-popup top-[28%] right-3 w-[58%] sm:w-[42%] lg:top-[55%] lg:-right-16 lg:w-[280px]"
+          className="hidden lg:block absolute z-20 pointer-events-none animate-popup lg:top-[55%] lg:-right-16 lg:w-[280px]"
           style={{ animationDelay: "1.2s" }}
         >
           <WhatsAppNotification
