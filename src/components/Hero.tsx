@@ -173,7 +173,16 @@ export default function Hero() {
               width={1712}
               height={1286}
               priority
-              className="w-32 sm:w-40 lg:w-44 h-auto"
+              className="w-32 sm:w-40 h-auto lg:hidden"
+              style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.3))" }}
+            />
+            <Image
+              src="/logos/e21-med-left.svg"
+              alt={HERO.badge}
+              width={1560}
+              height={1286}
+              priority
+              className="hidden lg:block lg:w-44 h-auto"
               style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.3))" }}
             />
             <p className="text-xs text-cream/70">
