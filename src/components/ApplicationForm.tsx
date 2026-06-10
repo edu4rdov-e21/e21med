@@ -19,10 +19,13 @@ export default function ApplicationForm() {
     setSubmitted(false);
     setErrorMessage(null);
     setIsOpen(true);
+    // anuncia pra interessados externos (ex.: StickyCTA se esconde)
+    window.dispatchEvent(new CustomEvent("e21:application-opened"));
   }
 
   function closeModal() {
     setIsOpen(false);
+    window.dispatchEvent(new CustomEvent("e21:application-closed"));
     setTimeout(() => triggerRef.current?.focus({ preventScroll: true }), 100);
   }
 

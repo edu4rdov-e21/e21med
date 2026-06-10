@@ -8,6 +8,7 @@ import Specialties from "@/components/Specialties";
 import Testimonials from "@/components/Testimonials";
 import ApplicationForm from "@/components/ApplicationForm";
 import Footer from "@/components/Footer";
+import StickyCTA from "@/components/StickyCTA";
 import { PHOTO_DIVIDER_1 } from "@/lib/constants";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
       <Testimonials />
       <ApplicationForm />
       <Footer />
+      <StickyCTA />
     </main>
   );
 }
