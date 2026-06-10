@@ -49,6 +49,17 @@ export const SOCIAL_PROOF = {
   ],
 } as const;
 
+export const STATS = {
+  items: [
+    // TODO Eduardo: número real
+    { value: 9999, suffix: "+", label: "conteúdos publicados" },
+    // TODO Eduardo: número real
+    { value: 9999, suffix: "", label: "médicos atendidos" },
+    // TODO Eduardo: número real
+    { value: 9999, suffix: "+", label: "pacientes alcançados" },
+  ],
+} as const;
+
 export const SPECIALTIES = {
   items: [
     "Endocrinologia",

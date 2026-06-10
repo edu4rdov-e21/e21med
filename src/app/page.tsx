@@ -9,6 +9,7 @@ import Testimonials from "@/components/Testimonials";
 import ApplicationForm from "@/components/ApplicationForm";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
+import StatsBar from "@/components/StatsBar";
 import { PHOTO_DIVIDER_1 } from "@/lib/constants";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
     <main id="main" className="flex-1 flex flex-col">
       <Hero />
       <SocialProof />
+      <StatsBar />
       <OpenLetter />
       <PhotoDivider
         description={PHOTO_DIVIDER_1.description}
