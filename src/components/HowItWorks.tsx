@@ -3,6 +3,7 @@
 import { useRef, useState, type KeyboardEvent } from "react";
 import { HOW_IT_WORKS } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
+import HowItWorksTimeline from "./HowItWorksTimeline";
 
 export default function HowItWorks() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
@@ -47,7 +48,9 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="overflow-x-auto -mx-6 sm:mx-0 mb-10 sm:mb-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <HowItWorksTimeline />
+
+        <div className="hidden lg:block overflow-x-auto -mx-6 sm:mx-0 mb-10 sm:mb-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div
             role="tablist"
             aria-label="Etapas da jornada"
@@ -102,7 +105,7 @@ export default function HowItWorks() {
           role="tabpanel"
           id={`tabpanel-${activeTab}`}
           aria-labelledby={`tab-${activeTab}`}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start"
+          className="hidden lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-start"
         >
           <div
             key={`photo-${activeTab}`}
