@@ -51,12 +51,9 @@ export const SOCIAL_PROOF = {
 
 export const STATS = {
   items: [
-    // TODO Eduardo: número real
-    { value: 9999, suffix: "+", label: "conteúdos publicados" },
-    // TODO Eduardo: número real
-    { value: 9999, suffix: "", label: "médicos atendidos" },
-    // TODO Eduardo: número real
-    { value: 9999, suffix: "+", label: "pacientes alcançados" },
+    { value: 1000, suffix: "+", label: "conteúdos publicados" },
+    { value: 20, suffix: "+", label: "profissionais atendidos" },
+    { value: 1000000, suffix: "+", label: "visualizações geradas" },
   ],
 } as const;
 
