@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import type { HOW_IT_WORKS } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
@@ -13,7 +12,30 @@ export default function TimelineMilestone({
   milestone: Milestone;
 }) {
   const { ref, className } = useFadeIn<HTMLDivElement>();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [showDetails, setShowDetails] = useState(false);
+
+  // Toca o video só enquanto o milestone está na tela (poupa rede/bateria:
+  // preload="none" e os 4 videos nunca rodam ao mesmo tempo).
+  // Com prefers-reduced-motion fica no poster, sem playback.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(v);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <li className="relative pl-9 pb-12 last:pb-0">
@@ -36,18 +58,23 @@ export default function TimelineMilestone({
           {milestone.title}
         </h3>
 
-        {/* No mobile só o poster: 4 vídeos autoplay empilhados pesam demais */}
         <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg ring-1 ring-navy/10 bg-photo-placeholder mt-4">
-          <Image
-            src={milestone.videoPoster}
-            alt={milestone.photoDescription}
-            fill
-            sizes="(max-width: 1024px) 100vw, 0px"
-            className="object-cover grayscale"
-          />
+          <video
+            ref={videoRef}
+            muted
+            loop
+            playsInline
+            preload="none"
+            poster={milestone.videoPoster}
+            aria-label={milestone.photoDescription}
+            className="w-full h-full object-cover grayscale"
+          >
+            <source src={milestone.videoSrc} type="video/mp4" />
+          </video>
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-navy/30"
+            className="pointer-events-none absolute inset-0 bg-navy/30 z-10"
+            style={{ transform: "translateZ(0)" }}
           />
         </div>
 
