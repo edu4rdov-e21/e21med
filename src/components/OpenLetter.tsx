@@ -8,6 +8,7 @@ import {
 } from "react";
 import { LETTER } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
+import SignatureDraw from "./SignatureDraw";
 
 export default function OpenLetter() {
   const { ref: headRef, className: headClass } = useFadeIn<HTMLDivElement>();
@@ -206,9 +207,16 @@ export default function OpenLetter() {
                   {LETTER.paragraphs.map((p, i) => (
                     <p
                       key={i}
-                      className={`text-base sm:text-lg leading-relaxed text-navy ${
+                      className={`text-base sm:text-lg leading-relaxed text-navy transition-[opacity,transform] duration-500 ease-out ${
                         p.emphasis ? "font-semibold" : ""
+                      } ${
+                        isOpen
+                          ? "opacity-100 translate-y-0"
+                          : "opacity-0 translate-y-2"
                       }`}
+                      style={{
+                        transitionDelay: isOpen ? `${250 + i * 50}ms` : "0ms",
+                      }}
                     >
                       {p.text}
                     </p>
@@ -219,9 +227,7 @@ export default function OpenLetter() {
                   <p className="italic text-navy/70 text-sm sm:text-base font-serif mb-1">
                     {LETTER.signatureLabel}
                   </p>
-                  <p className="font-serif text-xl sm:text-2xl text-navy">
-                    {LETTER.signatureName}
-                  </p>
+                  <SignatureDraw name={LETTER.signatureName} play={isOpen} />
                   <p className="text-sm sm:text-base text-navy/70 mt-1">
                     {LETTER.signatureRole}
                   </p>
