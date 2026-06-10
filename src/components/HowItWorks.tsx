@@ -72,7 +72,7 @@ export default function HowItWorks() {
                   tabIndex={isActive ? 0 : -1}
                   onClick={() => changeTab(i)}
                   onKeyDown={(e) => handleTabKey(e, i)}
-                  className={`shrink-0 sm:shrink snap-start text-left px-4 py-3 sm:px-5 sm:py-4 rounded-lg border transition-colors duration-200 ${
+                  className={`shrink-0 sm:shrink snap-start text-left px-4 py-3 sm:px-5 sm:py-4 rounded-lg border transition duration-200 active:scale-[0.98] ${
                     isActive
                       ? "bg-navy text-cream border-navy"
                       : "bg-transparent text-navy border-navy/15 hover:border-navy/40"
@@ -170,7 +170,7 @@ export default function HowItWorks() {
             <button
               type="button"
               onClick={() => setShowDetails((v) => !v)}
-              className="self-start inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-navy hover:text-navy-light transition-colors"
+              className="self-start inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-navy hover:text-navy-light transition active:scale-[0.97]"
             >
               <span>{showDetails ? "Ocultar detalhes" : "Ver detalhes"}</span>
               <span

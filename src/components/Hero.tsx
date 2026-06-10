@@ -67,7 +67,7 @@ export default function Hero() {
             type="button"
             onClick={toggleVideo}
             aria-label={isPlaying ? "Pausar vídeo de bastidores" : "Reproduzir vídeo de bastidores"}
-            className="absolute bottom-3 right-3 z-30 inline-flex items-center justify-center w-9 h-9 rounded-full bg-navy-dark/70 backdrop-blur-md text-cream ring-1 ring-cream/20 hover:bg-navy-dark/90 transition-colors"
+            className="absolute bottom-3 right-3 z-30 inline-flex items-center justify-center w-9 h-9 rounded-full bg-navy-dark/70 backdrop-blur-md text-cream ring-1 ring-cream/20 hover:bg-navy-dark/90 transition active:scale-90"
           >
             {isPlaying ? (
               <svg
@@ -192,7 +192,7 @@ export default function Hero() {
             onClick={() =>
               window.dispatchEvent(new CustomEvent("e21:open-application"))
             }
-            className="inline-flex items-center justify-center rounded-full bg-cream text-navy px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold hover:bg-white transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+            className="inline-flex items-center justify-center rounded-full bg-cream text-navy px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold hover:bg-white transition duration-300 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
           >
             {HERO.ctaLabel}
           </button>

@@ -123,7 +123,7 @@ export default function OpenLetter() {
               aria-label="Abrir a carta"
               onClick={openLetter}
               onKeyDown={handleEnvelopeKey}
-              className="group relative w-full max-w-md aspect-[3/2] bg-[#F5F2ED] rounded-md cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_60px_-15px_rgba(26,54,93,0.35)] shadow-[0_12px_40px_-15px_rgba(26,54,93,0.25)] border border-navy/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-4 focus-visible:ring-offset-cream"
+              className="group relative w-full max-w-md aspect-[3/2] bg-[#F5F2ED] rounded-md cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 active:scale-[0.98] hover:shadow-[0_20px_60px_-15px_rgba(26,54,93,0.35)] shadow-[0_12px_40px_-15px_rgba(26,54,93,0.25)] border border-navy/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-4 focus-visible:ring-offset-cream"
             >
               <svg
                 aria-hidden="true"
@@ -170,7 +170,7 @@ export default function OpenLetter() {
               type="button"
               onClick={openLetter}
               tabIndex={isOpen ? -1 : 0}
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-cream text-navy border-2 border-navy px-6 py-3 text-sm sm:text-base font-bold hover:bg-navy hover:text-cream transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-cream text-navy border-2 border-navy px-6 py-3 text-sm sm:text-base font-bold hover:bg-navy hover:text-cream transition duration-300 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
             >
               {LETTER.openCta}
             </button>
@@ -243,7 +243,7 @@ export default function OpenLetter() {
           type="button"
           onClick={closeLetter}
           aria-label="Fechar a carta"
-          className="fixed bottom-6 right-6 sm:bottom-10 sm:right-10 z-40 inline-flex items-center gap-2 px-5 sm:px-6 py-3 rounded-full bg-navy text-cream font-semibold text-sm shadow-lg hover:shadow-xl hover:bg-navy-dark transition-all duration-300 animate-fade-in-up focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+          className="fixed bottom-6 right-6 sm:bottom-10 sm:right-10 z-40 inline-flex items-center gap-2 px-5 sm:px-6 py-3 rounded-full bg-navy text-cream font-semibold text-sm shadow-lg hover:shadow-xl hover:bg-navy-dark transition-all duration-300 active:scale-[0.97] animate-fade-in-up focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
           style={{ animationDelay: "200ms" }}
         >
           <svg

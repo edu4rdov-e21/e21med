@@ -104,7 +104,7 @@ export default function ApplicationForm() {
             ref={triggerRef}
             type="button"
             onClick={openModal}
-            className="inline-flex items-center justify-center rounded-full bg-cream text-navy font-bold px-8 py-4 text-base sm:text-lg hover:opacity-90 transition-opacity duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-4 focus-visible:ring-offset-navy"
+            className="inline-flex items-center justify-center rounded-full bg-cream text-navy font-bold px-8 py-4 text-base sm:text-lg hover:opacity-90 transition duration-300 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-4 focus-visible:ring-offset-navy"
           >
             {FORM.submitLabel}
           </button>
@@ -134,7 +134,7 @@ export default function ApplicationForm() {
               type="button"
               aria-label="Fechar"
               onClick={closeModal}
-              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full text-navy/60 hover:text-navy hover:bg-navy/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-navy"
+              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full text-navy/60 hover:text-navy hover:bg-navy/10 transition active:scale-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy"
             >
               <svg
                 aria-hidden="true"
@@ -175,7 +175,7 @@ export default function ApplicationForm() {
                   <button
                     type="button"
                     onClick={closeModal}
-                    className="mt-6 inline-flex items-center justify-center rounded-full bg-navy text-cream font-bold px-6 py-3 text-sm hover:bg-navy-dark transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
+                    className="mt-6 inline-flex items-center justify-center rounded-full bg-navy text-cream font-bold px-6 py-3 text-sm hover:bg-navy-dark transition duration-300 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
                   >
                     Fechar
                   </button>
@@ -225,7 +225,7 @@ export default function ApplicationForm() {
                     type="submit"
                     disabled={isSubmitting}
                     aria-busy={isSubmitting}
-                    className="mt-2 bg-navy text-cream font-bold rounded-full px-8 py-4 text-base hover:bg-navy-dark transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
+                    className="mt-2 bg-navy text-cream font-bold rounded-full px-8 py-4 text-base hover:bg-navy-dark transition duration-300 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
                   >
                     {isSubmitting ? "Enviando..." : FORM.submitLabel}
                   </button>

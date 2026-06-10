@@ -34,7 +34,7 @@ export default function PhotoDivider({
                 alt={description}
                 fill
                 sizes="(max-width: 1280px) 100vw, 1280px"
-                className="object-cover"
+                className="object-cover parallax-img"
                 priority={false}
               />
             </div>
