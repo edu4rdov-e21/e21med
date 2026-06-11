@@ -17,9 +17,11 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-end lg:items-center overflow-hidden">
-      {/* mobile: constelação é o fundo inteiro; desktop: metade direita */}
+      {/* mobile: constelação é o fundo inteiro; desktop: metade direita.
+          variant="symbols": partículas formam DNA -> estetoscópio ->
+          seringa -> ECG em loop */}
       <Constellation
-        variant="hero"
+        variant="symbols"
         interactive
         className="absolute inset-0 lg:left-[44%] lg:w-[56%] h-full"
       />
