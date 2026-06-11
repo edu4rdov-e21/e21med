@@ -149,9 +149,9 @@ export default function Constellation({
       const base = VARIANT_PARAMS[variant];
       if (variant !== "phase") return base;
       return {
-        clusterRatio: lerp(0.45, 0.92, intensity),
-        radiusFactor: lerp(0.42, 0.2, intensity),
-        areaPerParticle: lerp(8000, 2800, intensity),
+        clusterRatio: lerp(0.4, 0.94, intensity),
+        radiusFactor: lerp(0.45, 0.22, intensity),
+        areaPerParticle: lerp(9000, 1000, intensity),
         center: base.center,
       };
     }
