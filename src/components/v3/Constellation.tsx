@@ -67,6 +67,7 @@ const VARIANT_PARAMS: Record<
 };
 
 const SYMBOL_HOLD_S = 5.5; // tempo que cada símbolo fica formado
+const CLOUD_HOLD_S = 2.8; // tempo na nuvem genérica entre símbolos
 
 // bone e plum dominam; amber/lichen são salpicos raros
 const PALETTE: Array<[string, number]> = [
@@ -329,7 +330,15 @@ export default function Constellation({
     let inView = true;
     let symbolCount = 0;
     let shapeIdx = 0;
-    let lastSwitchMs = 0;
+    // máquina de estados do ciclo caos->ordem: nuvem genérica entre
+    // cada símbolo ("cloud"), símbolo formado ("symbol")
+    let mode: "cloud" | "symbol" = "cloud";
+    let modeStartMs = 0;
+    let firstSymbolShown = false;
+    // deriva amplificada na nuvem (caos) e contida no símbolo (ordem),
+    // com easing entre os dois regimes
+    let driftScale = 4;
+    let driftTarget = 4;
     const pointer = { x: -9999, y: -9999, active: false };
 
     function params() {
@@ -341,6 +350,18 @@ export default function Constellation({
         areaPerParticle: lerp(9000, 1000, intensity),
         center: base.center,
       };
+    }
+
+    // nuvem orgânica re-sorteada a cada ciclo: gaussiana larga em torno
+    // do centro — cada "caos" é diferente do anterior
+    function assignCloudTargets() {
+      const cx = 0.5 * width;
+      const cy = (width < 700 ? 0.34 : 0.47) * height;
+      const r = Math.min(width, height) * 0.36;
+      for (let i = 0; i < symbolCount; i++) {
+        particles[i].tx = cx + gaussian(rand) * r * 0.6;
+        particles[i].ty = cy + gaussian(rand) * r * 0.55;
+      }
     }
 
     function assignSymbolTargets(idx: number) {
@@ -462,25 +483,46 @@ export default function Constellation({
     function frame(tMs: number) {
       const t = tMs / 1000;
 
-      // troca de símbolo: as molas levam as partículas pro novo alvo
+      // ciclo caos->ordem: nuvem -> símbolo -> nuvem -> próximo símbolo.
+      // As molas levam as partículas pro novo alvo; nada de morph extra.
       if (variant === "symbols" && !reducedMotion) {
-        if (lastSwitchMs === 0) lastSwitchMs = tMs;
-        if (tMs - lastSwitchMs > SYMBOL_HOLD_S * 1000) {
-          shapeIdx = (shapeIdx + 1) % SYMBOL_SHAPES.length;
-          assignSymbolTargets(shapeIdx);
-          lastSwitchMs = tMs;
+        if (modeStartMs === 0) {
+          modeStartMs = tMs;
+          assignCloudTargets();
         }
+        const heldS = (tMs - modeStartMs) / 1000;
+        if (mode === "symbol" && heldS > SYMBOL_HOLD_S) {
+          mode = "cloud";
+          driftTarget = 4;
+          assignCloudTargets();
+          modeStartMs = tMs;
+        } else if (mode === "cloud" && heldS > CLOUD_HOLD_S) {
+          mode = "symbol";
+          driftTarget = 1;
+          if (firstSymbolShown) {
+            shapeIdx = (shapeIdx + 1) % SYMBOL_SHAPES.length;
+          }
+          firstSymbolShown = true;
+          assignSymbolTargets(shapeIdx);
+          modeStartMs = tMs;
+        }
+        driftScale += (driftTarget - driftScale) * 0.015;
       }
 
       ctx!.clearRect(0, 0, width, height);
 
-      for (const pt of particles) {
+      for (let i = 0; i < particles.length; i++) {
+        const pt = particles[i];
+        // na nuvem, as partículas do símbolo derivam mais (caos);
+        // no símbolo formado, menos (ordem)
+        const amp =
+          variant === "symbols" && i < symbolCount
+            ? pt.driftAmp * driftScale
+            : pt.driftAmp;
         const driftX =
-          Math.sin(t * pt.driftFreqX * Math.PI * 2 + pt.driftPhaseX) *
-          pt.driftAmp;
+          Math.sin(t * pt.driftFreqX * Math.PI * 2 + pt.driftPhaseX) * amp;
         const driftY =
-          Math.cos(t * pt.driftFreqY * Math.PI * 2 + pt.driftPhaseY) *
-          pt.driftAmp;
+          Math.cos(t * pt.driftFreqY * Math.PI * 2 + pt.driftPhaseY) * amp;
 
         // mola suave em direção ao alvo + deriva orgânica
         pt.x += (pt.tx + driftX - pt.x) * 0.022;
