@@ -295,6 +295,22 @@ export const HOW_IT_WORKS = {
   ],
 } as const;
 
+export const SCENARIOS = {
+  label: "Direto do estúdio",
+  title: "Um estúdio, muitos cenários",
+  subtitle:
+    "Exemplos reais de vídeos gravados no estúdio do E21. Cada cenário foi pensado pra dar outra cara ao mesmo espaço.",
+  items: [
+    { src: "/video/cenarios/cenario-1.mp4", poster: "/video/cenarios/cenario-1-poster.jpg", label: "Cenário 01" },
+    { src: "/video/cenarios/cenario-2.mp4", poster: "/video/cenarios/cenario-2-poster.jpg", label: "Cenário 02" },
+    { src: "/video/cenarios/cenario-3.mp4", poster: "/video/cenarios/cenario-3-poster.jpg", label: "Cenário 03" },
+    { src: "/video/cenarios/cenario-4.mp4", poster: "/video/cenarios/cenario-4-poster.jpg", label: "Cenário 04" },
+    { src: "/video/cenarios/cenario-5.mp4", poster: "/video/cenarios/cenario-5-poster.jpg", label: "Cenário 05" },
+    { src: "/video/cenarios/cenario-6.mp4", poster: "/video/cenarios/cenario-6-poster.jpg", label: "Cenário 06" },
+    { src: "/video/cenarios/cenario-7.mp4", poster: "/video/cenarios/cenario-7-poster.jpg", label: "Cenário 07" },
+  ],
+} as const;
+
 export const TESTIMONIALS = {
   title: "Quem já vive isso",
   items: [

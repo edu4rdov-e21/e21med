@@ -5,6 +5,7 @@ import PhotoDivider from "@/components/PhotoDivider";
 import Team from "@/components/Team";
 import HowItWorks from "@/components/HowItWorks";
 import Specialties from "@/components/Specialties";
+import ScenarioShowcase from "@/components/ScenarioShowcase";
 import Testimonials from "@/components/Testimonials";
 import ApplicationForm from "@/components/ApplicationForm";
 import Footer from "@/components/Footer";
@@ -27,6 +28,7 @@ export default function Home() {
       <Specialties />
       <Team />
       <HowItWorks />
+      <ScenarioShowcase />
       <Testimonials />
       <ApplicationForm />
       <Footer />
