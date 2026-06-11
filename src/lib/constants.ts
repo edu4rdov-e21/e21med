@@ -49,6 +49,15 @@ export const SOCIAL_PROOF = {
   ],
 } as const;
 
+export const NAV_V3 = {
+  links: [
+    { label: "Manifesto", href: "#manifesto" },
+    { label: "Jornada", href: "#jornada" },
+  ],
+  cta: "Agendar reunião",
+  ctaHref: "#agendar",
+} as const;
+
 export const STATS = {
   items: [
     { value: 1000, suffix: "+", label: "conteúdos publicados" },

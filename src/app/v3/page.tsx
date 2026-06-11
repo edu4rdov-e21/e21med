@@ -1,15 +1,13 @@
-import Constellation from "@/components/v3/Constellation";
+import NavBar from "@/components/v3/NavBar";
+import Hero from "@/components/v3/Hero";
 
 export default function HomeV3() {
   return (
-    <main id="main" className="flex flex-col">
-      <section className="relative min-h-screen">
-        <Constellation
-          variant="hero"
-          interactive
-          className="absolute inset-0 w-full h-full"
-        />
-      </section>
-    </main>
+    <>
+      <NavBar />
+      <main id="main" className="flex flex-col">
+        <Hero />
+      </main>
+    </>
   );
 }
