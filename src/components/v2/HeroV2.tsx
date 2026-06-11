@@ -1,18 +1,40 @@
-import Image from "next/image";
+"use client";
+
+import { useRef, useState } from "react";
 import { HERO } from "@/lib/constants";
 
 export default function HeroV2() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  function toggleVideo() {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setIsPlaying(true);
+    } else {
+      v.pause();
+      setIsPlaying(false);
+    }
+  }
+
   return (
     <section className="relative min-h-[88vh] flex items-end overflow-hidden">
-      <Image
-        src="/images/studio-geral.jpg"
-        alt=""
+      {/* mesmo vídeo de bastidores do hero da v1 */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/video/takes-poster.jpg"
         aria-hidden="true"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover"
-      />
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={HERO.videoSrc} type="video/mp4" />
+      </video>
       {/* overlay escuro warm (~60%) pra manter o headline legível */}
       <div
         aria-hidden="true"
@@ -22,6 +44,40 @@ export default function HeroV2() {
             "linear-gradient(to top, rgba(42,43,47,0.82) 0%, rgba(42,43,47,0.55) 45%, rgba(42,43,47,0.35) 100%)",
         }}
       />
+
+      <button
+        type="button"
+        onClick={toggleVideo}
+        aria-label={
+          isPlaying
+            ? "Pausar vídeo de bastidores"
+            : "Reproduzir vídeo de bastidores"
+        }
+        className="absolute bottom-5 right-5 z-10 inline-flex items-center justify-center w-11 h-11 rounded-full bg-ink/60 text-parchment ring-1 ring-parchment/25 hover:bg-ink/80 transition active:scale-90"
+      >
+        {isPlaying ? (
+          <svg
+            aria-hidden="true"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="currentColor"
+          >
+            <rect x="3" y="2" width="3" height="10" rx="0.5" />
+            <rect x="8" y="2" width="3" height="10" rx="0.5" />
+          </svg>
+        ) : (
+          <svg
+            aria-hidden="true"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="currentColor"
+          >
+            <path d="M3 2v10l9-5L3 2z" />
+          </svg>
+        )}
+      </button>
 
       <div className="relative w-full max-w-[1280px] mx-auto px-6 sm:px-10 pb-16 sm:pb-24 pt-40">
         <p className="font-v2-mono text-[11px] uppercase tracking-wide text-parchment/90 mb-5">
