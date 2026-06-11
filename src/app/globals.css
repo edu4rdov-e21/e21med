@@ -31,6 +31,15 @@
   --font-v2-display: var(--font-fraunces), Georgia, serif;
   --font-v2-sans: var(--font-inter-v2), system-ui, sans-serif;
   --font-v2-mono: var(--font-fragment-mono), ui-monospace, monospace;
+
+  /* === V3: Constellation === */
+  --color-void: #000000;
+  --color-bone: #ffffff;
+  --color-v3-ash: #bdbdbd;
+  --color-smoke: #9a9a9a;
+  --color-plum-voltage: #8052ff;
+  --color-amber-spark: #ffb829;
+  --color-lichen: #15846e;
 }
 
 html {
@@ -58,6 +67,50 @@ h3, h4, h5, h6 {
   font-family: var(--font-serif-display), Georgia, serif;
   font-weight: 400;
   letter-spacing: -0.01em;
+}
+
+/* === V3: Constellation — escopo [data-theme="v3"] ===
+   Body abre com tracking positivo (+0.025em) pra leitura no preto.
+   Headings: peso 200 "etched in light"; tracking negativo so nos
+   displays grandes (h1/h2), conforme a regra >=48px do sistema. */
+[data-theme="v3"] {
+  letter-spacing: 0.025em;
+}
+
+[data-theme="v3"] h1,
+[data-theme="v3"] h2,
+[data-theme="v3"] h3,
+[data-theme="v3"] h4,
+[data-theme="v3"] h5,
+[data-theme="v3"] h6 {
+  font-family: var(--font-inter-v3), system-ui, sans-serif;
+  font-weight: 200;
+  color: var(--color-bone);
+  text-wrap: balance;
+}
+
+[data-theme="v3"] h1,
+[data-theme="v3"] h2 {
+  letter-spacing: -0.04em;
+}
+
+[data-theme="v3"] h3,
+[data-theme="v3"] h4,
+[data-theme="v3"] h5,
+[data-theme="v3"] h6 {
+  letter-spacing: normal;
+}
+
+[data-theme="v3"] :focus-visible {
+  outline: 2px solid var(--color-plum-voltage);
+  outline-offset: 3px;
+}
+
+.v3-eyebrow {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* Raiz do tema v2: tracking -0.023em no sans (herda pra todo o texto),
