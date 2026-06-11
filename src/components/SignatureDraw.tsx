@@ -9,9 +9,11 @@
 export default function SignatureDraw({
   name,
   play,
+  stroke = "var(--color-navy)",
 }: {
   name: string;
   play: boolean;
+  stroke?: string;
 }) {
   return (
     <span className="block">
@@ -25,7 +27,7 @@ export default function SignatureDraw({
         <path
           pathLength={1}
           className={play ? "signature-stroke" : "signature-stroke-idle"}
-          stroke="var(--color-navy)"
+          stroke={stroke}
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -59,7 +61,7 @@ export default function SignatureDraw({
           className={
             play ? "signature-stroke-underline" : "signature-stroke-idle"
           }
-          stroke="var(--color-navy)"
+          stroke={stroke}
           strokeWidth="2"
           strokeLinecap="round"
           d="M 14 82 C 52 90, 112 88, 162 76"
