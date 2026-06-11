@@ -4,6 +4,8 @@ import Manifesto from "@/components/v3/Manifesto";
 import SocialProof from "@/components/v3/SocialProof";
 import Journey from "@/components/v3/Journey";
 import Team from "@/components/v3/Team";
+import FinalCta from "@/components/v3/FinalCta";
+import Footer from "@/components/v3/Footer";
 
 export default function HomeV3() {
   return (
@@ -15,7 +17,9 @@ export default function HomeV3() {
         <SocialProof />
         <Journey />
         <Team />
+        <FinalCta />
       </main>
+      <Footer />
     </>
   );
 }
