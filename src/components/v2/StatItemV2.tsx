@@ -3,10 +3,16 @@
 import { useCountUp } from "@/hooks/useCountUp";
 
 const formatter = new Intl.NumberFormat("pt-BR");
+const millionFormatter = new Intl.NumberFormat("pt-BR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
 
 function formatStat(current: number, target: number): string {
   if (target >= 1_000_000) {
-    return `${formatter.format(Math.round((current / 1_000_000) * 10) / 10)}M`;
+    return `${millionFormatter.format(
+      Math.round((current / 1_000_000) * 100) / 100
+    )}M`;
   }
   return formatter.format(current);
 }

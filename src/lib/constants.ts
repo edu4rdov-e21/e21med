@@ -63,7 +63,7 @@ export const STATS = {
   items: [
     { value: 1542, prefix: "", suffix: "", label: "vídeos entregues" },
     { value: 82, prefix: "", suffix: "", label: "gravações feitas" },
-    { value: 1800000, prefix: "+", suffix: "", label: "views" },
+    { value: 5440000, prefix: "+", suffix: "", label: "views" },
   ],
 } as const;
 
