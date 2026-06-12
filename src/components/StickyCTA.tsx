@@ -29,21 +29,21 @@ export default function StickyCTA() {
   return (
     <div
       aria-hidden={!show}
-      className={`lg:hidden fixed bottom-0 inset-x-0 z-40 transition-transform duration-300 ease-out ${
-        show ? "translate-y-0" : "translate-y-full"
+      className={`fixed bottom-0 inset-x-0 lg:inset-x-auto lg:right-8 lg:bottom-8 z-40 transition-all duration-300 ease-out ${
+        show
+          ? "translate-y-0 opacity-100"
+          : "translate-y-6 opacity-0 pointer-events-none"
       }`}
     >
-      <div
-        className="bg-navy-dark/90 backdrop-blur-md border-t border-cream/10 px-4 pt-3"
-        style={{ paddingBottom: "max(env(safe-area-inset-bottom), 0.75rem)" }}
-      >
+      {/* mobile: barra full-width; desktop: pill flutuante no canto */}
+      <div className="bg-navy-dark/90 backdrop-blur-md border-t border-cream/10 px-4 pt-3 pb-[max(env(safe-area-inset-bottom),0.75rem)] lg:bg-transparent lg:backdrop-blur-none lg:border-0 lg:px-0 lg:pt-0 lg:pb-0">
         <button
           type="button"
           tabIndex={show ? 0 : -1}
           onClick={() =>
             window.dispatchEvent(new CustomEvent("e21:open-application"))
           }
-          className="w-full min-h-12 inline-flex items-center justify-center rounded-full bg-cream text-navy px-6 py-3 text-base font-bold active:scale-[0.97] transition-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+          className="w-full lg:w-auto min-h-12 inline-flex items-center justify-center rounded-full bg-cream text-navy px-6 lg:px-8 py-3 lg:py-4 text-base font-bold lg:shadow-[0_18px_45px_-12px_rgba(15,36,64,0.55)] lg:ring-1 lg:ring-navy/10 hover:bg-white active:scale-[0.97] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
         >
           {HERO.ctaLabel}
         </button>

@@ -263,7 +263,7 @@ export default function OpenLetter() {
           type="button"
           onClick={closeLetter}
           aria-label="Fechar a carta"
-          className="fixed bottom-6 right-6 sm:bottom-10 sm:right-10 z-40 inline-flex items-center gap-2 px-5 sm:px-6 py-3 rounded-full bg-navy text-cream font-semibold text-sm shadow-lg hover:shadow-xl hover:bg-navy-dark transition-all duration-300 active:scale-[0.97] animate-fade-in-up focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+          className="fixed bottom-24 right-4 sm:right-8 lg:bottom-28 z-40 inline-flex items-center gap-2 px-5 sm:px-6 py-3 rounded-full bg-navy text-cream font-semibold text-sm shadow-lg hover:shadow-xl hover:bg-navy-dark transition-all duration-300 active:scale-[0.97] animate-fade-in-up focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
           style={{ animationDelay: "200ms" }}
         >
           <svg
