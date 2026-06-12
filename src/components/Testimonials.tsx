@@ -12,7 +12,8 @@ type Card =
   | { kind: "google"; review: GoogleReview }
   | { kind: "print"; item: PrintItem };
 
-// mescla avaliações Google e prints de WhatsApp, intercalados
+// mescla avaliações Google e prints de WhatsApp, intercalados;
+// o último cartão (depoimento 10) abre a pilha, os demais seguem na ordem
 const CARDS: Card[] = (() => {
   const out: Card[] = [];
   const max = Math.max(
@@ -25,6 +26,8 @@ const CARDS: Card[] = (() => {
     if (TESTIMONIALS.items[i])
       out.push({ kind: "print", item: TESTIMONIALS.items[i] });
   }
+  const last = out.pop();
+  if (last) out.unshift(last);
   return out;
 })();
 
