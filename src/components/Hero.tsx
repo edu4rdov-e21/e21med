@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HERO } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import WhatsAppNotification from "./WhatsAppNotification";
@@ -10,7 +10,29 @@ import MobileNotificationStack from "./MobileNotificationStack";
 export default function Hero() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const bgVideoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
+
+  // video de fundo do desktop: toca so visivel e sem reduced-motion
+  // (com motion reduzido fica parado no primeiro frame, como imagem)
+  useEffect(() => {
+    const v = bgVideoRef.current;
+    if (!v) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(v);
+    return () => observer.disconnect();
+  }, []);
 
   function toggleVideo() {
     const v = videoRef.current;
@@ -29,9 +51,10 @@ export default function Hero() {
       id="hero"
       className="relative overflow-hidden bg-navy-dark pt-[68%] lg:pt-20 lg:pb-20 lg:min-h-[720px] flex flex-col justify-end lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16 lg:px-10 xl:px-16"
     >
+      {/* mobile: imagem estática (attachment fixed); desktop: vídeo animado */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0"
+        className="lg:hidden pointer-events-none absolute inset-0 z-0"
         style={{
           backgroundImage: "url('/images/e21-studio-bg.jpg')",
           backgroundSize: "cover",
@@ -42,6 +65,18 @@ export default function Hero() {
           mixBlendMode: "luminosity",
         }}
       />
+      <video
+        ref={bgVideoRef}
+        aria-hidden="true"
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="hidden lg:block pointer-events-none absolute inset-0 z-0 w-full h-full object-cover"
+        style={{ opacity: 0.22, mixBlendMode: "luminosity" }}
+      >
+        <source src="/video/hero-bg.mp4" type="video/mp4" />
+      </video>
       <div
         className="
           absolute inset-0
