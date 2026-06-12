@@ -39,7 +39,7 @@ const STACK_POSE = [
   { x: 4, y: 30, r: 1.5, s: 0.88, o: 0.6, z: 10 },
 ];
 
-function GoogleLogo() {
+export function GoogleLogo() {
   return (
     <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24">
       <path
@@ -62,7 +62,7 @@ function GoogleLogo() {
   );
 }
 
-function Stars({ size = 18 }: { size?: number }) {
+export function Stars({ size = 18 }: { size?: number }) {
   return (
     <span aria-hidden="true" className="inline-flex gap-0.5 text-amber-400">
       {Array.from({ length: 5 }, (_, i) => (

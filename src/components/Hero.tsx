@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { HERO } from "@/lib/constants";
+import { HERO, TESTIMONIALS } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import WhatsAppNotification from "./WhatsAppNotification";
 import MobileNotificationStack from "./MobileNotificationStack";
+import { GoogleLogo, Stars } from "./Testimonials";
 
 export default function Hero() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
@@ -164,7 +165,7 @@ export default function Hero() {
 
       <MobileNotificationStack notifications={HERO.notifications} />
 
-      <div className="relative z-10 lg:order-1 w-full max-w-7xl mx-auto px-6 sm:px-10 pb-10 sm:pb-14 lg:p-0 lg:mx-0 lg:max-w-2xl lg:flex-1">
+      <div className="relative z-10 lg:order-1 w-full max-w-7xl mx-auto px-6 sm:px-10 pb-10 sm:pb-14 lg:p-0 lg:mx-0 lg:max-w-3xl xl:max-w-[820px] lg:flex-1">
         <div
           ref={ref}
           className={`${className} flex flex-col items-center text-center lg:items-start lg:text-left gap-4`}
@@ -176,7 +177,7 @@ export default function Hero() {
               width={1712}
               height={1286}
               priority
-              className="w-32 sm:w-40 h-auto lg:hidden"
+              className="w-24 sm:w-28 h-auto lg:hidden"
               style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.3))" }}
             />
             <Image
@@ -185,7 +186,7 @@ export default function Hero() {
               width={1560}
               height={1286}
               priority
-              className="hidden lg:block lg:w-44 h-auto"
+              className="hidden lg:block lg:w-32 h-auto"
               style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.3))" }}
             />
             <p className="text-xs text-cream/70">
@@ -202,7 +203,7 @@ export default function Hero() {
           </div>
 
           <h1
-            className="text-xl sm:text-2xl lg:text-4xl text-cream leading-[1.08]"
+            className="text-2xl sm:text-3xl lg:text-[40px] xl:text-[44px] text-cream leading-[1.08]"
             style={{ textShadow: "0 2px 12px rgba(0,0,0,0.35)" }}
           >
             {HERO.headlinePre.trimEnd()}
@@ -231,6 +232,16 @@ export default function Hero() {
           >
             {HERO.ctaLabel}
           </button>
+
+          {/* trust row sob o CTA: mesmo selo Google da boutique de avaliações */}
+          <p className="flex items-center gap-2 text-xs sm:text-sm text-cream/75">
+            <GoogleLogo />
+            <Stars size={13} />
+            <span className="font-bold text-cream">
+              {TESTIMONIALS.stats.ratingLabel}
+            </span>
+            <span>· {TESTIMONIALS.stats.total} avaliações no Google</span>
+          </p>
         </div>
       </div>
     </section>
