@@ -152,11 +152,15 @@ export default function HowItWorks() {
               {active.summary}
             </p>
 
-            <ul className="space-y-2.5">
+            <ul
+              className="space-y-2.5"
+              style={{ "--stagger-step": "60ms" } as React.CSSProperties}
+            >
               {active.shortItems.map((item, i) => (
                 <li
                   key={i}
-                  className="flex gap-3 text-sm sm:text-base text-navy/70"
+                  className="animate-stagger-in flex gap-3 text-sm sm:text-base text-navy/70"
+                  style={{ "--stagger-i": i } as React.CSSProperties}
                 >
                   <span
                     aria-hidden="true"
@@ -190,15 +194,23 @@ export default function HowItWorks() {
               }}
             >
               <div className="overflow-hidden">
-                <ul className="space-y-3 pt-4 border-t border-navy/10">
+                {/* stagger só com opacity/transform: a altura do conteúdo
+                    não muda, então a transição do grid não dá salto */}
+                <ul
+                  className="space-y-3 pt-4 border-t border-navy/10"
+                  style={{ "--stagger-step": "50ms" } as React.CSSProperties}
+                >
                   {active.detailItems.map((item, i) => {
                     const colonIdx = item.indexOf(":");
+                    const liClass = `text-sm sm:text-base text-navy/70 leading-snug ${
+                      showDetails ? "animate-stagger-in" : "opacity-0"
+                    }`;
+                    const liStyle = {
+                      "--stagger-i": i,
+                    } as React.CSSProperties;
                     if (colonIdx > 0) {
                       return (
-                        <li
-                          key={i}
-                          className="text-sm sm:text-base text-navy/70 leading-snug"
-                        >
+                        <li key={i} className={liClass} style={liStyle}>
                           <span className="font-semibold text-navy">
                             {item.slice(0, colonIdx)}
                           </span>
@@ -207,10 +219,7 @@ export default function HowItWorks() {
                       );
                     }
                     return (
-                      <li
-                        key={i}
-                        className="text-sm sm:text-base text-navy/70 leading-snug"
-                      >
+                      <li key={i} className={liClass} style={liStyle}>
                         {item}
                       </li>
                     );
