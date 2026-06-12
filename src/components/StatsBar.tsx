@@ -10,6 +10,7 @@ export default function StatsBar() {
             <StatItem
               key={s.label}
               value={s.value}
+              prefix={s.prefix}
               suffix={s.suffix}
               label={s.label}
             />

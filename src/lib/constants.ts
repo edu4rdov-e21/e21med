@@ -60,9 +60,9 @@ export const NAV_V3 = {
 
 export const STATS = {
   items: [
-    { value: 1000, suffix: "+", label: "conteúdos publicados" },
-    { value: 20, suffix: "+", label: "profissionais atendidos" },
-    { value: 1000000, suffix: "+", label: "visualizações geradas" },
+    { value: 1542, prefix: "", suffix: "", label: "vídeos entregues em 2026" },
+    { value: 82, prefix: "", suffix: "", label: "gravações feitas em 2026" },
+    { value: 1800000, prefix: "+", suffix: "", label: "views em 2026" },
   ],
 } as const;
 
