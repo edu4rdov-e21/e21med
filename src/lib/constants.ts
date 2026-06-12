@@ -139,6 +139,12 @@ export const LETTER = {
   signatureRole: "Fundador do E21 Med",
 } as const;
 
+export const BACKSTAGE = {
+  label: "Bastidores",
+  caption: "Gravação em andamento no estúdio E21",
+  specialtiesLabel: "Especialidades que já gravaram aqui",
+} as const;
+
 export const PHOTO_DIVIDER_1 = {
   description: "Visão geral do estúdio E21",
   src: "/images/studio-geral.jpg",
