@@ -33,13 +33,8 @@ export default function Team() {
                 priority={false}
               />
             </div>
-            <figcaption className="mt-3 mb-14 sm:mb-20 flex items-baseline justify-between text-navy/60">
-              <span className="text-xs sm:text-sm italic font-serif">
-                {TEAM.groupPhoto.alt}
-              </span>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em]">
-                Estúdio E21
-              </span>
+            <figcaption className="mt-3 mb-14 sm:mb-20 text-xs sm:text-sm italic font-serif text-navy/60">
+              {TEAM.groupPhoto.alt}
             </figcaption>
           </figure>
 
