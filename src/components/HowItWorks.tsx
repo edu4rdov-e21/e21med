@@ -3,7 +3,7 @@
 import { useRef, useState, type KeyboardEvent } from "react";
 import { HOW_IT_WORKS } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
-import HowItWorksTimeline from "./HowItWorksTimeline";
+import JourneyCarousel from "./JourneyCarousel";
 
 export default function HowItWorks() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
@@ -48,7 +48,7 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <HowItWorksTimeline />
+        <JourneyCarousel />
 
         <div className="hidden lg:block overflow-x-auto -mx-6 sm:mx-0 mb-10 sm:mb-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div

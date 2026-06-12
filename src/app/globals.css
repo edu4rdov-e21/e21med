@@ -222,33 +222,6 @@ h3, h4, h5, h6 {
   }
 }
 
-/* Linha da timeline mobile: cheia por padrão (fallback funcional);
-   com suporte a scroll-driven animations, cresce conforme o scroll. */
-.timeline-fill {
-  transform-origin: top;
-  transform: scaleY(1);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .timeline-fill {
-      transform: scaleY(0);
-      animation: timeline-grow linear both;
-      animation-timeline: view();
-      animation-range: cover 5% cover 70%;
-    }
-  }
-}
-
-@keyframes timeline-grow {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
-
 @keyframes draw-stroke {
   to {
     stroke-dashoffset: 0;
