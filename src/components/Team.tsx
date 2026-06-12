@@ -5,7 +5,7 @@ import { TEAM } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
 export default function Team() {
-  const { ref, className } = useFadeIn<HTMLDivElement>();
+  const { ref, className, visible } = useFadeIn<HTMLDivElement>();
 
   return (
     <section id="equipe" className="bg-cream py-16 sm:py-24 scroll-mt-8">
@@ -28,10 +28,13 @@ export default function Team() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-            {TEAM.members.map((member) => (
+            {TEAM.members.map((member, i) => (
               <div
                 key={member.name}
-                className="flex flex-col items-center text-center gap-3 sm:gap-4"
+                className={`flex flex-col items-center text-center gap-3 sm:gap-4 ${
+                  visible ? "animate-stagger-in" : "opacity-0"
+                }`}
+                style={{ "--stagger-i": i } as React.CSSProperties}
               >
                 <div className="relative w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden ring-1 ring-navy/10 bg-photo-placeholder">
                   <Image
