@@ -313,6 +313,39 @@ export const SCENARIOS = {
 
 export const TESTIMONIALS = {
   title: "Quem já vive isso",
+  subtitle: "São 55 avaliações no Google, 54 delas com 5 estrelas.",
+  stats: {
+    total: 55,
+    fiveStar: 54,
+    ratingLabel: "5,0",
+  },
+  googleReviews: [
+    {
+      name: "Luciana Taynã Sanches",
+      meta: "Avaliação no Google",
+      text: "Estou produzindo fotos e vídeos profissionais para a minha empresa com a E21 Studio e a experiência tem sido excelente. A qualidade das entregas é visível em cada detalhe, e o atendimento da equipe: profissional, leve e muito atencioso, faz toda a diferença no processo. Recomendo demais!",
+    },
+    {
+      name: "Carla Marcela Faedda",
+      meta: "Local Guide · 149 avaliações",
+      text: "Contratei a equipe do E21 Studio para divulgação da minha clínica. Fiquei muito satisfeita com o resultado e a rapidez nas edições. Profissionais excelentes!",
+    },
+    {
+      name: "Newton",
+      meta: "Avaliação no Google",
+      text: "A minha experiência com a produtora 21 foi incrível. Com certeza recomendo. São profissionais de altíssimo gabarito. Atenciosos. Caprichosos. Criativos e conduzem tudo como o cliente pede. O resultado do meu vídeo foi incrível.",
+    },
+    {
+      name: "Alice Copy",
+      meta: "Avaliação no Google",
+      text: "Com certeza são os melhores de Brasília! Fiquei impressionada com a excelência. Pra quem precisa de um Studio, super indico.",
+    },
+    {
+      name: "Luciana Viana",
+      meta: "Local Guide · 36 avaliações",
+      text: "Equipe que promove com conteúdo e imagem sensacional.",
+    },
+  ],
   items: [
     { src: "/images/depoimentos/depoimento-1.jpeg", alt: "Depoimento de cliente", width: 1170, height: 662 },
     { src: "/images/depoimentos/depoimento-2.jpeg", alt: "Depoimento de cliente", width: 1134, height: 307 },
