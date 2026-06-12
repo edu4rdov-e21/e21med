@@ -49,7 +49,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-navy-dark pt-[68%] lg:pt-20 lg:pb-20 lg:min-h-[720px] flex flex-col justify-end lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16 lg:px-10 xl:px-16"
+      className="relative overflow-hidden bg-navy-dark pt-[68%] lg:py-[75px] lg:min-h-[720px] flex flex-col justify-end lg:flex-row lg:items-center lg:justify-center lg:gap-[60px] lg:px-12"
     >
       {/* mobile: imagem estática (attachment fixed); desktop: vídeo animado */}
       <div
@@ -167,9 +167,9 @@ export default function Hero() {
       <div className="relative z-10 lg:order-1 w-full max-w-7xl mx-auto px-6 sm:px-10 pb-10 sm:pb-14 lg:p-0 lg:mx-0 lg:max-w-2xl lg:flex-1">
         <div
           ref={ref}
-          className={`${className} flex flex-col items-center text-center lg:items-start lg:text-left gap-5 sm:gap-7`}
+          className={`${className} flex flex-col items-center text-center lg:items-start lg:text-left gap-4`}
         >
-          <div className="flex flex-col items-center lg:items-start gap-3">
+          <div className="flex flex-col items-center lg:items-start gap-2">
             <Image
               src="/logos/e21-med.svg"
               alt={HERO.badge}
@@ -202,7 +202,7 @@ export default function Hero() {
           </div>
 
           <h1
-            className="text-xl sm:text-2xl lg:text-4xl text-cream leading-tight"
+            className="text-xl sm:text-2xl lg:text-4xl text-cream leading-[1.08]"
             style={{ textShadow: "0 2px 12px rgba(0,0,0,0.35)" }}
           >
             {HERO.headlinePre.trimEnd()}
@@ -212,7 +212,7 @@ export default function Hero() {
           </h1>
 
           <p
-            className="text-sm sm:text-base lg:text-lg text-cream/70 leading-relaxed max-w-xl"
+            className="text-sm sm:text-base lg:text-lg text-cream/70 leading-[1.4] max-w-[480px]"
             style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}
           >
             {HERO.subheadlinePre}
@@ -227,7 +227,7 @@ export default function Hero() {
             onClick={() =>
               window.dispatchEvent(new CustomEvent("e21:open-application"))
             }
-            className="inline-flex items-center justify-center rounded-full bg-cream text-navy px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold hover:bg-white transition duration-300 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+            className="mt-3 inline-flex items-center justify-center rounded-full bg-cream text-navy px-8 py-[15px] text-sm sm:text-base font-bold hover:bg-white transition duration-300 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
           >
             {HERO.ctaLabel}
           </button>
