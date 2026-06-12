@@ -188,6 +188,18 @@ h3, h4, h5, h6 {
   animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Entrada escalonada: cada item seta --stagger-i inline; o contexto pode
+   sobrescrever --stagger-step/--stagger-start. Reusa o keyframe fade-in-up
+   (so opacity/transform — nunca altera layout). Equivale a
+   stagger(step, { start }) das libs de animacao, em CSS puro. */
+.animate-stagger-in {
+  opacity: 0;
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(
+    var(--stagger-i, 0) * var(--stagger-step, 90ms) + var(--stagger-start, 0ms)
+  );
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

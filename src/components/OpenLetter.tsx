@@ -199,38 +199,58 @@ export default function OpenLetter() {
                   transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
                 }}
               >
-                <p className="italic text-navy/70 text-base sm:text-lg font-serif mb-6 sm:mb-8">
-                  {LETTER.greeting}
-                </p>
+                {/* cascata: saudação é o item 0, parágrafos 1..N,
+                    assinatura por último; translate/opacity apenas, então
+                    a altura medida pelo ResizeObserver não muda */}
+                <div
+                  style={
+                    {
+                      "--stagger-step": "70ms",
+                      "--stagger-start": "250ms",
+                    } as React.CSSProperties
+                  }
+                >
+                  <p
+                    className={`italic text-navy/70 text-base sm:text-lg font-serif mb-6 sm:mb-8 ${
+                      isOpen ? "animate-stagger-in" : "opacity-0"
+                    }`}
+                    style={{ "--stagger-i": 0 } as React.CSSProperties}
+                  >
+                    {LETTER.greeting}
+                  </p>
 
-                <div className="space-y-5 sm:space-y-6">
-                  {LETTER.paragraphs.map((p, i) => (
-                    <p
-                      key={i}
-                      className={`text-base sm:text-lg leading-relaxed text-navy transition-[opacity,transform] duration-500 ease-out ${
-                        p.emphasis ? "font-semibold" : ""
-                      } ${
-                        isOpen
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-2"
-                      }`}
-                      style={{
-                        transitionDelay: isOpen ? `${250 + i * 50}ms` : "0ms",
-                      }}
-                    >
-                      {p.text}
+                  <div className="space-y-5 sm:space-y-6">
+                    {LETTER.paragraphs.map((p, i) => (
+                      <p
+                        key={i}
+                        className={`text-base sm:text-lg leading-relaxed text-navy ${
+                          p.emphasis ? "font-semibold" : ""
+                        } ${isOpen ? "animate-stagger-in" : "opacity-0"}`}
+                        style={{ "--stagger-i": i + 1 } as React.CSSProperties}
+                      >
+                        {p.text}
+                      </p>
+                    ))}
+                  </div>
+
+                  <div
+                    className={`mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-navy/15 ${
+                      isOpen ? "animate-stagger-in" : "opacity-0"
+                    }`}
+                    style={
+                      {
+                        "--stagger-i": LETTER.paragraphs.length + 1,
+                      } as React.CSSProperties
+                    }
+                  >
+                    <p className="italic text-navy/70 text-sm sm:text-base font-serif mb-1">
+                      {LETTER.signatureLabel}
                     </p>
-                  ))}
-                </div>
-
-                <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-navy/15">
-                  <p className="italic text-navy/70 text-sm sm:text-base font-serif mb-1">
-                    {LETTER.signatureLabel}
-                  </p>
-                  <SignatureDraw name={LETTER.signatureName} play={isOpen} />
-                  <p className="text-sm sm:text-base text-navy/70 mt-1">
-                    {LETTER.signatureRole}
-                  </p>
+                    <SignatureDraw name={LETTER.signatureName} play={isOpen} />
+                    <p className="text-sm sm:text-base text-navy/70 mt-1">
+                      {LETTER.signatureRole}
+                    </p>
+                  </div>
                 </div>
               </article>
             </div>

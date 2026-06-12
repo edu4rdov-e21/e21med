@@ -30,5 +30,5 @@ export function useFadeIn<T extends HTMLElement = HTMLDivElement>() {
     ? "opacity-100 translate-y-0 transition-all duration-700 ease-out"
     : "opacity-0 translate-y-4 transition-all duration-700 ease-out";
 
-  return { ref, className };
+  return { ref, className, visible };
 }
