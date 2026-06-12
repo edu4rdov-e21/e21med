@@ -79,6 +79,7 @@ export default function ApplicationForm() {
       whatsapp: (formData.get("whatsapp") as string) || "",
       specialty: (formData.get("especialidade") as string) || "",
       instagram: (formData.get("instagram") as string) || "",
+      revenue: (formData.get("faturamento") as string) || "",
     });
 
     setIsSubmitting(false);
@@ -197,17 +198,53 @@ export default function ApplicationForm() {
                           <span className="text-navy/60"> *</span>
                         )}
                       </label>
-                      <input
-                        ref={i === 0 ? firstFieldRef : undefined}
-                        id={field.name}
-                        name={field.name}
-                        type={field.type}
-                        required={field.required}
-                        autoComplete={field.autoComplete}
-                        inputMode={field.inputMode}
-                        disabled={isSubmitting}
-                        className="w-full bg-white text-navy border border-navy/15 rounded-lg px-4 py-3 text-base placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-navy/40 focus:border-navy/40 disabled:opacity-60"
-                      />
+                      {"options" in field ? (
+                        <div className="relative">
+                          <select
+                            id={field.name}
+                            name={field.name}
+                            required={field.required}
+                            disabled={isSubmitting}
+                            defaultValue=""
+                            className="w-full appearance-none bg-white text-navy border border-navy/15 rounded-lg px-4 py-3 pr-10 text-base focus:outline-none focus:ring-2 focus:ring-navy/40 focus:border-navy/40 disabled:opacity-60 invalid:text-navy/40"
+                          >
+                            <option value="" disabled>
+                              {field.placeholder}
+                            </option>
+                            {field.options.map((opt) => (
+                              <option key={opt} value={opt}>
+                                {opt}
+                              </option>
+                            ))}
+                          </select>
+                          <svg
+                            aria-hidden="true"
+                            className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-navy/50"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <polyline points="6 9 12 15 18 9" />
+                          </svg>
+                        </div>
+                      ) : (
+                        <input
+                          ref={i === 0 ? firstFieldRef : undefined}
+                          id={field.name}
+                          name={field.name}
+                          type={field.type}
+                          required={field.required}
+                          autoComplete={field.autoComplete}
+                          inputMode={field.inputMode}
+                          disabled={isSubmitting}
+                          className="w-full bg-white text-navy border border-navy/15 rounded-lg px-4 py-3 text-base placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-navy/40 focus:border-navy/40 disabled:opacity-60"
+                        />
+                      )}
                     </div>
                   ))}
 

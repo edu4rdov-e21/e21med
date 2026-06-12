@@ -28,6 +28,7 @@ export default function FinalCta() {
       whatsapp: (formData.get("whatsapp") as string) || "",
       specialty: (formData.get("especialidade") as string) || "",
       instagram: (formData.get("instagram") as string) || "",
+      revenue: (formData.get("faturamento") as string) || "",
     });
 
     setIsSubmitting(false);
@@ -85,16 +86,36 @@ export default function FinalCta() {
                       <span aria-hidden="true"> *</span>
                     )}
                   </label>
-                  <input
-                    id={`v3-${field.name}`}
-                    name={field.name}
-                    type={field.type}
-                    required={field.required}
-                    autoComplete={field.autoComplete}
-                    inputMode={field.inputMode}
-                    disabled={isSubmitting}
-                    className="w-full bg-transparent text-bone border border-ash rounded-full px-6 py-3.5 text-base placeholder:text-smoke focus:outline-none focus:border-plum-voltage focus:ring-[3px] focus:ring-plum-voltage/30 disabled:opacity-60"
-                  />
+                  {"options" in field ? (
+                    <select
+                      id={`v3-${field.name}`}
+                      name={field.name}
+                      required={field.required}
+                      disabled={isSubmitting}
+                      defaultValue=""
+                      className="w-full appearance-none bg-transparent text-bone border border-ash rounded-full px-6 py-3.5 text-base focus:outline-none focus:border-plum-voltage focus:ring-[3px] focus:ring-plum-voltage/30 disabled:opacity-60 invalid:text-smoke [&>option]:bg-void [&>option]:text-bone"
+                    >
+                      <option value="" disabled>
+                        {field.placeholder}
+                      </option>
+                      {field.options.map((opt) => (
+                        <option key={opt} value={opt}>
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      id={`v3-${field.name}`}
+                      name={field.name}
+                      type={field.type}
+                      required={field.required}
+                      autoComplete={field.autoComplete}
+                      inputMode={field.inputMode}
+                      disabled={isSubmitting}
+                      className="w-full bg-transparent text-bone border border-ash rounded-full px-6 py-3.5 text-base placeholder:text-smoke focus:outline-none focus:border-plum-voltage focus:ring-[3px] focus:ring-plum-voltage/30 disabled:opacity-60"
+                    />
+                  )}
                 </div>
               ))}
 

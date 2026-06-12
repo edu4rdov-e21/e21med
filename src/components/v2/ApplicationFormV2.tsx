@@ -24,6 +24,7 @@ export default function ApplicationFormV2() {
       whatsapp: (formData.get("whatsapp") as string) || "",
       specialty: (formData.get("especialidade") as string) || "",
       instagram: (formData.get("instagram") as string) || "",
+      revenue: (formData.get("faturamento") as string) || "",
     });
 
     setIsSubmitting(false);
@@ -75,16 +76,36 @@ export default function ApplicationFormV2() {
                       <span className="text-graphite"> *</span>
                     )}
                   </label>
-                  <input
-                    id={`v2-${field.name}`}
-                    name={field.name}
-                    type={field.type}
-                    required={field.required}
-                    autoComplete={field.autoComplete}
-                    inputMode={field.inputMode}
-                    disabled={isSubmitting}
-                    className="w-full bg-parchment text-ink border border-ash rounded-full px-5 py-3 text-base placeholder:text-graphite focus:outline-none focus:border-terracotta-seal focus:ring-[3px] focus:ring-terracotta-seal/20 disabled:opacity-60"
-                  />
+                  {"options" in field ? (
+                    <select
+                      id={`v2-${field.name}`}
+                      name={field.name}
+                      required={field.required}
+                      disabled={isSubmitting}
+                      defaultValue=""
+                      className="w-full appearance-none bg-parchment text-ink border border-ash rounded-full px-5 py-3 text-base focus:outline-none focus:border-terracotta-seal focus:ring-[3px] focus:ring-terracotta-seal/20 disabled:opacity-60 invalid:text-graphite"
+                    >
+                      <option value="" disabled>
+                        {field.placeholder}
+                      </option>
+                      {field.options.map((opt) => (
+                        <option key={opt} value={opt}>
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      id={`v2-${field.name}`}
+                      name={field.name}
+                      type={field.type}
+                      required={field.required}
+                      autoComplete={field.autoComplete}
+                      inputMode={field.inputMode}
+                      disabled={isSubmitting}
+                      className="w-full bg-parchment text-ink border border-ash rounded-full px-5 py-3 text-base placeholder:text-graphite focus:outline-none focus:border-terracotta-seal focus:ring-[3px] focus:ring-terracotta-seal/20 disabled:opacity-60"
+                    />
+                  )}
                 </div>
               ))}
 

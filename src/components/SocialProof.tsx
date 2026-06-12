@@ -17,16 +17,21 @@ export default function SocialProof() {
           </p>
         </div>
 
-        <div
-          className="relative"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
-          }}
-        >
-          <ul className="flex gap-8 sm:gap-12 lg:gap-16 w-max animate-scroll-x">
+        {/* fades nas bordas via overlays estáticos: mask-image sobre o
+            track animado re-rasteriza a camada a cada frame e trava */}
+        <div className="relative">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 left-0 w-[6%] z-10 bg-gradient-to-r from-cream to-transparent"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 w-[6%] z-10 bg-gradient-to-l from-cream to-transparent"
+          />
+          <ul
+            className="flex gap-8 sm:gap-12 lg:gap-16 w-max animate-scroll-x"
+            style={{ transform: "translateZ(0)" }}
+          >
             {clients.map((client, idx) => (
               <li
                 key={`${client.name}-${idx}`}

@@ -5,6 +5,7 @@ export type LeadInput = {
   whatsapp: string;
   specialty: string;
   instagram?: string;
+  revenue?: string;
 };
 
 export type SubmitResult = { success: boolean; error?: string };
@@ -23,6 +24,7 @@ export async function submitLead(input: LeadInput): Promise<SubmitResult> {
     whatsapp: input.whatsapp.trim(),
     specialty: input.specialty.trim(),
     instagram: input.instagram?.trim().replace(/^@/, "") || null,
+    revenue: input.revenue?.trim() || null,
     funnel: "med",
     utm_source: params.get("utm_source"),
     utm_medium: params.get("utm_medium"),

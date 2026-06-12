@@ -402,6 +402,21 @@ export const FORM = {
       autoComplete: "username",
       inputMode: "text" as const,
     },
+    {
+      name: "faturamento",
+      label: "Faturamento mensal médio da clínica",
+      type: "select",
+      required: true,
+      autoComplete: "off",
+      inputMode: "text" as const,
+      placeholder: "Selecione uma faixa",
+      options: [
+        "Até R$ 50.000 por mês",
+        "De R$ 50.000 a R$ 100.000",
+        "De R$ 100.000 a R$ 250.000",
+        "+ de R$ 250.000",
+      ],
+    },
   ],
 } as const;
 
