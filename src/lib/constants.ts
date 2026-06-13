@@ -1,8 +1,3 @@
-export const BRAND = {
-  name: "E21 MED",
-  tagline: "Produtora de autoridade digital.",
-} as const;
-
 export const HERO = {
   badge: "E21 MED",
   subBadgePre: "um projeto do grupo ",
@@ -198,7 +193,6 @@ export const HOW_IT_WORKS = {
     {
       monthLabel: "01",
       phaseLabel: "Fase 1",
-      phase: 1 as const,
       title: "Fundação",
       summary: "Montamos toda a base do seu perfil profissional.",
       photoDescription:
@@ -226,7 +220,6 @@ export const HOW_IT_WORKS = {
     {
       monthLabel: "02-03",
       phaseLabel: "Fase 1",
-      phase: 1 as const,
       title: "Crescimento",
       summary:
         "Produção diária e construção de autoridade na sua especialidade.",
@@ -252,7 +245,6 @@ export const HOW_IT_WORKS = {
     {
       monthLabel: "04-05",
       phaseLabel: "Fase 2",
-      phase: 2 as const,
       title: "Conversão",
       summary:
         "Tráfego pago turbina o orgânico e pacientes começam a agendar.",
@@ -278,7 +270,6 @@ export const HOW_IT_WORKS = {
     {
       monthLabel: "06",
       phaseLabel: "Fase 2",
-      phase: 2 as const,
       title: "Autoridade",
       summary: "Você vira a referência da sua especialidade.",
       photoDescription:
@@ -323,7 +314,6 @@ export const TESTIMONIALS = {
   subtitle: "São 55 avaliações no Google, 54 delas com 5 estrelas.",
   stats: {
     total: 55,
-    fiveStar: 54,
     ratingLabel: "5,0",
   },
   googleReviews: [

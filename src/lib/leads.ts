@@ -1,6 +1,6 @@
 import { getSupabase } from "./supabase";
 
-export type LeadInput = {
+type LeadInput = {
   name: string;
   whatsapp: string;
   specialty: string;
@@ -8,7 +8,7 @@ export type LeadInput = {
   revenue?: string;
 };
 
-export type SubmitResult = { success: boolean; error?: string };
+type SubmitResult = { success: boolean; error?: string };
 
 export async function submitLead(input: LeadInput): Promise<SubmitResult> {
   const params =
