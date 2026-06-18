@@ -357,7 +357,7 @@ export const FORM = {
   subtitle:
     "Nossa equipe entra em contato em até 10 minutos por ligação pra marcar sua reunião de diagnóstico.",
   ctaLabel: "Entrar em contato",
-  submitLabel: "Quero agendar minha reunião",
+  submitLabel: "Quero entrar em contato",
   successMessage:
     "Pedido recebido. Em até 10 minutos nossa equipe entra em contato por ligação pra marcar sua reunião de diagnóstico.",
   fields: [
