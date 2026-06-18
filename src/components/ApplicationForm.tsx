@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef, FormEvent } from "react";
-import { FORM } from "@/lib/constants";
+import { FORM, WHATSAPP_LEAD_HREF } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { submitLead } from "@/lib/leads";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function ApplicationForm() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
@@ -86,6 +87,8 @@ export default function ApplicationForm() {
 
     if (result.success) {
       setSubmitted(true);
+      // leva o lead direto pro WhatsApp com a mensagem pré-preenchida
+      window.location.href = WHATSAPP_LEAD_HREF;
     } else {
       setErrorMessage(result.error || "Erro ao enviar. Tente novamente.");
     }
@@ -173,13 +176,13 @@ export default function ApplicationForm() {
                   <p className="text-navy text-base sm:text-lg leading-relaxed">
                     {FORM.successMessage}
                   </p>
-                  <button
-                    type="button"
-                    onClick={closeModal}
-                    className="mt-6 inline-flex items-center justify-center rounded-full bg-navy text-cream font-bold px-6 py-3 text-sm hover:bg-navy-dark transition duration-300 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
+                  <a
+                    href={WHATSAPP_LEAD_HREF}
+                    className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] text-white font-bold px-6 py-3 text-sm hover:brightness-95 transition duration-300 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
                   >
-                    Fechar
-                  </button>
+                    <WhatsAppIcon className="w-4 h-4" />
+                    Abrir o WhatsApp
+                  </a>
                 </div>
               ) : (
                 <form

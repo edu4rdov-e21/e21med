@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { FORM } from "@/lib/constants";
+import { FORM, WHATSAPP_LEAD_HREF } from "@/lib/constants";
 import { submitLead } from "@/lib/leads";
 import Constellation from "./Constellation";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 /**
  * CTA final + form inline (decisão: sem modal — o void comporta o form
@@ -35,6 +36,8 @@ export default function FinalCta() {
 
     if (result.success) {
       setSubmitted(true);
+      // leva o lead direto pro WhatsApp com a mensagem pré-preenchida
+      window.location.href = WHATSAPP_LEAD_HREF;
     } else {
       setErrorMessage(result.error || "Erro ao enviar. Tente novamente.");
     }
@@ -69,6 +72,13 @@ export default function FinalCta() {
               <p className="text-xl font-extralight text-bone leading-relaxed">
                 {FORM.successMessage}
               </p>
+              <a
+                href={WHATSAPP_LEAD_HREF}
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] text-white font-semibold px-6 py-3 text-sm hover:brightness-95 transition active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+                Abrir o WhatsApp
+              </a>
             </div>
           ) : (
             <form

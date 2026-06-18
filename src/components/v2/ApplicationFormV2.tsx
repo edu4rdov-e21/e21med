@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { FORM } from "@/lib/constants";
+import { FORM, WHATSAPP_LEAD_HREF } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { submitLead } from "@/lib/leads";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function ApplicationFormV2() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
@@ -31,6 +32,8 @@ export default function ApplicationFormV2() {
 
     if (result.success) {
       setSubmitted(true);
+      // leva o lead direto pro WhatsApp com a mensagem pré-preenchida
+      window.location.href = WHATSAPP_LEAD_HREF;
     } else {
       setErrorMessage(result.error || "Erro ao enviar. Tente novamente.");
     }
@@ -59,6 +62,13 @@ export default function ApplicationFormV2() {
               <p className="font-v2-display italic font-light text-xl text-ink leading-relaxed">
                 {FORM.successMessage}
               </p>
+              <a
+                href={WHATSAPP_LEAD_HREF}
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] text-white font-semibold px-6 py-3 text-sm hover:brightness-95 transition active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-aged-paper"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+                Abrir o WhatsApp
+              </a>
             </div>
           ) : (
             <form

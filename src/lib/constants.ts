@@ -352,6 +352,16 @@ export const TESTIMONIALS = {
   ],
 } as const;
 
+export const WHATSAPP_LEAD = {
+  number: "5561998704135",
+  message: "Olá, me interessei no E21 MED e já preenchi o formulário.",
+};
+
+// Link pré-preenchido pra onde o lead é levado direto após enviar o form.
+export const WHATSAPP_LEAD_HREF = `https://wa.me/${
+  WHATSAPP_LEAD.number
+}?text=${encodeURIComponent(WHATSAPP_LEAD.message)}`;
+
 export const FORM = {
   title: "Agende sua reunião",
   subtitle:
@@ -359,7 +369,7 @@ export const FORM = {
   ctaLabel: "Entrar em contato",
   submitLabel: "Quero entrar em contato",
   successMessage:
-    "Pedido recebido. Em até 10 minutos nossa equipe entra em contato por ligação pra marcar sua reunião de diagnóstico.",
+    "Recebido! Estamos te levando pro WhatsApp pra falar com a nossa equipe agora. Se não abrir sozinho, toque no botão abaixo.",
   fields: [
     {
       name: "nome",
