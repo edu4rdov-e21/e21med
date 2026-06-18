@@ -107,7 +107,7 @@ export default function ApplicationForm() {
             onClick={openModal}
             className="inline-flex items-center justify-center rounded-full bg-cream text-navy font-bold px-8 py-4 text-base sm:text-lg hover:opacity-90 transition duration-300 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-4 focus-visible:ring-offset-navy"
           >
-            {FORM.submitLabel}
+            {FORM.ctaLabel}
           </button>
         </div>
       </div>

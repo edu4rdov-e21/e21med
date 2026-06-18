@@ -9,7 +9,7 @@ export const HERO = {
   subheadlinePre: "O E21 constrói uma audiência composta por ",
   subheadlineStrong: "pacientes prontos para adquirir seus serviços",
   subheadlinePost: ".",
-  ctaLabel: "Quero agendar minha reunião",
+  ctaLabel: "Entrar em contato",
   videoSrc: "/video/takes.mp4",
   notifications: [
     {
@@ -49,7 +49,7 @@ export const NAV_V3 = {
     { label: "Manifesto", href: "#manifesto" },
     { label: "Jornada", href: "#jornada" },
   ],
-  cta: "Agendar reunião",
+  cta: "Entrar em contato",
   ctaHref: "#agendar",
 } as const;
 
@@ -356,6 +356,7 @@ export const FORM = {
   title: "Agende sua reunião",
   subtitle:
     "Nossa equipe entra em contato em até 10 minutos por ligação pra marcar sua reunião de diagnóstico.",
+  ctaLabel: "Entrar em contato",
   submitLabel: "Quero agendar minha reunião",
   successMessage:
     "Pedido recebido. Em até 10 minutos nossa equipe entra em contato por ligação pra marcar sua reunião de diagnóstico.",
