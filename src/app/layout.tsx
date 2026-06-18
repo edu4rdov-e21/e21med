@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Source_Serif_4, DM_Sans } from "next/font/google";
 import "./globals.css";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import MetaPixel from "@/components/MetaPixel";
 
 const sourceSerif = Source_Serif_4({
   variable: "--font-serif-display",
@@ -123,6 +124,7 @@ export default function RootLayout({
       className={`${sourceSerif.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-navy">
+        <MetaPixel />
         <SchemaMarkup />
         <a
           href="#main"
