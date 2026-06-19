@@ -481,6 +481,11 @@ export const PRESS = {
       outlet: "Vozes de Brasília",
       outletKind: "Veículo de imprensa",
       date: "Janeiro de 2026",
+      image: "/images/press/vozes-brasilia-e21.jpg",
+      imageAlt:
+        "Equipe do E21 em entrevista no estúdio para a Vozes de Brasília",
+      imageCaption:
+        "George Medeiros, Fellype Ribeiro e Eduardo Vinícius, CEO do E21",
       headline:
         "E21 Studio se destaca em Brasília por produzir um mês de conteúdo em apenas 1 dia",
       quote:
