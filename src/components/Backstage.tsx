@@ -1,25 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { BACKSTAGE, PHOTO_DIVIDER_1, SPECIALTIES } from "@/lib/constants";
+import { BACKSTAGE, PHOTO_DIVIDER_1 } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
 /**
- * Bastidores + especialidades numa seção única e coesa: a foto vira um
- * frame de câmera gravando (REC pulsando, brackets de viewfinder,
- * legenda de set) e as especialidades entram rotuladas como fichas do
- * estúdio em marquee duplo, tudo sobre navy-dark.
+ * Bastidores: a foto vira um frame de câmera gravando (REC pulsando,
+ * brackets de viewfinder, legenda de set) sobre navy-dark. As especialidades
+ * saíram daqui pro componente Specialties (ficaram mais acima na página).
  */
 export default function Backstage() {
   const { ref, className } = useFadeIn<HTMLDivElement>();
-  const row = [...SPECIALTIES.items, ...SPECIALTIES.items];
-  // segunda linha começa em outro ponto da lista pra não espelhar a primeira
-  const rowReversed = [
-    ...SPECIALTIES.items.slice(5),
-    ...SPECIALTIES.items.slice(0, 5),
-    ...SPECIALTIES.items.slice(5),
-    ...SPECIALTIES.items.slice(0, 5),
-  ];
 
   return (
     <section className="bg-navy-dark py-16 sm:py-24 overflow-hidden">
@@ -66,46 +57,7 @@ export default function Backstage() {
               {BACKSTAGE.caption}
             </p>
           </div>
-
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cream/60 text-center mt-14 sm:mt-16 mb-7">
-            {BACKSTAGE.specialtiesLabel}
-          </p>
         </div>
-      </div>
-
-      <div
-        className="relative flex flex-col gap-3 sm:gap-4"
-        style={{
-          maskImage:
-            "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
-        }}
-      >
-        <ul className="flex gap-3 sm:gap-4 w-max animate-scroll-x-fast">
-          {row.map((s, i) => (
-            <li
-              key={i}
-              className="shrink-0 rounded-full border border-cream/15 bg-cream/5 px-4 py-1.5 text-sm text-cream/80 whitespace-nowrap"
-            >
-              {s}
-            </li>
-          ))}
-        </ul>
-        <ul
-          aria-hidden="true"
-          className="flex gap-3 sm:gap-4 w-max animate-scroll-x-fast"
-          style={{ animationDirection: "reverse" }}
-        >
-          {rowReversed.map((s, i) => (
-            <li
-              key={i}
-              className="shrink-0 rounded-full border border-cream/15 bg-cream/5 px-4 py-1.5 text-sm text-cream/80 whitespace-nowrap"
-            >
-              {s}
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import SocialProof from "@/components/SocialProof";
 import OpenLetter from "@/components/OpenLetter";
 import Backstage from "@/components/Backstage";
+import Specialties from "@/components/Specialties";
 import Team from "@/components/Team";
 import HowItWorks from "@/components/HowItWorks";
 import ScenarioShowcase from "@/components/ScenarioShowcase";
@@ -19,12 +20,13 @@ export default function Home() {
       <SocialProof />
       <StatsBar />
       <OpenLetter />
-      <Backstage />
+      <Press />
+      <Specialties />
       <Team />
       <HowItWorks />
       <ScenarioShowcase />
       <Testimonials />
-      <Press />
+      <Backstage />
       <ApplicationForm />
       <Footer />
       <StickyCTA />
