@@ -6,6 +6,7 @@ import Team from "@/components/Team";
 import HowItWorks from "@/components/HowItWorks";
 import ScenarioShowcase from "@/components/ScenarioShowcase";
 import Testimonials from "@/components/Testimonials";
+import Press from "@/components/Press";
 import ApplicationForm from "@/components/ApplicationForm";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
@@ -23,6 +24,7 @@ export default function Home() {
       <HowItWorks />
       <ScenarioShowcase />
       <Testimonials />
+      <Press />
       <ApplicationForm />
       <Footer />
       <StickyCTA />

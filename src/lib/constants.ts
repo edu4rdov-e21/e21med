@@ -472,3 +472,21 @@ export const FOOTER = {
   ],
   copyright: "© 2026 E21 Studio Ltda · CNPJ 55.788.849/0001-63",
 } as const;
+
+export const PRESS = {
+  label: "O E21 na mídia",
+  intro: "O método que aplicamos com você já virou pauta na imprensa.",
+  items: [
+    {
+      outlet: "Vozes de Brasília",
+      outletKind: "Veículo de imprensa",
+      date: "Janeiro de 2026",
+      headline:
+        "E21 Studio se destaca em Brasília por produzir um mês de conteúdo em apenas 1 dia",
+      quote:
+        "Ao transformar a criatividade em processo e a autoridade em método, o E21 Studio não está apenas fazendo vídeos.",
+      href: "https://www.vozesdebrasilia.com/post/e21-studio-se-destaca-em-bras%C3%ADlia-por-produzir-um-m%C3%AAs-de-conte%C3%BAdo-em-apenas-1-dia",
+      cta: "Ler a matéria completa",
+    },
+  ],
+} as const;
