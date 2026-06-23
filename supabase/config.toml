@@ -1,0 +1,10 @@
+# Config do Supabase CLI. project_id é o ref do projeto (público, está na URL
+# do dashboard) — não é segredo. Os demais campos usam os padrões do CLI.
+project_id = "itizksxupmgjbslypiwz"
+
+# A função é chamada por um Database Webhook autenticado pelo nosso header
+# secreto (x-webhook-secret), não por um JWT do Supabase. Por isso desligamos
+# a verificação de JWT — senão o webhook seria rejeitado antes de chegar ao
+# handler.
+[functions.sync-lead-to-sheet]
+verify_jwt = false

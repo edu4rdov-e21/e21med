@@ -43,6 +43,19 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# ...mas os .env.example das Edge Functions (só nomes, sem valores) sim
+!supabase/**/.env.example
+
+# credenciais / chaves de service account (NUNCA commitar)
+*.key
+service-account*.json
+**/service-account*.json
+*-service-account.json
+**/*-service-account.json
+gcp-*.json
+**/gcp-*.json
+credentials*.json
+**/credentials*.json
 
 # vercel
 .vercel
