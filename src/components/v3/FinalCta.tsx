@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import { FORM, WHATSAPP_LEAD_HREF } from "@/lib/constants";
 import { submitLead } from "@/lib/leads";
+import { fireLeadConversion } from "@/lib/metaPixel";
 import Constellation from "./Constellation";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
@@ -24,20 +25,30 @@ export default function FinalCta() {
     setErrorMessage(null);
 
     const formData = new FormData(e.currentTarget);
-    const result = await submitLead({
+    const lead = {
       name: (formData.get("nome") as string) || "",
       whatsapp: (formData.get("whatsapp") as string) || "",
       specialty: (formData.get("especialidade") as string) || "",
       instagram: (formData.get("instagram") as string) || "",
       revenue: (formData.get("faturamento") as string) || "",
-    });
+    };
+    const result = await submitLead(lead);
 
     setIsSubmitting(false);
 
     if (result.success) {
       setSubmitted(true);
-      // leva o lead direto pro WhatsApp com a mensagem pré-preenchida
-      window.location.href = WHATSAPP_LEAD_HREF;
+      // dispara a conversao 'Lead' do Meta (uma vez por envio, eventID unico)
+      // apos a validacao e ANTES do redirect pro WhatsApp
+      fireLeadConversion({
+        whatsapp: lead.whatsapp,
+        faturamento: lead.revenue,
+        especialidade: lead.specialty,
+      });
+      // pequeno atraso pra o beacon do pixel sair antes de navegar
+      setTimeout(() => {
+        window.location.href = WHATSAPP_LEAD_HREF;
+      }, 400);
     } else {
       setErrorMessage(result.error || "Erro ao enviar. Tente novamente.");
     }
