@@ -5,10 +5,11 @@
 
 import type { Lead } from "./lead.ts";
 import { appendLeadToSheet } from "./sheets.ts";
+import { notifyTelegram } from "./notify-telegram.ts";
 
 export type Sink = (lead: Lead) => Promise<void>;
 
 export const sinks: Sink[] = [
   appendLeadToSheet,
-  // notifyWhatsApp, // futuro: notificar o lead no WhatsApp (não implementado)
+  notifyTelegram, // avisa o grupo do Telegram (best-effort, tolerante a falha)
 ];
