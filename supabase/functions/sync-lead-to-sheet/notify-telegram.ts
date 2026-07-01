@@ -11,7 +11,9 @@ export async function notifyTelegram(input: Record<string, any>): Promise<void> 
   // fim da cadeia de fallbacks pra a Área não vir vazia.
   const area = lead.area ?? lead.categoria ?? lead.profissao ?? lead.specialty ?? "—";
   const revenue = lead.revenue ?? "—";
-  const email = lead.email ?? "—";
+  // e21med coleta o @ do Instagram (não e-mail); o handle é salvo sem o "@".
+  const igHandle = String(lead.instagram ?? lead.instagram_handle ?? "").trim().replace(/^@/, "");
+  const instagram = igHandle ? `https://instagram.com/${igHandle}` : "—";
   const digits = String(lead.whatsapp ?? lead.phone ?? lead.telefone ?? "").replace(/\D/g, "");
   const wa = digits ? `https://wa.me/${digits.length <= 11 ? "55" + digits : digits}` : "";
   const text =
@@ -19,7 +21,7 @@ export async function notifyTelegram(input: Record<string, any>): Promise<void> 
     `Nome: ${nome}\n` +
     `Área: ${area}\n` +
     `Faturamento: ${revenue}\n` +
-    `E-mail: ${email}` +
+    `Instagram: ${instagram}` +
     (wa ? `\nWhatsApp: ${wa}` : "");
   const resp = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: "POST",
