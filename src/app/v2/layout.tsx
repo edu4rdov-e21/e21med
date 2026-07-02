@@ -3,7 +3,7 @@ import { Fraunces, Inter, Fragment_Mono } from "next/font/google";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
-  weight: ["300", "400"],
+  weight: ["300", "400", "500"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
@@ -11,7 +11,7 @@ const fraunces = Fraunces({
 
 const interV2 = Inter({
   variable: "--font-inter-v2",
-  weight: ["300", "400", "600", "700"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal"],
   subsets: ["latin"],
   display: "swap",
@@ -37,7 +37,7 @@ export default function V2Layout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div
-      className={`${fraunces.variable} ${interV2.variable} ${fragmentMono.variable} v2-root min-h-screen bg-parchment text-ink font-v2-sans`}
+      className={`${fraunces.variable} ${interV2.variable} ${fragmentMono.variable} v2-root min-h-screen bg-v2-ink text-v2-bone font-v2-sans antialiased`}
     >
       {children}
     </div>

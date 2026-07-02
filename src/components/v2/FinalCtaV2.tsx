@@ -1,16 +1,20 @@
 "use client";
 
-import { useState, FormEvent } from "react";
-import { FORM, WHATSAPP_LEAD_HREF } from "@/lib/constants";
-import { useFadeIn } from "@/hooks/useFadeIn";
+import { useState, type FormEvent } from "react";
+import { FORM, WHATSAPP_LEAD_HREF, FOOTER } from "@/lib/constants";
 import { submitLead } from "@/lib/leads";
 import { fireLeadConversion } from "@/lib/metaPixel";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
-export default function ApplicationFormV2() {
-  const { ref, className } = useFadeIn<HTMLDivElement>();
-  const [submitted, setSubmitted] = useState(false);
+/**
+ * Conversão. Objetivo único: o envio do formulário. Sala escura, uma
+ * pergunta, um cartão de formulário com inputs editoriais de sublinhado;
+ * nenhum outro caminho na tela. Mesmo pipeline dos outros forms do site:
+ * Supabase -> evento Lead do Meta -> redirect pro WhatsApp.
+ */
+export default function FinalCtaV2() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -50,52 +54,67 @@ export default function ApplicationFormV2() {
     }
   }
 
-  return (
-    <section id="formulario-v2" className="bg-parchment py-16 sm:py-24 scroll-mt-8">
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-        <div ref={ref} className={`${className} max-w-xl mx-auto`}>
-          <div className="text-center mb-10">
-            <h2 className="font-v2-display text-3xl sm:text-5xl text-ink leading-[1.1] mb-4">
-              {FORM.title}
-            </h2>
-            <p className="text-base text-graphite leading-relaxed">
-              {FORM.subtitle}
-            </p>
-          </div>
+  const inputClass =
+    "w-full border-0 border-b border-v2-bone/25 bg-transparent px-0 py-3 text-base text-v2-bone placeholder:text-v2-bone/35 focus:border-v2-brass-bright focus:outline-none focus:ring-0 disabled:opacity-60";
 
+  return (
+    <section
+      id="contato"
+      className="v2-grain scroll-mt-8 border-t border-v2-bone/10 bg-v2-ink py-16 text-v2-bone sm:py-24"
+    >
+      <div className="relative z-[2] mx-auto grid max-w-6xl gap-12 px-6 sm:px-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:px-16">
+        {/* pitch */}
+        <div>
+          <p className="v2-eyebrow text-v2-brass-bright">Próximo passo</p>
+          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl">{FORM.title}</h2>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-v2-bone/70">
+            {FORM.subtitle}
+          </p>
+          <div className="mt-10 hidden border-t border-v2-bone/10 pt-6 lg:block">
+            <p className="font-v2-mono text-[11px] uppercase tracking-[0.2em] text-v2-bone/45">
+              Prefere falar direto?
+            </p>
+            <a
+              href={FOOTER.contact.items[1].href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block text-lg text-v2-bone/85 transition hover:text-v2-bone"
+            >
+              {FOOTER.contact.items[1].text}
+            </a>
+          </div>
+        </div>
+
+        {/* formulário */}
+        <div className="rounded-2xl bg-v2-coal p-7 ring-1 ring-v2-bone/10 sm:p-10">
           {submitted ? (
             <div
               role="status"
               aria-live="polite"
               aria-atomic="true"
-              className="bg-aged-paper rounded-3xl p-10 text-center"
+              className="flex min-h-72 flex-col items-center justify-center text-center"
             >
-              <p className="font-v2-display italic font-light text-xl text-ink leading-relaxed">
+              <p className="max-w-sm text-base leading-relaxed text-v2-bone/85 sm:text-lg">
                 {FORM.successMessage}
               </p>
               <a
                 href={WHATSAPP_LEAD_HREF}
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] text-white font-semibold px-6 py-3 text-sm hover:brightness-95 transition active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-aged-paper"
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-white transition hover:brightness-95 active:scale-[0.97]"
               >
-                <WhatsAppIcon className="w-4 h-4" />
+                <WhatsAppIcon className="h-4 w-4" />
                 Abrir o WhatsApp
               </a>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="bg-aged-paper rounded-3xl p-6 sm:p-10 flex flex-col gap-4"
-            >
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               {FORM.fields.map((field) => (
-                <div key={field.name} className="flex flex-col gap-1.5">
+                <div key={field.name} className="flex flex-col gap-1">
                   <label
                     htmlFor={`v2-${field.name}`}
-                    className="text-sm font-semibold text-ink"
+                    className="font-v2-mono text-[10px] uppercase tracking-[0.2em] text-v2-bone/50"
                   >
                     {field.label}
-                    {field.required && (
-                      <span className="text-graphite"> *</span>
-                    )}
+                    {field.required && <span aria-hidden="true"> *</span>}
                   </label>
                   {"options" in field ? (
                     <select
@@ -104,14 +123,14 @@ export default function ApplicationFormV2() {
                       required={field.required}
                       disabled={isSubmitting}
                       defaultValue=""
-                      className="w-full appearance-none bg-parchment text-ink border border-ash rounded-full px-5 py-3 text-base focus:outline-none focus:border-terracotta-seal focus:ring-[3px] focus:ring-terracotta-seal/20 disabled:opacity-60 invalid:text-graphite"
+                      className={`${inputClass} appearance-none invalid:text-v2-bone/35 [&>option]:bg-v2-coal [&>option]:text-v2-bone`}
                     >
                       <option value="" disabled>
                         {field.placeholder}
                       </option>
-                      {field.options.map((opt) => (
-                        <option key={opt} value={opt}>
-                          {opt}
+                      {field.options.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
                         </option>
                       ))}
                     </select>
@@ -124,18 +143,14 @@ export default function ApplicationFormV2() {
                       autoComplete={field.autoComplete}
                       inputMode={field.inputMode}
                       disabled={isSubmitting}
-                      className="w-full bg-parchment text-ink border border-ash rounded-full px-5 py-3 text-base placeholder:text-graphite focus:outline-none focus:border-terracotta-seal focus:ring-[3px] focus:ring-terracotta-seal/20 disabled:opacity-60"
+                      className={inputClass}
                     />
                   )}
                 </div>
               ))}
 
               {errorMessage && (
-                <p
-                  className="text-terracotta-seal text-sm font-semibold"
-                  role="alert"
-                  aria-live="polite"
-                >
+                <p role="alert" className="text-sm text-red-400">
                   {errorMessage}
                 </p>
               )}
@@ -143,8 +158,7 @@ export default function ApplicationFormV2() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                aria-busy={isSubmitting}
-                className="mt-3 w-full min-h-12 inline-flex items-center justify-center rounded-[40px] bg-terracotta-seal text-parchment font-semibold text-base px-7 py-3.5 hover:opacity-90 transition duration-300 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-seal focus-visible:ring-offset-2 focus-visible:ring-offset-aged-paper"
+                className="mt-2 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-v2-brass-bright px-8 py-3.5 text-base font-semibold text-v2-ink transition hover:brightness-110 active:scale-[0.98] disabled:opacity-60"
               >
                 {isSubmitting ? "Enviando..." : FORM.submitLabel}
               </button>

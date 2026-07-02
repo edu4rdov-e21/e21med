@@ -1,130 +1,90 @@
-import Link from "next/link";
 import { FOOTER } from "@/lib/constants";
 
+/**
+ * Rodapé institucional. Objetivo: fechar com solidez de empresa real
+ * (contato, endereço, CNPJ, links legais), no mesmo tom da sala escura.
+ */
 export default function FooterV2() {
   return (
-    <footer className="bg-parchment border-t border-warm-taupe py-14 sm:py-20">
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12">
-          <div className="space-y-3 sm:col-span-2 lg:col-span-1">
-            <p className="font-v2-display text-xl text-ink">
-              {FOOTER.brand.name}
-            </p>
-            <p className="font-v2-mono text-[11px] uppercase tracking-wide text-terracotta-seal">
-              {FOOTER.brand.tagline}
-            </p>
-            <p className="text-sm text-graphite leading-relaxed max-w-xs">
-              {FOOTER.brand.description}
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wide text-ink">
-              {FOOTER.contact.label}
-            </p>
-            <ul className="space-y-2">
-              {FOOTER.contact.items.map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={
-                      item.href.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    className="text-sm text-charcoal hover:text-terracotta-seal transition-colors"
-                  >
-                    {item.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <p className="text-sm text-graphite leading-relaxed max-w-xs">
-              {FOOTER.contact.address}
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wide text-ink">
-              {FOOTER.institutional.label}
-            </p>
-            <ul className="space-y-2">
-              {FOOTER.institutional.items.map((item) => (
-                <li key={item.label}>
-                  {item.href.startsWith("mailto:") ? (
-                    <a
-                      href={item.href}
-                      className="text-sm text-charcoal hover:text-terracotta-seal transition-colors"
-                    >
-                      {item.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className="text-sm text-charcoal hover:text-terracotta-seal transition-colors"
-                    >
-                      {item.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wide text-ink">
-              {FOOTER.legal.label}
-            </p>
-            <ul className="space-y-2">
-              {FOOTER.legal.items.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-charcoal hover:text-terracotta-seal transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <footer className="border-t border-v2-bone/10 bg-v2-ink py-14 text-v2-bone">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 sm:px-10 md:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-16">
+        <div>
+          <p className="font-v2-display text-2xl">
+            E21 <span className="v2-eyebrow align-middle text-v2-bone/60">MED</span>
+          </p>
+          <p className="mt-2 text-sm text-v2-brass-bright">{FOOTER.brand.tagline}</p>
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-v2-bone/60">
+            {FOOTER.brand.description}
+          </p>
         </div>
 
-        <div className="pt-8 border-t border-warm-taupe flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <p className="text-xs text-graphite">{FOOTER.copyright}</p>
-          <ul className="flex items-center gap-4">
-            {FOOTER.social.map((s) => (
-              <li key={s.label}>
+        <div>
+          <p className="v2-eyebrow text-v2-bone/45">{FOOTER.contact.label}</p>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {FOOTER.contact.items.map((item) => (
+              <li key={item.label}>
                 <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="text-charcoal hover:text-terracotta-seal transition-colors"
+                  href={item.href}
+                  className="text-v2-bone/75 transition hover:text-v2-bone"
                 >
-                  {s.icon === "instagram" && (
-                    <svg
-                      aria-hidden="true"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                    </svg>
-                  )}
+                  {item.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <address className="mt-4 max-w-xs text-xs not-italic leading-relaxed text-v2-bone/40">
+            {FOOTER.contact.address}
+          </address>
+        </div>
+
+        <div>
+          <p className="v2-eyebrow text-v2-bone/45">{FOOTER.institutional.label}</p>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {FOOTER.institutional.items.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="text-v2-bone/75 transition hover:text-v2-bone"
+                >
+                  {item.label}
                 </a>
               </li>
             ))}
           </ul>
         </div>
+
+        <div>
+          <p className="v2-eyebrow text-v2-bone/45">{FOOTER.legal.label}</p>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {FOOTER.legal.items.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="text-v2-bone/75 transition hover:text-v2-bone"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-12 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-v2-bone/10 px-6 pt-6 sm:flex-row sm:px-10 lg:px-16">
+        <p className="font-v2-mono text-[11px] tracking-[0.08em] text-v2-bone/40">
+          {FOOTER.copyright}
+        </p>
+        {FOOTER.social.map((social) => (
+          <a
+            key={social.label}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-v2-bone/60 transition hover:text-v2-bone"
+          >
+            {social.label} ↗
+          </a>
+        ))}
       </div>
     </footer>
   );

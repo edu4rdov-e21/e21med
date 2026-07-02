@@ -1,33 +1,37 @@
 import HeroV2 from "@/components/v2/HeroV2";
-import SocialProofV2 from "@/components/v2/SocialProofV2";
-import StatsBarV2 from "@/components/v2/StatsBarV2";
-import OpenLetterV2 from "@/components/v2/OpenLetterV2";
-import PhotoDividerV2 from "@/components/v2/PhotoDividerV2";
-import SpecialtiesV2 from "@/components/v2/SpecialtiesV2";
+import TrustDeckV2 from "@/components/v2/TrustDeckV2";
+import StatsV2 from "@/components/v2/StatsV2";
+import ManifestoV2 from "@/components/v2/ManifestoV2";
+import MethodV2 from "@/components/v2/MethodV2";
+import StudioV2 from "@/components/v2/StudioV2";
 import TeamV2 from "@/components/v2/TeamV2";
-import HowItWorksV2 from "@/components/v2/HowItWorksV2";
-import TestimonialsV2 from "@/components/v2/TestimonialsV2";
-import ApplicationFormV2 from "@/components/v2/ApplicationFormV2";
+import ShowcaseV2 from "@/components/v2/ShowcaseV2";
+import ProofV2 from "@/components/v2/ProofV2";
+import FinalCtaV2 from "@/components/v2/FinalCtaV2";
 import FooterV2 from "@/components/v2/FooterV2";
-import { PHOTO_DIVIDER_1 } from "@/lib/constants";
+import StickyCtaV2 from "@/components/v2/StickyCtaV2";
 
+/**
+ * V2 "cinema institucional". Ritmo claro/escuro: os momentos
+ * cinematográficos (hero, estúdio, vitrine, conversão) acontecem na sala
+ * escura; os editoriais (confiança, números, manifesto, método, equipe,
+ * prova) no papel claro. Cada seção tem um objetivo único.
+ */
 export default function HomeV2() {
   return (
-    <main className="flex flex-col">
+    <main id="main" className="flex flex-col">
       <HeroV2 />
-      <SocialProofV2 />
-      <StatsBarV2 />
-      <OpenLetterV2 />
-      <PhotoDividerV2
-        description={PHOTO_DIVIDER_1.description}
-        src={PHOTO_DIVIDER_1.src}
-      />
-      <SpecialtiesV2 />
+      <TrustDeckV2 />
+      <StatsV2 />
+      <ManifestoV2 />
+      <MethodV2 />
+      <StudioV2 />
       <TeamV2 />
-      <HowItWorksV2 />
-      <TestimonialsV2 />
-      <ApplicationFormV2 />
+      <ShowcaseV2 />
+      <ProofV2 />
+      <FinalCtaV2 />
       <FooterV2 />
+      <StickyCtaV2 />
     </main>
   );
 }

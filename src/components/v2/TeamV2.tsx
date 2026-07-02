@@ -1,58 +1,78 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { TEAM } from "@/lib/constants";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
+/**
+ * A equipe. Objetivo: gerar confiança mostrando quem cuida do projeto. Os
+ * retratos de estúdio são o destaque absoluto: grandes, em galeria, com
+ * nameplate editorial embaixo (nada por cima da foto). Fecha com o retrato
+ * do time completo, como a página de elenco de uma produção.
+ */
 export default function TeamV2() {
-  const { ref, className } = useFadeIn<HTMLDivElement>();
+  const { ref, visible } = useFadeIn<HTMLDivElement>();
 
   return (
-    <section className="bg-aged-paper py-16 sm:py-24">
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-        <div ref={ref} className={className}>
-          <h2 className="font-v2-display text-3xl sm:text-5xl text-ink text-center leading-[1.1] max-w-3xl mx-auto mb-12 sm:mb-16">
-            {TEAM.title}
-          </h2>
+    <section
+      id="equipe"
+      className="scroll-mt-8 border-t border-v2-ink/10 bg-v2-bone py-16 text-v2-ink sm:py-24"
+    >
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
+        <p className="v2-eyebrow text-v2-stone">A equipe</p>
+        <h2 className="mt-4 max-w-2xl text-3xl sm:text-4xl lg:text-5xl">
+          {TEAM.title}
+        </h2>
 
-          <div className="relative w-full aspect-[16/9] sm:aspect-[2/1] overflow-hidden rounded-3xl mb-14 sm:mb-20">
+        <div
+          ref={ref}
+          className="mt-12 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-3 lg:gap-x-8"
+          style={{ "--stagger-step": "80ms" } as CSSProperties}
+        >
+          {TEAM.members.map((member, i) => (
+            <figure
+              key={member.name}
+              className={visible ? "animate-stagger-in" : "opacity-0"}
+              style={{ "--stagger-i": i } as CSSProperties}
+            >
+              <div className="group relative aspect-[3/4] overflow-hidden rounded-xl ring-1 ring-v2-ink/10">
+                <Image
+                  src={member.src}
+                  alt={`${member.name}, ${member.role}`}
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+                <span className="absolute left-3 top-3 font-v2-mono text-[10px] tracking-[0.2em] text-white/80 [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]">
+                  {String(i + 1).padStart(2, "0")} / {String(TEAM.members.length).padStart(2, "0")}
+                </span>
+              </div>
+              <figcaption className="mt-3 border-b border-v2-ink/10 pb-3">
+                <p className="font-v2-display text-lg sm:text-xl">{member.name}</p>
+                <p className="mt-0.5 font-v2-mono text-[10px] uppercase tracking-[0.18em] text-v2-stone sm:text-[11px]">
+                  {member.role}
+                </p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        {/* retrato do elenco completo */}
+        <figure className="mt-14">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-xl ring-1 ring-v2-ink/10 sm:aspect-[21/9]">
             <Image
               src={TEAM.groupPhoto.src}
               alt={TEAM.groupPhoto.alt}
               fill
-              sizes="(max-width: 1024px) 100vw, 1280px"
-              quality={92}
+              sizes="(max-width: 1280px) 100vw, 1152px"
               className="object-cover"
             />
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
-            {TEAM.members.map((member) => (
-              <div
-                key={member.name}
-                className="flex flex-col items-center text-center gap-3"
-              >
-                <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden ring-1 ring-warm-taupe">
-                  <Image
-                    src={member.src}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 640px) 96px, 128px"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex flex-col gap-0.5">
-                  <h3 className="font-v2-sans font-semibold text-sm sm:text-base text-ink leading-tight">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-graphite leading-snug">
-                    {member.role}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+          <figcaption className="mt-3 text-center font-v2-display text-sm italic text-v2-stone">
+            {TEAM.groupPhoto.alt}
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

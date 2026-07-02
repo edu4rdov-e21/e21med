@@ -18,14 +18,17 @@
   --font-serif: var(--font-serif-display);
   --font-sans: var(--font-dm-sans);
 
-  /* Tema v2 — "warm apothecary journal" (rota /v2) */
-  --color-terracotta-seal: #b05a36;
-  --color-parchment: #fef9ef;
-  --color-aged-paper: #f5eee1;
-  --color-warm-taupe: #d1c9bf;
-  --color-ink: #2a2b2f;
-  --color-charcoal: #333333;
-  --color-graphite: #515151;
+  /* Tema v2 — "cinema institucional" (rota /v2): tinta quente pros momentos
+     cinematográficos, papel quente pros editoriais, latão como acento único. */
+  --color-v2-ink: #131210;
+  --color-v2-coal: #1d1b18;
+  --color-v2-bone: #f3f0e9;
+  --color-v2-paper: #eae5da;
+  --color-v2-stone: #6b665c;
+  --color-v2-brass: #a1793f;
+  --color-v2-brass-bright: #c9a76b;
+
+  /* compartilhado: v3/FinalCta usa border-ash */
   --color-ash: #808988;
 
   --font-v2-display: var(--font-fraunces), Georgia, serif;
@@ -113,11 +116,12 @@ h3, h4, h5, h6 {
   letter-spacing: 0.05em;
 }
 
-/* Raiz do tema v2: tracking -0.023em no sans (herda pra todo o texto),
-   headings voltam pra normal e trocam pro serif editorial (Fraunces).
-   O override é necessário porque o CSS global aplica Source Serif aos h1-h6. */
+/* Raiz do tema v2 "cinema institucional": Inter no corpo com tracking leve,
+   headings em Fraunces (o CSS global aplica Source Serif aos h1-h6, então o
+   override é necessário; referência direta à var do next/font porque tokens
+   de @theme inline não existem como CSS vars em runtime). */
 .v2-root {
-  letter-spacing: -0.023em;
+  letter-spacing: -0.011em;
 }
 
 .v2-root h1,
@@ -126,16 +130,44 @@ h3, h4, h5, h6 {
 .v2-root h4,
 .v2-root h5,
 .v2-root h6 {
-  /* referencia direta a var do next/font: tokens de @theme inline
-     nao existem como CSS vars em runtime */
   font-family: var(--font-fraunces), Georgia, serif;
-  font-weight: 400;
-  letter-spacing: normal;
+  font-weight: 300;
+  letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
-.v2-root .font-v2-display {
-  letter-spacing: normal;
+/* Rótulo técnico de set: mono, caixa alta, tracking largo. O toque de
+   linguagem de estúdio que assina o tema. */
+.v2-eyebrow {
+  font-family: var(--font-fragment-mono), ui-monospace, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+}
+
+/* Grão de filme sutil pros fundos escuros (SVG estático, sem animação). */
+.v2-grain {
+  position: relative;
+  isolation: isolate;
+}
+
+.v2-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Letterbox: barras de cinema acima/abaixo de frames de vídeo. */
+.v2-letterbox::before,
+.v2-letterbox::after {
+  content: "";
+  display: block;
+  height: clamp(14px, 3vw, 36px);
+  background: var(--color-v2-ink, #131210);
 }
 
 @keyframes popup-in {
