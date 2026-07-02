@@ -1,35 +1,30 @@
-import HeroV2 from "@/components/v2/HeroV2";
-import TrustDeckV2 from "@/components/v2/TrustDeckV2";
-import StatsV2 from "@/components/v2/StatsV2";
-import ManifestoV2 from "@/components/v2/ManifestoV2";
-import MethodV2 from "@/components/v2/MethodV2";
-import StudioV2 from "@/components/v2/StudioV2";
-import TeamV2 from "@/components/v2/TeamV2";
-import ShowcaseV2 from "@/components/v2/ShowcaseV2";
-import ProofV2 from "@/components/v2/ProofV2";
-import FinalCtaV2 from "@/components/v2/FinalCtaV2";
+import SceneOpening from "@/components/v2/SceneOpening";
+import ActDiscover from "@/components/v2/ActDiscover";
+import InterludeStudio from "@/components/v2/InterludeStudio";
+import ActTrust from "@/components/v2/ActTrust";
+import ActDecide from "@/components/v2/ActDecide";
+import TurnManifesto from "@/components/v2/TurnManifesto";
+import FinalScene from "@/components/v2/FinalScene";
 import FooterV2 from "@/components/v2/FooterV2";
 import StickyCtaV2 from "@/components/v2/StickyCtaV2";
 
 /**
- * V2 "cinema institucional". Ritmo claro/escuro: os momentos
- * cinematográficos (hero, estúdio, vitrine, conversão) acontecem na sala
- * escura; os editoriais (confiança, números, manifesto, método, equipe,
- * prova) no papel claro. Cada seção tem um objetivo único.
+ * V2 "Na tela dela": a página é uma história em atos contada do ponto de
+ * vista da futura paciente. O visitante-médico assiste o funil acontecer
+ * na tela dela (descoberta -> confiança -> decisão), vê a máquina que
+ * produz tudo isso, e no final troca de lugar: a próxima história é a dele.
+ * Teatro escuro contínuo; os assets atuam nos papéis nativos deles.
  */
 export default function HomeV2() {
   return (
     <main id="main" className="flex flex-col">
-      <HeroV2 />
-      <TrustDeckV2 />
-      <StatsV2 />
-      <ManifestoV2 />
-      <MethodV2 />
-      <StudioV2 />
-      <TeamV2 />
-      <ShowcaseV2 />
-      <ProofV2 />
-      <FinalCtaV2 />
+      <SceneOpening />
+      <ActDiscover />
+      <InterludeStudio />
+      <ActTrust />
+      <ActDecide />
+      <TurnManifesto />
+      <FinalScene />
       <FooterV2 />
       <StickyCtaV2 />
     </main>

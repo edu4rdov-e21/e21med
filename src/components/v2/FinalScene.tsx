@@ -7,12 +7,11 @@ import { fireLeadConversion } from "@/lib/metaPixel";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 /**
- * Conversão. Objetivo único: o envio do formulário. Sala escura, uma
- * pergunta, um cartão de formulário com inputs editoriais de sublinhado;
- * nenhum outro caminho na tela. Mesmo pipeline dos outros forms do site:
- * Supabase -> evento Lead do Meta -> redirect pro WhatsApp.
+ * Cena final: o convite. A história dela só começa quando você entra em
+ * cena. Um caminho só na tela: o formulário. Mesmo pipeline dos outros
+ * forms do site: Supabase -> evento Lead do Meta -> redirect pro WhatsApp.
  */
-export default function FinalCtaV2() {
+export default function FinalScene() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -60,32 +59,42 @@ export default function FinalCtaV2() {
   return (
     <section
       id="contato"
-      className="v2-grain scroll-mt-8 border-t border-v2-bone/10 bg-v2-ink py-16 text-v2-bone sm:py-24"
+      className="relative scroll-mt-8 overflow-hidden border-t border-v2-bone/10 bg-v2-ink py-16 sm:py-24"
     >
-      <div className="relative z-[2] mx-auto grid max-w-6xl gap-12 px-6 sm:px-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:px-16">
-        {/* pitch */}
+      {/* a luz do teatro acende no final */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(201,167,107,0.09),transparent_55%)]"
+      />
+
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-6 sm:px-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:px-16">
         <div>
-          <p className="v2-eyebrow text-v2-brass-bright">Próximo passo</p>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl">{FORM.title}</h2>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-v2-bone/70">
+          <p className="v2-eyebrow text-v2-brass-bright">Cena final · sua vez</p>
+          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl">
+            O próximo perfil que ela encontra{" "}
+            <em className="font-v2-display italic text-v2-brass-bright">
+              pode ser o seu
+            </em>
+            .
+          </h2>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-v2-bone/65">
             {FORM.subtitle}
           </p>
           <div className="mt-10 hidden border-t border-v2-bone/10 pt-6 lg:block">
-            <p className="font-v2-mono text-[11px] uppercase tracking-[0.2em] text-v2-bone/45">
+            <p className="font-v2-mono text-[11px] uppercase tracking-[0.2em] text-v2-bone/40">
               Prefere falar direto?
             </p>
             <a
               href={FOOTER.contact.items[1].href}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block text-lg text-v2-bone/85 transition hover:text-v2-bone"
+              className="mt-2 inline-block text-lg text-v2-bone/80 transition hover:text-v2-bone"
             >
               {FOOTER.contact.items[1].text}
             </a>
           </div>
         </div>
 
-        {/* formulário */}
         <div className="rounded-2xl bg-v2-coal p-7 ring-1 ring-v2-bone/10 sm:p-10">
           {submitted ? (
             <div
