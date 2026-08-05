@@ -56,8 +56,8 @@ export const NAV_V3 = {
 export const STATS = {
   tag: "Em 2026",
   items: [
-    { value: 1542, prefix: "", suffix: "", label: "vídeos entregues" },
-    { value: 82, prefix: "", suffix: "", label: "gravações feitas" },
+    { value: 1811, prefix: "", suffix: "", label: "vídeos entregues" },
+    { value: 105, prefix: "", suffix: "", label: "projetos iniciados" },
     { value: 5440000, prefix: "+", suffix: "", label: "views" },
   ],
 } as const;
