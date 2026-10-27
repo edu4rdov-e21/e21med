@@ -136,13 +136,13 @@ export const LETTER = {
 
 export const BACKSTAGE = {
   label: "Bastidores",
-  caption: "Gravação em andamento no estúdio E21",
+  caption: "Estúdio E21, em Brasília",
   specialtiesLabel: "Especialidades que já gravaram aqui",
 } as const;
 
 export const PHOTO_DIVIDER_1 = {
-  description: "Visão geral do estúdio E21",
-  src: "/images/studio-geral.jpg",
+  description: "Set de gravação do Estúdio E21, em Brasília",
+  src: "/images/estudio-set.webp",
 } as const;
 
 export const TEAM = {
